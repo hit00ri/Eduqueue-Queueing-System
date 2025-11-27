@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+<link rel="stylesheet" href="../css/sidebar.css">
 
 <div class="sidebar fade-in">
     <h4 class="mb-4 sidebar-title">
@@ -24,14 +25,28 @@
         Dashboard
     </a>
 
-    <a class="sidebar-link" href="dashboard.php">
+    <a class="sidebar-link" href="../student-management/payment_slip.php">
         <span class="material-symbols-outlined nav-icon">record_voice_over</span>
         Payment Slip
     </a>
 
-    <a class="sidebar-link" href="../api/student-api/student-logout-b.php">
-        <span class="material-symbols-outlined nav-icon">record_voice_over</span>
-        Logout
-    </a>
-
+    <div class="logout-container">
+        <a class="sidebar-link" href="../api/student-api/student-logout-b.php">
+            <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+            Logout
+        </a>
+    </div>
 </div>
+
+<!-- <style>
+.sidebar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.logout-container {
+    margin-top: auto;
+    padding-top: 10px;
+}
+</style> -->
