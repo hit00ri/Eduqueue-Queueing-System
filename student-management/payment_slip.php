@@ -14,6 +14,7 @@ require_once "../api/student-api/payment-slip-b.php";
     <link rel="stylesheet" href="../css/slip.css">
 </head>
 <body>
+    <?php include '../includes/student_sidebar.php'; ?>
     <!-- Dark Mode Toggle -->
     <button class="dark-toggle btn btn-outline-secondary position-fixed top-0 end-0 m-3">
         <i class="bi bi-moon-stars"></i>
