@@ -23,8 +23,7 @@ require_once __DIR__ . "/api/staff-api/index-b.php";
 <div class="login-container card fade-in">
   <div class="login-logo">
     <i class="bi bi-ticket-perforated" style="font-size:28px;color:var(--accent)"></i>
-    <h1>balbablbalbalal</h1>
-    <h1>Eduqueue</h1>
+    <h1>ARDYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY</h1>
   </div>
   <?php if ($err): ?>
     <div class="alert alert-danger"><?=htmlspecialchars($err)?></div>
@@ -33,7 +32,7 @@ require_once __DIR__ . "/api/staff-api/index-b.php";
   <form method="post" class="mb-3">
       <!-- Username/Student ID -->
       <div class="mb-3">
-          <label class="form-label">bggfgfgfgfgfg</label>
+          <label class="form-label">input id or username</label>
           <div class="input-group">
               <span class="input-group-text">
                   <span class="material-symbols-outlined">person</span>

@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
 <div class="sidebar fade-in">
-    <h4 class="mb-4 sidebar-title">
+    <!-- <h4 class="mb-4 sidebar-title">
         <span class="material-symbols-outlined nav-icon">dashboard</span>
         Queuing System
-    </h4>
+    </h4> -->
 
     <!-- Debug: Show session status -->
     <?php if (getenv('APP_DEBUG') || isset($_GET['debug'])): ?>
@@ -15,32 +15,49 @@
     </div>
     <?php endif; ?>
 
-    <a class="sidebar-link" href="/eduqueue-main/staff-management/admin/admin_dashboard.php">
+    <div class="admin-sidebar-profile">
+        <img src="" alt="profile-pic">
+        <h2>Admin</h2>
+    </div>
+
+    <hr/>
+
+    <a class="sidebar-link" href="/Eduqueue-Queueing-System/staff-management/admin/admin_dashboard.php">
         <span class="material-symbols-outlined nav-icon">monitoring</span>
         Dashboard
     </a>
 
     <!-- Performance Metrics (Admin) -->
-    <a class="sidebar-link" href="/eduqueue-main/includes/metrics_dashboard.php">
+    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/metrics_dashboard.php">
         <span class="material-symbols-outlined nav-icon">monitoring</span>
-        Performance Metrics
+        Performance Analytics
     </a>
     
     <!-- Daily Reports -->
-    <a class="sidebar-link" href="/eduqueue-main/includes/reports.php">
+    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/reports.php">
         <span class="material-symbols-outlined nav-icon">analytics</span>
         Daily Reports
     </a>
 
     <!-- System Logs (Admin) -->
-    <a class="sidebar-link" href="/eduqueue-main/includes/system_logs.php">
+    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/system_logs.php">
         <span class="material-symbols-outlined nav-icon">list_alt</span>
-        System Logs
+        Manage Users
     </a>
     
     <!-- Advanced Reports (Admin) -->
-    <a class="sidebar-link" href="/eduqueue-main/includes/reports.php">
+    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/reports.php">
         <span class="material-symbols-outlined nav-icon">assessment</span>
-        Advanced Reports
+        Monitoring Dashboard
+    </a>
+
+    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/reports.php">
+        <span class="material-symbols-outlined nav-icon">assessment</span>
+        System Logs
+    </a>
+
+     <a class="sidebar-link" href="../api/student-api/student-logout-b.php">
+        <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+        Logout
     </a>
 </div>

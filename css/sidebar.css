@@ -1,3 +1,9 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .sidebar-link {
     padding: 10px 15px;
     border-radius: 8px;
