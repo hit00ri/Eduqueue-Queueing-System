@@ -32,7 +32,7 @@ require_once __DIR__ . "/api/staff-api/index-b.php";
   <form method="post" class="mb-3">
       <!-- Username/Student ID -->
       <div class="mb-3">
-          <label class="form-label">Username or Student ID</label>
+          <label class="form-label">hello</label>
           <div class="input-group">
               <span class="input-group-text">
                   <span class="material-symbols-outlined">person</span>
