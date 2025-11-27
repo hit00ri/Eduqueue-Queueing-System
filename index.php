@@ -23,7 +23,7 @@ require_once __DIR__ . "/api/staff-api/index-b.php";
 <div class="login-container card fade-in">
   <div class="login-logo">
     <i class="bi bi-ticket-perforated" style="font-size:28px;color:var(--accent)"></i>
-    <h1>Eduqueue</h1>
+    <h1>sample title</h1>
   </div>
   <?php if ($err): ?>
     <div class="alert alert-danger"><?=htmlspecialchars($err)?></div>
