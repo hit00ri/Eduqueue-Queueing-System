@@ -15,7 +15,7 @@
 
 .sidebar-link:hover {
     background: var(--accent);
-    color: white !important;
+    color: rgb(0, 18, 175) !important;
     padding-left: 20px;
 }
 
