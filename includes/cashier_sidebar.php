@@ -22,6 +22,22 @@
         <span class="material-symbols-outlined nav-icon">record_voice_over</span>
         Queue Management
     </a>
+
+    <a class="sidebar-link" href="dashboard.php">
+        <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+        My Performance
+    </a>
+
+    <a class="sidebar-link" href="dashboard.php">
+        <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+       Activity Logs
+    </a>
+
+    <a class="sidebar-link" href="../api/student-api/student-logout-b.php">
+        <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+        Logout
+    </a>
+
     <?php endif; ?>
 
 </div>
