@@ -24,7 +24,7 @@
         Dashboard
     </a>
 
-    <a class="sidebar-link" href="dashboard.php">
+    <a class="sidebar-link" href="../student-management/payment_slip.php">
         <span class="material-symbols-outlined nav-icon">record_voice_over</span>
         Payment Slip
     </a>
