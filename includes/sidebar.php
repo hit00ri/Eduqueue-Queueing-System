@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
 <div class="sidebar fade-in">
-    <h4 class="mb-4 sidebar-title">
+    <!-- <h4 class="mb-4 sidebar-title">
         <span class="material-symbols-outlined nav-icon">dashboard</span>
         Queuing System
-    </h4>
+    </h4> -->
 
     <!-- Debug: Show session status -->
     <?php if (getenv('APP_DEBUG') || isset($_GET['debug'])): ?>
@@ -14,6 +14,13 @@
         Name: <?= $_SESSION['user']['username'] ?? 'N/A' ?>
     </div>
     <?php endif; ?>
+
+    <div class="admin-sidebar-profile">
+        <img src="" alt="profile-pic">
+        <h2>Admin</h2>
+    </div>
+
+    <hr/>
 
     <a class="sidebar-link" href="/eduqueue-main/staff-management/admin/admin_dashboard.php">
         <span class="material-symbols-outlined nav-icon">monitoring</span>
@@ -35,7 +42,7 @@
     <!-- System Logs (Admin) -->
     <a class="sidebar-link" href="/eduqueue-main/includes/system_logs.php">
         <span class="material-symbols-outlined nav-icon">list_alt</span>
-        System Logs
+        Manage Users
     </a>
     
     <!-- Advanced Reports (Admin) -->

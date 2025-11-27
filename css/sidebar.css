@@ -18,3 +18,19 @@
     align-items: center;
     gap: 8px;
 }
+.admin-sidebar-profile{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 30px;
+
+}
+
+.admin-sidebar-profile:hover{
+    
+    background-color: blue;
+}
+
+.admin-sidebar-profile h2{
+    font-size: 20px;
+}
