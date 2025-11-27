@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . "/../../db/config.php";
+require_once "../../db/config.php";
 
 session_destroy();
-header("Location: /eduqueue-main/index.php");
+header("Location: ../../index.php");
 exit;
 ?>
