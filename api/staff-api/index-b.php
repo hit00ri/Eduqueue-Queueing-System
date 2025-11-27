@@ -2,7 +2,7 @@
 require_once __DIR__ . "/../../db/config.php";
 
 if (isset($_SESSION['user']) || isset($_SESSION['student'])) { 
-    header('Location: /eduqueue-main/index.php'); 
+    header('Location: /Eduqueue-Queueing-System/index.php'); 
     exit; 
 }
 
@@ -23,9 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         // Redirect based on user role
         if ($user['role'] === 'admin') {
-            header('Location: /eduqueue-main/staff-management/admin/admin_dashboard.php');
+            header('Location: /Eduqueue-Queueing-System/staff-management/admin/admin_dashboard.php');
         } else {
-            header('Location: /eduqueue-main/staff-management/cashier/dashboard.php');
+            header('Location: /Eduqueue-Queueing-System/staff-management/cashier/dashboard.php');
         }
         exit;
     }
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($student && $password === $student['password']) {
         // Student login successful
         $_SESSION['student'] = $student;
-        header("Location: /eduqueue-main/student-management/student_dashboard.php");
+        header("Location: /Eduqueue-Queueing-System/student-management/student_dashboard.php");
         exit;
     }
 
