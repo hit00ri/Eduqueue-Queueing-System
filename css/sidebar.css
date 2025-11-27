@@ -24,3 +24,8 @@
     align-items: center;
     gap: 8px;
 }
+
+.logout-container {
+    margin-top: auto;
+    padding-top: 10px;
+}
