@@ -49,7 +49,6 @@
     <!-- Advanced Reports (Admin) -->
     <a class="sidebar-link" href="/eduqueue-main/includes/reports.php">
         <span class="material-symbols-outlined nav-icon">assessment</span>
-<<<<<<< HEAD
         Monitoring Dashboard
     </a>
 
@@ -65,8 +64,3 @@
         </a>
     </div>
 </div>
-=======
-        Advanced Reports
-    </a>
-</div>
->>>>>>> aa7dd0ec38515b11fc5f5d5bba260b472e22b153
