@@ -8,7 +8,7 @@ if (file_exists($metricsServicePath)) {
 }
 
 if (!isset($_SESSION['user'])) {
-    header("Location: /eduqueue-main/index.php");
+    header("Location: /eduqueue-queueing-system/index.php");
     exit;
 }
 

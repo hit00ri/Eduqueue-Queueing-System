@@ -31,25 +31,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$id]);
     }
 
-    header('Location: /eduqueue-main/staff-management/cashier/dashboard.php');
+    header('Location: /eduqueue-queueing-system/staff-management/cashier/dashboard.php');
     exit;
 }
 
 // QUERY DATA
-$serving = $conn->query("
-    SELECT q.*, s.name 
-    FROM queue q 
-    JOIN students s ON q.student_id = s.student_id 
-    WHERE q.status = 'serving' 
-    ORDER BY q.queue_id ASC 
-    LIMIT 1
-")->fetch(PDO::FETCH_ASSOC);
+// $serving = $conn->query("
+//     SELECT q.*, s.name 
+//     FROM queue q 
+//     JOIN students s ON q.student_id = s.student_id 
+//     WHERE q.status = 'serving' 
+//     ORDER BY q.queue_id ASC 
+//     LIMIT 1
+// ")->fetch(PDO::FETCH_ASSOC);
+$serving = $conn->query("SELECT q.*, s.name FROM queue q JOIN students s ON q.student_id = s.student_id WHERE q.status = 'serving' ORDER BY q.queue_id ASC LIMIT 1")->fetch(PDO::FETCH_ASSOC);
 
-$waiting = $conn->query("
-    SELECT q.*, s.name 
-    FROM queue q 
-    JOIN students s ON q.student_id = s.student_id 
-    WHERE q.status = 'waiting' 
-    ORDER BY q.queue_id ASC
-")->fetchAll(PDO::FETCH_ASSOC);
+// $waiting = $conn->query("
+//     SELECT q.*, s.name 
+//     FROM queue q 
+//     JOIN students s ON q.student_id = s.student_id 
+//     WHERE q.status = 'waiting' 
+//     ORDER BY q.queue_id ASC
+// ")->fetchAll(PDO::FETCH_ASSOC);
+$waiting = $conn->query("SELECT q.*, s.name FROM queue q JOIN students s ON q.student_id = s.student_id WHERE q.status = 'waiting' ORDER BY q.queue_id ASC")->fetchAll(PDO::FETCH_ASSOC);
 ?>

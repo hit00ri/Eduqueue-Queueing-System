@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    header('Location: /eduqueue-main/staff-management/admin/admin_dashboard.php');
+    header('Location: /eduqueue-queueing-system/staff-management/admin/admin_dashboard.php');
     exit;
 }
 
