@@ -23,6 +23,7 @@
         <span class="material-symbols-outlined nav-icon">record_voice_over</span>
         Queue Management
     </a>
+<<<<<<< HEAD
 
     <a class="sidebar-link" href="dashboard.php">
         <span class="material-symbols-outlined nav-icon">record_voice_over</span>
@@ -41,6 +42,8 @@
         </a>
     </div>
 
+=======
+>>>>>>> aa7dd0ec38515b11fc5f5d5bba260b472e22b153
     <?php endif; ?>
 
 </div>
