@@ -3,7 +3,7 @@ require_once __DIR__ . "/../../db/config.php";
 
 // Check if student is logged in
 if (!isset($_SESSION['student'])) {
-    header("Location: /eduqueue-main/student-management/student_login.php");
+    header("Location: /eduqueue-queueing-system/student-management/student_login.php");
     exit;
 }
 
@@ -99,13 +99,13 @@ if (isset($_POST['take_queue'])) {
     // Check if payment slip is completed
     if (!isset($_SESSION['payment_slip'])) {
         // Redirect to payment slip page
-        header("Location: /eduqueue-main/student-management/payment_slip.php");
+        header("Location: /eduqueue-queueing-system/student-management/payment_slip.php");
         exit();
     } else {
         // If payment slip exists but queue wasn't created, set the flag and redirect to auto-create
         if (!isset($_SESSION['queue_created_after_payment'])) {
             $_SESSION['payment_slip_complete'] = true;
-            header("Location: /eduqueue-main/student-management/student_dashboard.php");
+            header("Location: /eduqueue-queueing-system/student-management/student_dashboard.php");
             exit();
         }
     }

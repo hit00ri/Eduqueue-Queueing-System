@@ -3,7 +3,7 @@ require_once __DIR__ . "/../../../db/config.php";
 
 // Check if user is already logged in
 if (isset($_SESSION['user'])) {
-    header('Location: /eduqueue-main/staff-management/admin/admin_dashboard.php'); 
+    header('Location: /eduqueue-queueing-system/staff-management/admin/admin_dashboard.php'); 
     exit; 
 }
 
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Check if user is admin
         if ($user['role'] === 'admin') {
             $_SESSION['user'] = $user;
-            header('Location: /eduqueue-main/staff-management/admin/admin_dashboard.php');
+            header('Location: /eduqueue-queueing-system/staff-management/admin/admin_dashboard.php');
             exit;
         } else {
             $err = 'Access denied. Admin privileges required.';
