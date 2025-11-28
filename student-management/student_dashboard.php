@@ -11,13 +11,14 @@ require_once "../api/student-api/student-dashboard-b.php";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/student.css">
+    <link rel="stylesheet" href="../css/help.css">
 </head>
 <body>
 
     <?php include '../includes/student_sidebar.php'; ?>
 
-    <a href="help.php" class="btn btn-outline-secondary position-fixed top-0 end-0 m-3">
-        <i class="bi bi-question-circle"></i>
+    <a href="help.php" class="help-button position-fixed top-0 end-0 m-3 pulse">
+        <i class="bi bi-question-lg"></i>
     </a>
 
     <p class="mt-3"><a href="../api/student-api/student-logout-b.php">Logout</a></p>
