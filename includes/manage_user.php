@@ -20,9 +20,10 @@ $sql = "
     SELECT student_id AS id,
            name,
            email AS username,
-           'student' AS role,
-           course,
-           year_level
+            'student' AS role,
+            'student' AS type,
+            course,
+            year_level
     FROM students
     WHERE name LIKE :search OR email LIKE :search
 
