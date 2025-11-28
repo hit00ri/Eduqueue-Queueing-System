@@ -1,3 +1,9 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .sidebar-link {
     padding: 10px 15px;
     border-radius: 8px;
@@ -18,19 +24,14 @@
     align-items: center;
     gap: 8px;
 }
-.admin-sidebar-profile{
+
+.sidebar {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    height: 30px;
-
+    height: 100vh;
 }
 
-.admin-sidebar-profile:hover{
-    
-    background-color: blue;
-}
-
-.admin-sidebar-profile h2{
-    font-size: 20px;
+.logout-container {
+    margin-top: auto;
+    padding-top: 10px;
 }
