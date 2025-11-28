@@ -22,42 +22,32 @@
 
     <hr/>
 
-    <a class="sidebar-link" href="/Eduqueue-Queueing-System/staff-management/admin/admin_dashboard.php">
+    <a class="sidebar-link" href="/eduqueue-main/staff-management/admin/admin_dashboard.php">
         <span class="material-symbols-outlined nav-icon">monitoring</span>
         Dashboard
     </a>
 
     <!-- Performance Metrics (Admin) -->
-    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/metrics_dashboard.php">
+    <a class="sidebar-link" href="/eduqueue-main/includes/metrics_dashboard.php">
         <span class="material-symbols-outlined nav-icon">monitoring</span>
-        Performance Analytics
+        Performance Metrics
     </a>
     
     <!-- Daily Reports -->
-    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/reports.php">
+    <a class="sidebar-link" href="/eduqueue-main/includes/reports.php">
         <span class="material-symbols-outlined nav-icon">analytics</span>
         Daily Reports
     </a>
 
     <!-- System Logs (Admin) -->
-    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/system_logs.php">
+    <a class="sidebar-link" href="/eduqueue-main/includes/system_logs.php">
         <span class="material-symbols-outlined nav-icon">list_alt</span>
         Manage Users
     </a>
     
     <!-- Advanced Reports (Admin) -->
-    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/reports.php">
+    <a class="sidebar-link" href="/eduqueue-main/includes/reports.php">
         <span class="material-symbols-outlined nav-icon">assessment</span>
-        Monitoring Dashboard
-    </a>
-
-    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/reports.php">
-        <span class="material-symbols-outlined nav-icon">assessment</span>
-        System Logs
-    </a>
-
-     <a class="sidebar-link" href="../api/student-api/student-logout-b.php">
-        <span class="material-symbols-outlined nav-icon">record_voice_over</span>
-        Logout
+        Advanced Reports
     </a>
 </div>
