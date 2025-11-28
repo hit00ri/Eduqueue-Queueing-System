@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_payment_slip']
         unset($_SESSION['queue_created_after_payment']);
         
         // Redirect to dashboard to get queue number
-        header("Location: /eduqueue-main/student-management/student_dashboard.php");
+        header("Location: /eduqueue-queueing-system/student-management/student_dashboard.php");
         exit();
     }
 }

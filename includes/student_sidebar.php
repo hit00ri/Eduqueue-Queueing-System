@@ -30,6 +30,11 @@
         Payment Slip
     </a>
 
+    <!-- <a class="sidebar-link" href="../student-management/help.php">
+        <span class="material-symbols-outlined nav-icon">help</span>
+        Help
+    </a> -->
+
     <div class="logout-container">
         <a class="sidebar-link" href="../api/student-api/student-logout-b.php">
             <span class="material-symbols-outlined nav-icon">record_voice_over</span>

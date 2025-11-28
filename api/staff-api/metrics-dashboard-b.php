@@ -4,7 +4,7 @@ require_once __DIR__ . "/../services/MetricsService.php";
 
 // Check if user is logged in and is admin
 if (!isset($_SESSION['user'])) {
-    header("Location: /eduqueue-main/index.php");
+    header("Location: /eduqueue-queueing-system/index.php");
     exit;
 }
 

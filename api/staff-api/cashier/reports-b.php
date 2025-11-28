@@ -2,7 +2,7 @@
 require_once __DIR__ . "/../../db/config.php";
 
 if (!isset($_SESSION['user'])) {
-    header("Location: /eduqueue-main/staff-management/cashier/index.php");
+    header("Location: /eduqueue-queueing-system/staff-management/cashier/index.php");
     exit;
 }
 

@@ -10,6 +10,7 @@ require_once __DIR__ . "/../api/staff-api/metrics-dashboard-b.php";
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/common.css">
 <link rel="stylesheet" href="../css/metrics.css">
+<link rel="stylesheet" href="../css/sidebar.css">
 </head>
 <body>
 <?php include 'sidebar.php'; ?>
