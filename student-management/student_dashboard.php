@@ -15,10 +15,10 @@ require_once "../api/student-api/student-dashboard-b.php";
 <body>
 
     <?php include '../includes/student_sidebar.php'; ?>
-    <!-- Dark Mode Toggle -->
-    <button class="dark-toggle btn btn-outline-secondary position-fixed top-0 end-0 m-3">
-        <i class="bi bi-moon-stars"></i>
-    </button>
+
+    <a href="help.php" class="btn btn-outline-secondary position-fixed top-0 end-0 m-3">
+        <i class="bi bi-question-circle"></i>
+    </a>
 
     <p class="mt-3"><a href="../api/student-api/student-logout-b.php">Logout</a></p>
 
@@ -247,9 +247,9 @@ require_once "../api/student-api/student-dashboard-b.php";
                         </small>
                     <?php else: ?>
                         <!-- Show link to payment slip page -->
-                        <a href="payment_slip.php" class="btn btn-primary btn-lg">
+                        <!-- <a href="payment_slip.php" class="btn btn-primary btn-lg">
                             <i class="bi bi-ticket-perforated"></i> Take Queue Number
-                        </a>
+                        </a> -->
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
@@ -267,7 +267,5 @@ require_once "../api/student-api/student-dashboard-b.php";
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/darkmode.js"></script>
-    <!-- <script src="../js/autorefresh.js"></script> -->
 </body>
 </html>
