@@ -64,3 +64,5 @@
         </a>
     </div>
 </div>
+
+<script src="/Eduqueue-Queueing-System/js/sidebar.js"></script>

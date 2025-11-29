@@ -58,6 +58,8 @@
     </div>
 </div>
 
+<script src="../js/sidebar.js"></script>
+
 <!-- <style>
 .sidebar {
     position: relative;

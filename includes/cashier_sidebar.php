@@ -43,3 +43,5 @@
     <?php endif; ?>
 
 </div>
+
+<script src="../../js/sidebar.js"></script>
