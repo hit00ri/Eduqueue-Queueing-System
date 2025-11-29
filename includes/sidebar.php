@@ -59,7 +59,7 @@
 
     <div class="logout-container">
         <a class="sidebar-link" href="../../api/student-api/student-logout-b.php">
-            <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+            <span class="material-symbols-outlined">logout</span>
             Logout
         </a>
     </div>

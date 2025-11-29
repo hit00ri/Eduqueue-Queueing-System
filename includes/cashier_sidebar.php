@@ -20,23 +20,23 @@
     <!-- Cashier & Admin: Queue Management -->
     <?php if (isset($_SESSION['user']) && in_array($_SESSION['user']['role'], ['cashier'])): ?>
     <a class="sidebar-link" href="dashboard.php">
-        <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+        <span class="material-symbols-outlined">featured_play_list</span>
         Queue Management
     </a>
 
     <a class="sidebar-link" href="dashboard.php">
-        <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+        <span class="material-symbols-outlined">analytics</span>
         My Performance
     </a>
 
     <a class="sidebar-link" href="dashboard.php">
-        <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+        <span class="material-symbols-outlined">update</span>
        Activity Logs
     </a>
 
     <div class="logout-container">
         <a class="sidebar-link" href="../../api/student-api/student-logout-b.php">
-            <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+            <span class="material-symbols-outlined">logout</span>
             Logout
         </a>
     </div>
