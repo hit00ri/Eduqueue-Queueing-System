@@ -1,0 +1,101 @@
+/* Queue History Page Styles */
+        body {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 20px;
+            min-height: 100vh;
+            background-color: var(--body-bg);
+        }
+        
+        .history-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding: 15px;
+            }
+        }
+        
+        /* Table styling */
+        .table th {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 8px;
+            font-weight: 600;
+        }
+        
+        .table td {
+            padding: 10px 8px;
+            vertical-align: middle;
+        }
+        
+        .badge {
+            font-size: 0.75em;
+            padding: 6px 10px;
+        }
+
+        /* queue_history.css */
+.student-info-card {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(var(--primary-rgb), 0.05);
+    transform: translateX(2px);
+    transition: all 0.2s ease;
+}
+
+/* Status badges with better styling */
+.badge.bg-success { background-color: var(--success) !important; }
+.badge.bg-warning { background-color: var(--warning) !important; }
+.badge.bg-primary { background-color: var(--primary) !important; }
+.badge.bg-secondary { background-color: var(--secondary) !important; }
+

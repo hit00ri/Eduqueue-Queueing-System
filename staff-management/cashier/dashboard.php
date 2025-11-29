@@ -107,6 +107,5 @@ require_once "../../api/staff-api/cashier/dashboard-b.php";
 
 <script src="../../js/darkmode.js"></script>
 <!-- <script src="../js/autorefresh.js"></script> -->
-
 </body>
 </html>
