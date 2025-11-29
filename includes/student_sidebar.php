@@ -35,6 +35,11 @@
         Payment Slip
     </a>
 
+    <a class="sidebar-link <?= basename($_SERVER['PHP_SELF']) === 'feedback.php' ? 'active' : '' ?>" href="feedback.php">
+        <span class="material-symbols-outlined nav-icon">feedback</span>
+        Feedback
+    </a>
+
     <a class="sidebar-link" href="../student-management/queue_history.php">
         <span class="material-symbols-outlined">history</span>
         History

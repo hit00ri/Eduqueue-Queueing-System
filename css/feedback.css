@@ -1,0 +1,98 @@
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: var(--body-bg);
+        }
+        
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .feedback-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding: 15px;
+            }
+        }
+        
+        /* Star Rating */
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .star-rating input {
+            display: none;
+        }
+        
+        .star-rating label {
+            font-size: 2rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        
+        .star-rating label:hover,
+        .star-rating input:checked ~ label {
+            color: #ffc107;
+        }
+        
+        .star-rating label:hover ~ label {
+            color: #ffc107;
+        }
+        
+        /* Feedback card styling */
+        .feedback-card {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 15px;
+        }
+        
+        .feedback-header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 25px;
+        }
+        
+        .character-count {
+            font-size: 0.875rem;
+            color: #6c757d;
+        }
+        
+        .character-count.warning {
+            color: #dc3545;
+        }
