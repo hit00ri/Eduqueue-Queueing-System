@@ -17,8 +17,19 @@
     <?php endif; ?>
 
     <div>
-        <h2>Profile</h2><br><br>
+        <li class="nav-item">
+            <a class="nav-link" href="profile.php">
+                <i class="bi bi-person"></i>
+                <h2>Profile</h2>
+            </a>
+        </li>
     </div>
+
+    <a class="sidebar-link" href="../student-management/queue_history.php">
+        <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+        History
+    </a>
+    
 
     <a class="sidebar-link" href="../student-management/student_dashboard.php">
         <span class="material-symbols-outlined nav-icon">record_voice_over</span>
