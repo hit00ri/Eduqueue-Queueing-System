@@ -5,7 +5,7 @@
 .header {
   background: linear-gradient(135deg, #003d7a 0%, #004a8f 100%);
   color: white;
-  padding: 10px 10px;
+  padding: 7px 7px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   font-family: Century Gothic;
 }
@@ -27,8 +27,8 @@
 }
 
 .header-logo img {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -97,7 +97,7 @@
 
 .login-logo h6 {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #666;
 }
 
@@ -105,6 +105,7 @@
   font-weight: 500;
   color: #333;
   margin-bottom: 8px;
+  font-size: 1rem;
 }
 
 .login-container .form-control {
@@ -119,30 +120,44 @@
   border-radius: 8px;
   padding: 10px;
   font-weight: 500;
-  margin-top: 10px;
 }
 
 .login-container .btn-primary:hover {
   background-color: #002a52;
 }
 
-.forgot-password {
+/* Footer */
+.footer {
+  background-color: #003d7a;
+  color: white;
   text-align: center;
-  margin-top: 15px;
-}
-
-.forgot-password a {
-  color: #666;
-  text-decoration: none;
+  padding: 5px 5px;
   font-size: 0.9rem;
-  font-style: italic;
 }
 
-.forgot-password a:hover {
-  color: #003d7a;
+.footer p {
+  margin: 0;
+  letter-spacing: 0.3px;
+  text-align: right;
+  font-size: 0.74rem;
+  padding-left: 15px;
 } 
 
 .mb-3 label{
-  font-size: 15px;
+  font-size: 10px;
+}
+
+.forgot-password{
+  width: 100%;
+  margin: 10px 0 0 0;
+  text-align: center;
+  display: block;
+  font-size: 0.95rem;
+  color: #003d7a;
+}
+
+.forgot-password em{
+  font-style: normal;
+  color: #666;
 }
 
