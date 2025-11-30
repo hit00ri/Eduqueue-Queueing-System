@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../../db/config.php";
+require_once "../../db/config.php";
 
 if (!isset($_SESSION['user'])) {
     header("Location: /eduqueue-queueing-system/staff-management/cashier/index.php");
