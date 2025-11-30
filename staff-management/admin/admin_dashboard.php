@@ -1,5 +1,5 @@
 <?php
-
+include "../../api/staff-api/admin/dashboard-queries.php";
 ?>
 <!doctype html>
 <html>
@@ -30,22 +30,43 @@
         <span class="material-symbols-outlined" style="vertical-align:middle">dashboard</span>
         Dashboard
       </h1>
+    </div>
 
-      <div>
-        <a href="reports.php" class="btn btn-outline-secondary me-2">
-          <span class="material-symbols-outlined" style="vertical-align:middle">bar_chart</span>
-          Reports
-        </a>
+    <div class="container-fluid mb-4">
+      <div class="row g-3">
+        <?php
+          // Prepare metrics with safe defaults
+          $m = [
+            ['label' => 'Total Users', 'value' => (int) ($total_users ?? 0), 'color' => 'primary'],
+            ['label' => 'Total Students', 'value' => (int) ($total_students ?? 0), 'color' => 'success'],
+            ['label' => 'Queue Today', 'value' => (int) ($total_queue_today ?? 0), 'color' => 'info'],
+            ['label' => 'Waiting', 'value' => (int) ($waiting ?? 0), 'color' => 'warning'],
+            ['label' => 'Served Today', 'value' => (int) ($served_today ?? 0), 'color' => 'secondary'],
+            ['label' => 'Voided Today', 'value' => (int) ($voided_today ?? 0), 'color' => 'danger'],
+            ['label' => 'Revenue Today', 'value' => '₱' . number_format((float) ($revenue_today ?? 0), 2), 'color' => 'dark'],
+            ['label' => 'Transactions Today', 'value' => (int) ($transactions_today ?? 0), 'color' => 'primary'],
+            ['label' => 'Avg Wait', 'value' => (round((float) ($avg_wait_today ?? 0),2) . 's'), 'color' => 'info'],
+            ['label' => 'Avg Service', 'value' => (round((float) ($avg_service_today ?? 0),2) . 's'), 'color' => 'info'],
+          ];
 
-        <a href="../../api/staff-api/admin/admin-logout.php" class="btn btn-outline-danger">
-          <span class="material-symbols-outlined" style="vertical-align:middle">logout</span>
-          Logout
-        </a>
+          foreach ($m as $metric): ?>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card shadow-sm h-100">
+                <div class="card-body p-3">
+                  <div class="d-flex flex-column">
+                    <small class="text-muted"><?= htmlspecialchars($metric['label']) ?></small>
+                    <div class="mt-2 d-flex align-items-end justify-content-between">
+                      <h4 class="mb-0 text-<?= htmlspecialchars($metric['color']) ?>"><?= htmlspecialchars($metric['value']) ?></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; ?>
       </div>
     </div>
-    </a>
+
   </div>
-  </div> 
 
 
 
