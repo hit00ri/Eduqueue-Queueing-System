@@ -17,6 +17,19 @@
 </head>
 
 <body>
+  <header class="header">
+    <div class="header-content">
+        <div class="header-logo">
+            <img src="./img/SLC LOGO.png" alt="slc logo" />
+        </div>
+        <div class="header-text">
+            <p class= "header-title">Saint Louis College</p>
+            <p class="header-subtitle">City of San Fernando, La Union</p>
+            <p class="header-system">Queuing Management System with Payment Tracking</p>
+        </div>
+    </div>
+  </header>
+
   <?php include '../../includes/sidebar.php'; ?>
 
   <button class="dark-toggle" title="Toggle dark mode">
