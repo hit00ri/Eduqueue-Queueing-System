@@ -14,6 +14,7 @@ require_once "../api/student-api/student-dashboard-b.php";
     <link rel="stylesheet" href="../css/help.css">
 </head>
 <body>
+    <?php include "../includes/header.php"; ?>
 
     <?php include '../includes/student_sidebar.php'; ?>
 
@@ -265,6 +266,8 @@ require_once "../api/student-api/student-dashboard-b.php";
             <?php endif; ?>
         </div>
     </div>
+
+    <?php include "../includes/footer.php"; ?>
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
