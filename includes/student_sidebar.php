@@ -19,26 +19,30 @@
     <div>
         <li class="nav-item">
             <a class="nav-link" href="profile.php">
-                <i class="bi bi-person"></i>
+                <span class="material-symbols-outlined">person_2</span>
                 <h2>Profile</h2>
             </a>
         </li>
     </div>
 
-    <a class="sidebar-link" href="../student-management/queue_history.php">
-        <span class="material-symbols-outlined nav-icon">record_voice_over</span>
-        History
-    </a>
-    
-
     <a class="sidebar-link" href="../student-management/student_dashboard.php">
-        <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+        <span class="material-symbols-outlined">dashboard</span>
         Dashboard
     </a>
 
     <a class="sidebar-link" href="../student-management/payment_slip.php">
-        <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+        <span class="material-symbols-outlined">receipt</span>
         Payment Slip
+    </a>
+
+    <a class="sidebar-link <?= basename($_SERVER['PHP_SELF']) === 'feedback.php' ? 'active' : '' ?>" href="feedback.php">
+        <span class="material-symbols-outlined nav-icon">feedback</span>
+        Feedback
+    </a>
+
+    <a class="sidebar-link" href="../student-management/queue_history.php">
+        <span class="material-symbols-outlined">history</span>
+        History
     </a>
 
     <!-- <a class="sidebar-link" href="../student-management/help.php">
@@ -48,11 +52,13 @@
 
     <div class="logout-container">
         <a class="sidebar-link" href="../api/student-api/student-logout-b.php">
-            <span class="material-symbols-outlined nav-icon">record_voice_over</span>
+            <span class="material-symbols-outlined">logout</span>
             Logout
         </a>
     </div>
 </div>
+
+<script src="../js/sidebar.js"></script>
 
 <!-- <style>
 .sidebar {
