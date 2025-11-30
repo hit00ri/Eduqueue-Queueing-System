@@ -35,11 +35,6 @@
         Payment Slip
     </a>
 
-    <a class="sidebar-link <?= basename($_SERVER['PHP_SELF']) === 'feedback.php' ? 'active' : '' ?>" href="feedback.php">
-        <span class="material-symbols-outlined nav-icon">feedback</span>
-        Feedback
-    </a>
-
     <a class="sidebar-link" href="../student-management/queue_history.php">
         <span class="material-symbols-outlined">history</span>
         History
@@ -51,6 +46,11 @@
     </a> -->
 
     <div class="logout-container">
+        <a class="sidebar-link <?= basename($_SERVER['PHP_SELF']) === 'feedback.php' ? 'active' : '' ?>" href="feedback.php">
+            <span class="material-symbols-outlined nav-icon">feedback</span>
+            Feedback
+        </a>
+
         <a class="sidebar-link" href="../api/student-api/student-logout-b.php">
             <span class="material-symbols-outlined">logout</span>
             Logout
