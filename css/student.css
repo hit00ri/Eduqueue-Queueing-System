@@ -1,12 +1,65 @@
-/* student.css */
-.student-box {
-    max-width: 500px;
-    margin: 2rem auto;
-    padding: 2rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    border-radius: 1rem;
+/* Student Dashboard Enhancements */
+body {
+    background-color: #f8f9fa; /* Softer background */
+    color: #495057; /* Neutral text color */
 }
-        
+
+.container-fluid {
+    padding: 20px;
+}
+
+.student-box {
+    max-width: 900px; /* Wider container */
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.card-header {
+    background: linear-gradient(135deg, #6c63ff, #3f51b5); /* Gradient background */
+    color: white;
+    padding: 20px;
+    font-size: 1.25rem; /* Larger font size */
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.stats-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.stats-box .card {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    background: #f8f9fa; /* Softer background */
+}
+
+.stats-box .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stats-box .card p {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
 .queue-number {
     font-size: 3rem;
     font-weight: bold;
@@ -21,10 +74,10 @@
 }
         
 .stats-box {
-    background: #f8f9fa;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
 }
         
 .fade-in {
