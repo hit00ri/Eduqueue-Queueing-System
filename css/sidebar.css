@@ -35,6 +35,10 @@
     gap: 8px;
 }
 
+.history-container {
+    margin-top: 10px;
+}
+
 .logout-container {
     margin-top: auto;
     padding-top: 10px;
