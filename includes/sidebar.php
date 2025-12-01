@@ -52,9 +52,9 @@
         Monitoring Dashboard
     </a>
 
-    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/reports.php">
+    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/transaction_history.php">
         <span class="material-symbols-outlined nav-icon">assessment</span>
-        System Logs
+        Transaction History
     </a>
 
     <div class="logout-container">

@@ -67,8 +67,16 @@ include "../../api/staff-api/admin/dashboard-queries.php";
       </div>
     </div>
 
-  </div>        
+    <h3 style="margin-left:20px;">Served vs Voided (Daily)</h3>
+    <canvas id="servedVoidedChart" style="width:100%; max-height:400px;"></canvas>
 
+
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../../js/served_voided_chart.js"></script>
   <script src="../../js/darkmode.js"></script>
   <!-- <script src="../js/autorefresh.js"></script> -->
 

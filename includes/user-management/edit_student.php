@@ -1,0 +1,80 @@
+<?php
+include "../../db/config.php";
+
+$id = intval($_GET['student_id'] ?? $_GET['id'] ?? 0);
+
+if ($id <= 0) {
+    echo "Error: Invalid user ID.";
+    exit;
+}
+
+try {
+    $stmt = $conn->prepare("SELECT * FROM students WHERE student_id = ?");
+    $stmt->execute([$id]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if (!$user) {
+        echo "Error: User not found.";
+        exit;
+    }
+} catch (PDOException $e) {
+    echo "Error fetching user: " . htmlspecialchars($e->getMessage());
+    exit;
+}
+
+if (isset($_POST['update'])) {
+    $name = trim($_POST['name'] ?? '');
+    $course = trim($_POST['course'] ?? '');
+    $year_level = trim($_POST['year_level'] ?? '');
+
+    try {
+        $stmt = $conn->prepare("UPDATE students SET name = ?, course = ?, year_level = ? WHERE student_id = ?");
+        $stmt->execute([$name, $course, $year_level, $id]);
+        header("Location: ../../staff-management/admin/manage_user.php?message=updated");
+        exit;
+    } catch (PDOException $e) {
+        echo "Error updating user: " . htmlspecialchars($e->getMessage());
+    }
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit User</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+
+    <div class="card p-4 shadow-sm">
+        <h4>Edit Student</h4><hr>
+
+           <!-- The form posts back to this page. The select inputs are
+               pre-selected using the $user array fetched above. -->
+           <form method="POST">
+
+           <div class="mb-3">
+                <label>Name: </label>
+                <input type="text" name="name" class="form-control" value="<?= $user['name'] ?>" required>
+            </div>
+
+            <div class="mb-3">
+                <label>course</label>
+                <input type="text" name="course" class="form-control" value="<?= $user['course'] ?>" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Year Level: </label>
+                <input type="text" name="year_level" class="form-control" value="<?= $user['year_level'] ?>" required>
+            </div>
+
+            <button name="update" class="btn btn-primary">Update</button>
+            <a href="../../staff-management/admin/manage_user.php" class="btn btn-secondary">Back</a>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
