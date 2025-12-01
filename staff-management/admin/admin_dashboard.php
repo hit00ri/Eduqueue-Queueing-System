@@ -17,6 +17,7 @@ include "../../api/staff-api/admin/dashboard-queries.php";
 </head>
 
 <body>
+
   <?php include '../../includes/sidebar.php'; ?>
 
   <button class="dark-toggle" title="Toggle dark mode">
@@ -66,9 +67,7 @@ include "../../api/staff-api/admin/dashboard-queries.php";
       </div>
     </div>
 
-  </div>
-
-
+  </div>        
 
   <script src="../../js/darkmode.js"></script>
   <!-- <script src="../js/autorefresh.js"></script> -->
