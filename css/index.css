@@ -2,6 +2,7 @@
 *{
   font-family: Century Gothic;
 }
+
 .header {
   background: linear-gradient(135deg, #003d7a 0%, #004a8f 100%);
   color: white;
@@ -133,6 +134,10 @@
   text-align: center;
   padding: 5px 5px;
   font-size: 0.9rem;
+  position: fixed; 
+  left:0; 
+  right:0; 
+  bottom:0;
 }
 
 .footer p {
@@ -161,3 +166,8 @@
   color: #666;
 }
 
+.dark-toggle {
+  position: fixed;
+  bottom: 60px; 
+  right: 20px;
+}

@@ -17,7 +17,14 @@ try {
         echo "Error: User does not exist.";
         exit;
     }
-    
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Prevent deleting admin accounts
+    if (strtolower($user['role'] ?? '') === 'admin') {
+        header("Location: ../../staff-management/admin/manage_user.php?error=cannot_delete_admin");
+        exit;
+    }
+
     // Delete the user
     $stmt = $conn->prepare("DELETE FROM users WHERE user_id = ?");
     $stmt->execute([$id]);

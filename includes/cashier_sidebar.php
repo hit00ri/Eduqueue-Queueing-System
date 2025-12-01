@@ -24,12 +24,12 @@
         Queue Management
     </a>
 
-    <a class="sidebar-link" href="dashboard.php">
+    <a class="sidebar-link" href="performance.php">
         <span class="material-symbols-outlined">analytics</span>
         My Performance
     </a>
 
-    <a class="sidebar-link" href="dashboard.php">
+    <a class="sidebar-link" href="logs.php">
         <span class="material-symbols-outlined">update</span>
        Activity Logs
     </a>

@@ -1,25 +1,60 @@
-.profile-container {
-    max-width: 600px;
-    margin: 0 auto;
+/* Profile Page Enhancements */
+body {
+    background-color: #f8f9fa; /* Softer background */
+    color: #495057; /* Neutral text color */
 }
+
+.profile-container {
+    max-width: 700px; /* Wider container */
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
 .profile-header {
     text-align: center;
     margin-bottom: 2rem;
 }
+
 .profile-avatar {
-    width: 100px;
-    height: 100px;
+    width: 120px; /* Larger avatar */
+    height: 120px;
     border-radius: 50%;
-    background: var(--accent);
+    background: linear-gradient(135deg, #6c63ff, #3f51b5); /* Gradient background */
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1rem;
     color: white;
-    font-size: 2.5rem;
+    font-size: 3rem; /* Larger font size */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
+
 .password-section {
     border-top: 1px solid #dee2e6;
     padding-top: 1.5rem;
     margin-top: 1.5rem;
+}
+
+.form-section {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    background: #f8f9fa; /* Softer background */
+}
+
+button {
+    background: #6c63ff; /* Accent color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s ease; /* Smoother transition */
+}
+
+button:hover {
+    background: #5a54d1; /* Darker hover color */
 }

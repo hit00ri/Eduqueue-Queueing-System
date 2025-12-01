@@ -13,15 +13,15 @@ require_once "../api/student-api/feedback-b.php";
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/student.css">
     <link rel="stylesheet" href="../css/feedback.css">
+    <link rel="stylesheet" href="../css/help.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body>
     <?php include '../includes/student_sidebar.php'; ?>
     
-    <!-- Dark Mode Toggle -->
-    <button class="dark-toggle btn btn-outline-secondary position-fixed top-0 end-0 m-3" style="z-index: 1050;">
-        <i class="bi bi-moon-stars"></i>
-    </button>
+    <a href="help.php" class="help-button position-fixed top-0 end-0 m-3 pulse">
+        <i class="bi bi-question-lg"></i>
+    </a>
 
     <div class="main-content">
         <div class="feedback-container">
@@ -199,7 +199,6 @@ require_once "../api/student-api/feedback-b.php";
             </div>
         </div>
     </div>
-
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/feedback.js"></script>

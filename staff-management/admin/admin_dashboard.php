@@ -17,6 +17,7 @@ include "../../api/staff-api/admin/dashboard-queries.php";
 </head>
 
 <body>
+
   <?php include '../../includes/sidebar.php'; ?>
 
   <button class="dark-toggle" title="Toggle dark mode">

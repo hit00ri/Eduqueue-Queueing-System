@@ -17,6 +17,11 @@ try {
         echo "Error: User not found.";
         exit;
     }
+    // Protect admin accounts from being edited via direct URL
+    if (strtolower($user['role'] ?? '') === 'admin') {
+        header("Location: ../../staff-management/admin/manage_user.php?error=protected_admin");
+        exit;
+    }
 } catch (PDOException $e) {
     echo "Error fetching user: " . htmlspecialchars($e->getMessage());
     exit;

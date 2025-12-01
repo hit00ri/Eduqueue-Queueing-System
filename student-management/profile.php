@@ -16,12 +16,8 @@ require_once "../api/student-api/profile-b.php";
     <link rel="stylesheet" href="../css/profile.css">
 </head>
 <body>
+    <?php include "../includes/header.php"; ?>
     <?php include '../includes/student_sidebar.php'; ?>
-    
-    <!-- Dark Mode Toggle -->
-    <button class="dark-toggle btn btn-outline-secondary position-fixed top-0 end-0 m-3">
-        <i class="bi bi-moon-stars"></i>
-    </button>
 
     <div class="container mt-4">
         <div class="profile-container card fade-in">
@@ -167,7 +163,8 @@ require_once "../api/student-api/profile-b.php";
             </form>
         </div>
     </div>
-
+    
+    <?php include "../includes/footer.php"; ?>
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/darkmode.js"></script>

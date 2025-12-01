@@ -104,8 +104,13 @@
                                         </span>
                                     </td>
                                     <td>
-                                        <a href="../../includes/user-management/edit_staff.php?id=<?= $user['id'] ?>" class="btn btn-sm btn-outline-primary">Modify</a>
-                                        <a href="../../includes/user-management/delete_staff.php?user_id=<?= $user['id'] ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete this user?')">Delete</a>
+                                        <?php if (strtolower($user['role'] ?? '') === 'admin'): ?>
+                                            <button class="btn btn-sm btn-outline-secondary" disabled>Modify</button>
+                                            <button class="btn btn-sm btn-outline-danger" disabled style="pointer-events:none;">Delete</button>
+                                        <?php else: ?>
+                                            <a href="../../includes/user-management/edit_staff.php?user_id=<?= $user['id'] ?>" class="btn btn-sm btn-outline-primary">Modify</a>
+                                            <a href="../../includes/user-management/delete_staff.php?user_id=<?= $user['id'] ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete this user?')">Delete</a>
+                                        <?php endif; ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
