@@ -1,4 +1,12 @@
 <?php
+require_once __DIR__ . '/../../db/config.php';
+
+// Check if user is logged in and is admin
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') { 
+    header("Location: /Eduqueue-Queueing-System/index.php");
+    exit; 
+}
+
 include "../../api/staff-api/admin/dashboard-queries.php";
 ?>
 <!doctype html>

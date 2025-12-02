@@ -3,7 +3,7 @@ require_once "../../db/config.php";
 
 // Check if user is logged in and is cashier
 // if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'cashier') { 
-//     header("Location: /eduqueue-main/staff-management/cashier/index.php");
+//     header("Location: /Eduqueue-Queueing-System/staff-management/cashier/index.php");
 //     exit; 
 // }
 

@@ -71,6 +71,7 @@ require_once __DIR__ . "/api/staff-api/index-b.php";
           Log In
       </button>
       <p class="forgot-password"><em>Forgot Password?</em></p>
+      <p><a href="includes/open_live_queue.php" class="forgot-password">View Live Queue</a></p>
   </form>
 
 </div>

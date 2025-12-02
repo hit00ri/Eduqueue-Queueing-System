@@ -1,9 +1,25 @@
 <?php
 require_once __DIR__ . "/../../db/config.php";
 
-if (isset($_SESSION['user']) || isset($_SESSION['student'])) { 
-    header('Location: /Eduqueue-Queueing-System/index.php'); 
-    exit; 
+// If called with ?public=1, skip auto-redirects so public pages can link back
+$isPublic = isset($_GET['public']) && $_GET['public'] == '1';
+
+if (!$isPublic) {
+    if (isset($_SESSION['user'])) { 
+        // Already logged in as staff, redirect to appropriate dashboard
+        if ($_SESSION['user']['role'] === 'admin') {
+            header('Location: /Eduqueue-Queueing-System/staff-management/admin/admin_dashboard.php');
+        } else {
+            header('Location: /Eduqueue-Queueing-System/staff-management/cashier/dashboard.php');
+        }
+        exit; 
+    }
+
+    if (isset($_SESSION['student'])) { 
+        // Already logged in as student, redirect to student dashboard
+        header('Location: /Eduqueue-Queueing-System/student-management/student_dashboard.php');
+        exit; 
+    }
 }
 
 $err = '';
