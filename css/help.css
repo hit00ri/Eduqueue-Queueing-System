@@ -1,3 +1,7 @@
+*{
+  font-family: Century Gothic;
+}
+
 /* Help Button Styles */
 .help-button {
     background-color: #0d6efd;

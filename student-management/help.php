@@ -10,7 +10,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Help Page</h1>
-        <p class="text-muted text-center">Learn how to use the Queue Management System</p>
+        <p class="text-muted text-center">Learn how to use the Queuing Management System</p>
 
         <div class="accordion" id="helpAccordion">
             <div class="accordion-item">
