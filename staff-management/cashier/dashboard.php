@@ -18,10 +18,6 @@ require_once "../../api/staff-api/cashier/dashboard-b.php";
 <body>
 <?php include '../../includes/cashier_sidebar.php'; ?>
 
-<button class="dark-toggle" title="Toggle dark mode">
-  <i class="bi bi-moon-stars"></i>
-</button>
-
 <div class="main-content">
 
   <div class="d-flex justify-content-between align-items-center mb-3">

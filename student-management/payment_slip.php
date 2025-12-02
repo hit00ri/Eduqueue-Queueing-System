@@ -26,8 +26,6 @@ require_once "../api/student-api/payment-slip-b.php";
         <div class="payment-slip-container">
             <!-- Header -->
             <div class="payment-slip-header text-center">
-                <h1 class="h3 mb-1">Saint Louis College</h1>
-                <p class="mb-1">City of San Fernando, 2500 La Union</p>
                 <h2 class="h4 mb-0">PAYMENT SLIP</h2>
             </div>
 

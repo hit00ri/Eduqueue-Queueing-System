@@ -20,10 +20,6 @@ include "../../api/staff-api/admin/dashboard-queries.php";
 
   <?php include '../../includes/sidebar.php'; ?>
 
-  <button class="dark-toggle" title="Toggle dark mode">
-    <i class="bi bi-moon-stars"></i>
-  </button>
-
   <div class="main-content">
 
     <div class="d-flex justify-content-between align-items-center mb-3">
