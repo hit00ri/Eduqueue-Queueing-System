@@ -13,7 +13,6 @@ require_once "../../api/staff-api/cashier/reports-b.php"
 </head>
 <body>
 <?php include '../../includes/sidebar.php'; ?>
-<button class="dark-toggle" title="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
 
 <div class="main-content">
   <h1><i class="bi bi-bar-chart nav-icon"></i> Reports</h1>
