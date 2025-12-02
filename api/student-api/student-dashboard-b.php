@@ -3,7 +3,7 @@ require_once __DIR__ . "/../../db/config.php";
 
 // Check if student is logged in
 if (!isset($_SESSION['student'])) {
-    header("Location: /eduqueue-queueing-system/student-management/student_login.php");
+    header("Location: /eduqueue-queueing-system/student-management/student_dashboard.php");
     exit;
 }
 

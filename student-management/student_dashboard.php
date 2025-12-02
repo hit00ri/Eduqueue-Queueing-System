@@ -16,7 +16,7 @@ require_once "../api/student-api/student-dashboard-b.php";
 <body>
     <?php include "../includes/header.php"; ?>
 
-    <?php include '../includes/student_sidebar.php'; ?>
+    
 
     <a href="help.php" class="help-button position-fixed top-0 end-0 m-3 pulse">
         <i class="bi bi-question-lg"></i>
@@ -25,6 +25,7 @@ require_once "../api/student-api/student-dashboard-b.php";
     <p class="mt-3"><a href="../api/student-api/student-logout-b.php">Logout</a></p>
 
     <div class="container-fluid">
+        <?php include '../includes/student_sidebar.php'; ?>
         <div class="student-box card fade-in">
             <!-- Header -->
             <div class="text-center mb-4">
