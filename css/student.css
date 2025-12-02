@@ -17,6 +17,7 @@ body {
     background: #ffffff; /* White background for contrast */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */   
+    
 }
 
 .card {
@@ -27,7 +28,7 @@ body {
 }
 
 .card-header {
-    background: linear-gradient(135deg, #6c63ff, #3f51b5); /* Gradient background */
+    background-color: #5880A5; /* Gradient background */
     color: white;
     padding: 20px;
     font-size: 1.25rem; /* Larger font size */
