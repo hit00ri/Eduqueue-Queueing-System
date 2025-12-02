@@ -23,15 +23,17 @@ require_once "../api/student-api/student-dashboard-b.php";
     </a>
 
     <p class="mt-3"><a href="../api/student-api/student-logout-b.php">Logout</a></p>
-
+<div class="student-dashboard-container">
     <div class="container-fluid">
+
         <?php include '../includes/student_sidebar.php'; ?>
-        <div class="student-box card fade-in">
+
+        <div class="student-box card fade-in" style="margin-top: 50px; margin-left: 400px">
             <!-- Header -->
             <div class="text-center mb-4">
                 <i class="bi bi-person-circle display-1 text-primary"></i>
                 <h1 class="h3 mt-2">Welcome, <?= htmlspecialchars($student['name']) ?></h1>
-                <p class="text-muted">Queue Management System</p>
+                <p class="text-muted">Queueing Management System</p>
             </div>
 
             <!-- Success Message -->
@@ -267,7 +269,7 @@ require_once "../api/student-api/student-dashboard-b.php";
             <?php endif; ?>
         </div>
     </div>
-
+</div>
     <?php include "../includes/footer.php"; ?>
 
     <!-- JavaScript -->

@@ -22,8 +22,8 @@ require_once "../api/student-api/payment-slip-b.php";
         <i class="bi bi-question-lg"></i>
     </a>
 
-    <div class="container mt-4">
-        <div class="payment-slip-container">
+    <div class="container mt-4" style="">
+        <div class="payment-slip-container" >
             <!-- Header -->
             <div class="payment-slip-header text-center">
                 <h2 class="h4 mb-0">PAYMENT SLIP</h2>

@@ -5,6 +5,7 @@
     height: 100vh;
     background: #f8f9fa; /* Light background for better contrast */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
 }
 
 /* Sidebar links */
@@ -53,7 +54,7 @@
 
 /* Logout container */
 .logout-container {
-    margin-top: auto;
+    margin-top: 130px;
     padding-top: 15px; /* Slightly larger padding */
     border-top: 1px solid #dee2e6; /* Separator line */
 }

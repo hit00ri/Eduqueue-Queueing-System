@@ -1,6 +1,12 @@
+
+
 .payment-slip-container {
     max-width: 600px;
-    margin: 0 auto;
+    /* center horizontally inside parent */
+    margin: 70px auto 50px;
+    display: block;
+    width: 100%;
+    padding-left: 30px;
 }
 .payment-slip-header {
     border-bottom: 2px solid #000;
@@ -34,4 +40,3 @@
     padding-top: 10px;
     border-top: 1px solid #ccc;
 }
-

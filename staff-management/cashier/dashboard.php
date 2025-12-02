@@ -24,6 +24,8 @@ require_once "../../api/staff-api/cashier/dashboard-b.php";
 
 </head>
 <body>
+<?php include __DIR__ . '/../../includes/header.php'; ?>
+
 <?php include '../../includes/cashier_sidebar.php'; ?>
 
 <div class="main-content">
@@ -111,5 +113,8 @@ require_once "../../api/staff-api/cashier/dashboard-b.php";
 
 <script src="../../js/darkmode.js"></script>
 <script src="../../js/auto-refresh.js"></script>
+
+<?php include "../../includes/footer.php"; ?>
+
 </body>
 </html>
