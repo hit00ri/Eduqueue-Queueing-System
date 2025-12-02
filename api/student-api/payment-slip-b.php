@@ -3,7 +3,8 @@ require_once __DIR__ . "/../../db/config.php";
 
 // Check if student is logged in
 if (!isset($_SESSION['student'])) {
-    header("Location: /eduqueue-main/student-management/student_login.php");
+    // Redirect to the consolidated public login page
+    header("Location: /Eduqueue-Queueing-System/index.php?public=1");
     exit;
 }
 
