@@ -17,9 +17,6 @@ require_once "../../api/staff-api/admin/admin-auth.php";
 
 <body>
     <!-- Dark Mode Toggle -->
-    <button class="dark-toggle btn btn-outline-secondary position-fixed top-0 end-0 m-3">
-        <i class="bi bi-moon-stars"></i>
-    </button>
 
     <div class="login-container card fade-in">
         <div class="login-logo">
@@ -63,7 +60,7 @@ require_once "../../api/staff-api/admin/admin-auth.php";
         </form>
     </div>
 
-    <script src="../../js/darkmode.js"></script>
+    
 </body>
 
 </html>

@@ -3,12 +3,12 @@ include "../../db/config.php";
 
 if (isset($_POST['save'])) {
     $name = $_POST['name'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $role = $_POST['role'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $role = $_POST['role'];
 
-    // Use PDO prepared statement to safely insert user
-    $sql = "INSERT INTO users (name, username, password, role) 
+        // Use PDO prepared statement to safely insert user
+        $sql = "INSERT INTO users (name, username, password, role) 
             VALUES (?, ?, ?, ?)";
     
     try {
@@ -49,6 +49,9 @@ if (isset($_POST['save'])) {
                 <input type="text" name="username" class="form-control" required>
             </div>
 
+            
+                <!-- Email input removed -->
+
             <div class="mb-3">
                 <label>Password: </label>
                 <input type="text" name="password" class="form-control" minlength="3" required>
@@ -56,9 +59,9 @@ if (isset($_POST['save'])) {
 
             <div class="mb-3">
                 <label>User Role</label>
-                <select name="role" class="form-control">
-                    <option>Cashier</option>
-                </select>
+                    <select name="role" class="form-control">
+                        <option>Cashier</option>
+                    </select>
             </div>
 
             <!-- Submit button: 'save' is used by PHP to detect submission -->

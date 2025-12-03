@@ -25,6 +25,7 @@ include "../../api/staff-api/admin/dashboard-queries.php";
 </head>
 
 <body>
+  <?php include __DIR__ . '/../../includes/header.php'; ?>
 
   <?php include '../../includes/sidebar.php'; ?>
 
@@ -77,11 +78,10 @@ include "../../api/staff-api/admin/dashboard-queries.php";
 
   </div>
 
-
+<?php include __DIR__ . '/../../includes/footer.php'; ?>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="../../js/served_voided_chart.js"></script>
-  <script src="../../js/darkmode.js"></script>
   <!-- <script src="../js/autorefresh.js"></script> -->
 
 </body>

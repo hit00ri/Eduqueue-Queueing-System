@@ -4,15 +4,15 @@
 <link rel="stylesheet" href="../css/index.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
-<header class="header" style="margin-left: 240px;">
+<header class="header">
     <div class="header-content">
         <div class="header-logo">
-            <img src="../img/SLC LOGO.png" alt="slc logo" />
+            <img src="/Eduqueue-Queueing-System/img/SLC LOGO.png" alt="SLC logo" />
         </div>
         <div class="header-text">
-            <p class= "header-title">Saint Louis College</p>
+            <p class="header-title">Saint Louis College</p>
             <p class="header-subtitle">City of San Fernando, La Union</p>
-            <p class="header-system">Queuing Management System with Payment Tracking</p>
+            <p class="header-system">Queueing Management System with Payment Tracking</p>
         </div>
     </div>
 </header>

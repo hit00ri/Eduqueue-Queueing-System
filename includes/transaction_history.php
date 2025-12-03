@@ -29,6 +29,7 @@ $transactions = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../css/transaction_history.css">
 </head>
 <body>
+    <?php include __DIR__ . '../../includes/header.php'; ?>
 <?php include 'sidebar.php'; ?>
 
 <div class="main-content container py-4">
@@ -60,6 +61,6 @@ $transactions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </table>
 
 </div>
-
+<?php include __DIR__ . '../../includes/footer.php'; ?>
 </body>
 </html>

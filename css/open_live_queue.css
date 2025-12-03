@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 /* Simplified Live Queue Display CSS */
 * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Century Gothic;
 }
 
 /* Header */
@@ -626,6 +626,7 @@ html, body {
 .footer {
     background: #003d7a;
     color: white;
+<<<<<<< HEAD
     text-align: center;
 <<<<<<< HEAD
 =======
@@ -634,6 +635,8 @@ html, body {
     flex-shrink: 0;
     margin-top: 5px;
 >>>>>>> bdummy
+=======
+>>>>>>> 40757fa19415fc0c89b8ff4314e51cffdf2f81c7
     padding: 15px;
     margin-top: 30px;
     font-size: 0.85rem;

@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 <link rel="stylesheet" href="../css/sidebar.css">
 
-<div class="sidebar fade-in">
+<div class="sidebar fade-in" >
     <h4 class="mb-4 sidebar-title">
         <span class="material-symbols-outlined nav-icon">dashboard</span>
-        Queuing System
+        Queueing System
     </h4>
 
     <!-- Debug: Show session status -->
@@ -45,7 +45,7 @@
         Help
     </a> -->
 
-    <div class="logout-container">
+    <div class="logout-container" >
         <a class="sidebar-link <?= basename($_SERVER['PHP_SELF']) === 'feedback.php' ? 'active' : '' ?>" href="feedback.php">
             <span class="material-symbols-outlined nav-icon">feedback</span>
             Feedback

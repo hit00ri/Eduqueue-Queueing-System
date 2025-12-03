@@ -4,6 +4,6 @@
 <link rel="stylesheet" href="../css/index.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
-<footer class="footer" style="margin-left: 240px;">
+<footer class="footer">
   <p>&copy; 2025 Saint Louis College of San Fernando, La Union. All rights reserved.</p>
 </footer>
