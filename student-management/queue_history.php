@@ -23,7 +23,7 @@ require_once "../api/student-api/queue-history-b.php";
         <i class="bi bi-question-lg"></i>
     </a>
 
-    <div class="main-content">
+    <div class="main-content" style="margin-top: 10px">
         <div class="history-container">
             <!-- Student Info Header -->
             <div class="student-info-card">

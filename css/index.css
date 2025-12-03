@@ -144,6 +144,10 @@
   left:0; 
   right:0; 
   bottom:0;
+  height: 6.2vh;
+  align-items: center;
+  display: flex;
+  justify-content: end;
 }
 
 .footer p {
