@@ -1,0 +1,522 @@
+/* ================================
+   FULLSCREEN NO-SCROLL LAYOUT
+================================== */
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+    background: #f2f7ff;
+    display: flex;
+    flex-direction: column;
+}
+/* Simplified Live Queue Display CSS */
+* {
+    font-family: Century Gothic;
+}
+
+/* Main container - fill available space */
+.container.mt-4 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px !important;
+    padding: 5px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Center content */
+.row.justify-content-center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* ================================
+   HEADER - ULTRA COMPACT
+================================== */
+.header {
+    background: linear-gradient(135deg, #003d7a 0%, #004a8f 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 5px 0;
+    flex-shrink: 0;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 10px;
+}
+
+.header-logo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-title {
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 1px;
+    line-height: 1;
+}
+
+.header-subtitle {
+    font-size: 0.65rem;
+    opacity: 0.9;
+    margin-bottom: 1px;
+    line-height: 1;
+}
+
+.header-system {
+    font-size: 0.6rem;
+    opacity: 0.8;
+    line-height: 1;
+}
+
+.header-button .btn {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+}
+
+/* ================================
+   MAIN DISPLAY - FIXED HEIGHT
+================================== */
+.digital-display {
+    width: 700px;
+    max-width: 90%;
+    max-height: 85vh; /* Limit maximum height */
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card Header */
+.display-header {
+    background: linear-gradient(135deg, #003d7a 0%, #004a8f 100%);
+    color: white;
+    padding: 6px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.display-header h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.display-header .btn {
+    padding: 3px 8px;
+    font-size: 0.7rem;
+}
+
+/* ================================
+   TWO COLUMN LAYOUT - FIXED HEIGHT
+================================== */
+.serving-container {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    min-height: 180px; /* Reduced height */
+    max-height: 220px; /* Limit max height */
+    overflow: hidden;
+}
+
+/* Left Column - Next to Serve */
+.next-serving-column {
+    flex: 1;
+    padding: 10px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Right Column - Now Serving */
+.now-serving-column {
+    flex: 1;
+    padding: 10px;
+    background: linear-gradient(to bottom, #f8fdff, #ffffff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Labels */
+.next-serving-label {
+    color: #003d7a;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.now-serving-label {
+    background: #28a768;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Queue Numbers - Optimized for empty states */
+.next-queue-number {
+    font-size: 2.2rem;
+    color: #004a8f;
+    font-weight: 700;
+    margin: 5px 0;
+    line-height: 1;
+    text-align: center;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.queue-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #003d7a;
+    margin: 5px 0;
+    line-height: 1;
+    text-align: center;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Empty state styling - MUCH MORE COMPACT */
+.queue-number[style*="color: #808080ff;"],
+.next-queue-number[style*="color: #808080ff;"] {
+    font-size: 1rem !important;
+    font-weight: 500;
+    color: #999 !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    min-height: 40px !important;
+    padding: 5px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Student Info - Compact */
+.student-info {
+    font-size: 0.85rem;
+    color: #333;
+    margin: 2px 0;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.student-info.course {
+    font-size: 0.75rem;
+    color: #666;
+    font-style: italic;
+}
+
+.student-info.id {
+    font-size: 0.7rem;
+    color: #555;
+}
+
+/* ================================
+   STATS CONTAINER - ULTRA COMPACT
+================================== */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+    background: #f8f9fa;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 3px;
+}
+
+.stat-icon {
+    font-size: 0.85rem;
+    color: #003d7a;
+    margin-bottom: 2px;
+}
+
+.stat-number {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #003d7a;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    color: #666;
+    margin-top: 1px;
+}
+
+/* ================================
+   RECENT SERVED LIST - COMPACT
+================================== */
+.recent-served {
+    padding: 8px 10px;
+    flex-shrink: 0;
+    border-top: none;
+}
+
+.recent-served h6 {
+    color: #003d7a;
+    font-weight: 600;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 4px;
+    font-size: 0.75rem;
+}
+
+.recent-list {
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+.recent-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.recent-item:last-child {
+    border-bottom: none;
+}
+
+.recent-number {
+    background: #e9ecef;
+    color: #003d7a;
+    padding: 1px 4px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.65rem;
+}
+
+.recent-name {
+    flex: 1;
+    margin: 0 6px;
+    color: #333;
+    font-size: 0.75rem;
+}
+
+.recent-time {
+    color: #666;
+    font-size: 0.65rem;
+}
+
+/* ================================
+   WAITING LIST
+================================== */
+.waiting-list-container {
+    margin-top: 8px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.waiting-list {
+    margin-top: 6px;
+    padding: 8px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 100px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.waiting-list h6 {
+    font-weight: 600;
+    color: #003d7a;
+    margin-bottom: 4px;
+    font-size: 0.75rem;
+}
+
+.waiting-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.waiting-list li {
+    padding: 3px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.75rem;
+}
+
+.waiting-list li:last-child {
+    border-bottom: none;
+}
+
+/* ================================
+   FOOTER - MINIMAL
+================================== */
+.footer {
+    background: #003d7a;
+    color: white;
+    text-align: center;
+    padding: 4px;
+    font-size: 0.6rem;
+    flex-shrink: 0;
+    margin-top: 5px;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 0.85rem;
+}
+
+/* ================================
+   ANIMATIONS - MINIMAL
+================================== */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.blink {
+    animation: blink 1.5s infinite;
+}
+
+@keyframes flash {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.01); }
+}
+
+.flash {
+    animation: flash 2s infinite;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================== */
+@media (max-width: 768px) {
+    .digital-display {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .serving-container {
+        flex-direction: column;
+        min-height: 150px;
+        max-height: 180px;
+    }
+    
+    .next-serving-column {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding: 8px;
+    }
+    
+    .now-serving-column {
+        padding: 8px;
+    }
+    
+    .queue-number {
+        font-size: 2.2rem;
+    }
+    
+    .next-queue-number {
+        font-size: 1.8rem;
+    }
+    
+    .queue-number[style*="color: #808080ff;"],
+    .next-queue-number[style*="color: #808080ff;"] {
+        font-size: 0.9rem !important;
+        min-height: 35px !important;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+        gap: 5px;
+        padding: 6px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 3px;
+    }
+    
+    .header-button {
+        margin-left: 0;
+        margin-top: 2px;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+    .digital-display {
+        width: 98%;
+        border-radius: 8px;
+    }
+    
+    .queue-number {
+        font-size: 1.8rem;
+    }
+    
+    .next-queue-number {
+        font-size: 1.5rem;
+    }
+    
+    .container.mt-4 {
+        margin-top: 2px !important;
+        padding: 2px;
+    }
+}
+
+/* Extra height adjustment for empty states */
+@media (max-height: 700px) {
+    .serving-container {
+        min-height: 150px;
+        max-height: 180px;
+    }
+    
+    .digital-display {
+        max-height: 80vh;
+    }
+    
+    .queue-number[style*="color: #808080ff;"],
+    .next-queue-number[style*="color: #808080ff;"] {
+        font-size: 0.9rem !important;
+        min-height: 30px !important;
+    }
+}
