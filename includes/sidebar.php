@@ -17,11 +17,11 @@
     <?php endif; ?>
 
     <div class="admin-sidebar-profile">
-        <img src="" alt="profile-pic">
-        <h2>Admin</h2>
+        <a class="nav-link" href="profile.php">
+        <span class="material-symbols-outlined">person_2</span>
+        <h3>Admin</h3>
     </div>
 
-    <hr/>
 
     <a class="sidebar-link" href="/Eduqueue-Queueing-System/staff-management/admin/admin_dashboard.php">
         <span class="material-symbols-outlined nav-icon">monitoring</span>
@@ -61,7 +61,7 @@
         <a class="sidebar-link" href="../../api/student-api/student-logout-b.php">
             <span class="material-symbols-outlined">logout</span>
             Logout
-        </a>
+        </a> 
     </div>
 </div>
 

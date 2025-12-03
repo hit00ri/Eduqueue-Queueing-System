@@ -13,6 +13,7 @@ require_once __DIR__ . "/../api/staff-api/metrics-dashboard-b.php";
 <link rel="stylesheet" href="../css/sidebar.css">
 </head>
 <body>
+    <?php include __DIR__ . '../../includes/header.php'; ?>
 <?php include 'sidebar.php'; ?>
 
 <div class="main-content">
@@ -152,7 +153,6 @@ require_once __DIR__ . "/../api/staff-api/metrics-dashboard-b.php";
         </div>
     </div>
 </div>
-
-<script src="../js/darkmode.js"></script>
+<?php include __DIR__ . '../../includes/footer.php'; ?>
 </body>
 </html>
