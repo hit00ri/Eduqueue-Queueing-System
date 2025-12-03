@@ -1,20 +1,23 @@
 <?php
 require_once __DIR__ . "/../../db/config.php";
 
-class MetricsService {
+class MetricsService
+{
     private $conn;
-    
-    public function __construct($connection) {
+
+    public function __construct($connection)
+    {
         $this->conn = $connection;
     }
     
     // ... your existing methods (recordQueueCompletion, generateDailyKPISummary, etc.) ...
-    
+
     /**
      * Get cashier-specific performance metrics
      * Requires 'handled_by' column in queue table
      */
-    public function getCashierMetrics($cashier_id, $days = 7) {
+    public function getCashierMetrics($cashier_id, $days = 7)
+    {
         $stmt = $this->conn->prepare("
             SELECT 
                 DATE(q.time_in) as service_date,
@@ -40,15 +43,16 @@ class MetricsService {
             GROUP BY DATE(q.time_in)
             ORDER BY service_date DESC
         ");
-        
+
         $stmt->execute([$cashier_id, $days]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    
+
     /**
      * Get individual cashier performance summary
      */
-    public function getCashierPerformanceSummary($cashier_id, $days = 30) {
+    public function getCashierPerformanceSummary($cashier_id, $days = 30)
+    {
         $stmt = $this->conn->prepare("
             SELECT 
                 u.name as cashier_name,
@@ -75,15 +79,16 @@ class MetricsService {
             
             GROUP BY u.user_id, u.name
         ");
-        
+
         $stmt->execute([$cashier_id, $days]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    
+
     /**
      * Compare all cashiers performance (Admin only)
      */
-    public function getAllCashiersPerformance($days = 30) {
+    public function getAllCashiersPerformance($days = 30)
+    {
         $stmt = $this->conn->prepare("
             SELECT 
                 u.user_id,
@@ -115,15 +120,16 @@ class MetricsService {
             GROUP BY u.user_id, u.name
             ORDER BY overall_efficiency_rate DESC, total_revenue_generated DESC
         ");
-        
+
         $stmt->execute([$days]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    
+
     /**
      * Log a generic event to metrics_log (creates table if missing)
      */
-    public function logEvent($level, $category, $message, $user_id = null, $student_id = null, $queue_id = null) {
+    public function logEvent($level, $category, $message, $user_id = null, $student_id = null, $queue_id = null)
+    {
         // Ensure table exists
         $this->conn->exec(
             "CREATE TABLE IF NOT EXISTS metrics_log (
@@ -146,7 +152,8 @@ class MetricsService {
     /**
      * Record queue completion metrics (served/voided). Creates table if missing.
      */
-    public function recordQueueCompletion($queue_id, $student_id, $status) {
+    public function recordQueueCompletion($queue_id, $student_id, $status)
+    {
         $allowed = ['served', 'voided'];
         if (!in_array($status, $allowed)) {
             $status = 'served';
@@ -170,7 +177,8 @@ class MetricsService {
     /**
      * Generate and store the daily KPI summary for a given date (YYYY-MM-DD)
      */
-    public function generateDailyKPISummary($date) {
+    public function generateDailyKPISummary($date)
+    {
         // Ensure summary table exists
         $this->conn->exec(
             "CREATE TABLE IF NOT EXISTS daily_kpi_summary (
@@ -250,4 +258,3 @@ class MetricsService {
 
     // ... rest of your existing methods ...
 }
-?>
