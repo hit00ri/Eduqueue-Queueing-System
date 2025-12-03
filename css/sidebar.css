@@ -2,10 +2,16 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    height:550px;
-    background: #f8f9fa; /* Light background for better contrast */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    justify-content: space-between;  /* Push last item to the bottom */
+
+    height: 100%;
+    max-height: 100vh;
+    background: #f8f9fa;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
+
+
 
 /* Sidebar links */
 .sidebar-link {
@@ -53,9 +59,10 @@
 
 /* Logout container */
 .logout-container {
-    margin-top: 100px;
+    margin-top: auto;
     padding-top: 15px; /* Slightly larger padding */
-    border-top: 1px solid #dee2e6; /* Separator line */
+    border-top: 1px solid #dee2e6; /* Separator line */  
+    margin-bottom: 100px; 
 }
 
 .admin-sidebar-profile h3{

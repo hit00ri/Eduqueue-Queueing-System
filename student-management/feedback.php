@@ -25,6 +25,7 @@ require_once "../api/student-api/feedback-b.php";
     </a>
 
     <div class="main-content"  style="margin-top: 10px">
+        
         <div class="feedback-container">
             <div class="card feedback-card fade-in">
                 <div class="card-header feedback-header text-center">
@@ -199,10 +200,13 @@ require_once "../api/student-api/feedback-b.php";
                 </div>
             </div>
         </div>
+        
     </div>
 
+    
     <?php include "../includes/footer.php"; ?>
     <!-- JavaScript -->
+     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/feedback.js"></script>
 </body>
