@@ -1,11 +1,7 @@
 <?php
 require_once __DIR__ . '/../../db/config.php';
-
-// Check if user is logged in and is cashier
-if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'cashier') { 
-    header("Location: /Eduqueue-Queueing-System/index.php");
-    exit; 
-}
+require_once __DIR__ . '/../../api/auth.php';
+require_role('cashier');
 
 require_once "../../api/staff-api/cashier/dashboard-b.php";
 ?>

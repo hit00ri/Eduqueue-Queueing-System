@@ -1,12 +1,7 @@
 <?php
 require_once __DIR__ . "/../../db/config.php";
+ require_once __DIR__ . "/../auth.php";
 require_once __DIR__ . "/../services/MetricsService.php";
-
-// Check if user is logged in and is admin
-if (!isset($_SESSION['user'])) {
-    header("Location: /eduqueue-queueing-system/index.php");
-    exit;
-}
 
 $metricsService = new MetricsService($conn);
 

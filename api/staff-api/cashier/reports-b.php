@@ -1,10 +1,7 @@
 <?php
 require_once "../../db/config.php";
 
-if (!isset($_SESSION['user'])) {
-    header("Location: /eduqueue-queueing-system/staff-management/cashier/index.php");
-    exit;
-}
+require_once __DIR__ . "/../auth.php";
 
 // Get queue data
 $data = $conn->query("

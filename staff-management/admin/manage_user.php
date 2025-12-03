@@ -1,6 +1,9 @@
 <?php
     // Main listing page for users. Shows a search box and a table with
     // actions to modify or delete a user.
+    require_once __DIR__ . '/../../api/auth.php';
+    require_role('admin');
+
     include "../../db/config.php"; // Connect to DB
 
     // Handle optional search query.

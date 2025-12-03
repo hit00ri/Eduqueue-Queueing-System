@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../api/student-protect.php';
 require_once "../api/student-api/payment-slip-b.php";    
 ?>
 <!DOCTYPE html>

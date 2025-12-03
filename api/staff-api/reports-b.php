@@ -1,15 +1,13 @@
 <?php
 require_once __DIR__ . "/../../db/config.php";
 
+// Include central auth (ensures login and no-cache headers)
+require_once __DIR__ . "/../auth.php";
+
 // Check if MetricsService exists before including
 $metricsServicePath = __DIR__ . "/../../services/MetricsService.php";
 if (file_exists($metricsServicePath)) {
     require_once $metricsServicePath;
-}
-
-if (!isset($_SESSION['user'])) {
-    header("Location: /eduqueue-queueing-system/index.php");
-    exit;
 }
 
 // Initialize metrics service if available
