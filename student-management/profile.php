@@ -20,7 +20,7 @@ require_once "../api/student-api/profile-b.php";
     <?php include '../includes/student_sidebar.php'; ?>
 
     <div class="container mt-4" >
-        <div class="profile-container card fade-in" style="margin-top: 100px; margin-bottom: 50px">
+        <div class="profile-container card fade-in" style="margin-top: 30px; margin-bottom: 30px;">
             <!-- Header -->
             <div class="profile-header">
                 <div class="profile-avatar">
