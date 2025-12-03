@@ -33,8 +33,7 @@ require_once __DIR__ . "/api/staff-api/index-b.php";
     </div>
 </header>
 
-<button class="dark-toggle" title="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
-<div class="index-container" style="margin-top: 100px">
+<div class="index-container" style="margin-top: 20px">
 
     </div><div class="login-container">
   <div class="login-logo">
@@ -85,6 +84,6 @@ require_once __DIR__ . "/api/staff-api/index-b.php";
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/darkmode.js"></script>
+
 </body>
 </html>
