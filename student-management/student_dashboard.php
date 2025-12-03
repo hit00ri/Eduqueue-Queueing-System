@@ -32,7 +32,7 @@ require_once "../api/student-api/student-dashboard-b.php";
 
         <?php include '../includes/student_sidebar.php'; ?>
 
-        <div class="student-box card fade-in" style="margin-top: 50px; margin-left: 400px">
+        <div class="student-box card fade-in" style="margin-top: 10px; margin-left: 400px">
             <!-- Header -->
             <div class="text-center mb-4">
                 <i class="bi bi-person-circle display-1 text-primary"></i>

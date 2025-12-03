@@ -94,11 +94,13 @@ body {
         .feedback-header h2 {
             font-size: 1.5rem; /* Larger heading */
             margin-bottom: 0.5rem;
+            color: #fff6f6;
         }
         
         .feedback-header p {
             font-size: 1rem; /* Slightly larger text */
             opacity: 0.8;
+            color: #fff6f6;
         }
         
         .character-count {

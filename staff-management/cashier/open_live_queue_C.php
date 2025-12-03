@@ -1,5 +1,5 @@
 <?php
-require_once "../api/staff-api/open-live-queue-b.php";
+require_once "../../api/staff-api/cashier/open-live-queue-C-b.php";
 ?>
 <!doctype html>
 <html>
@@ -9,8 +9,8 @@ require_once "../api/staff-api/open-live-queue-b.php";
         <title>Live Queue Display - EDUQUEUE</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
-        <link rel="stylesheet" href="../css/common.css">
-        <link rel="stylesheet" href="../css/open_live_queue.css">
+        <link rel="stylesheet" href="../../css/common.css">
+        <link rel="stylesheet" href="../../css/open_live_queue.css">
     </head>
 
     <body style="background-color: #f0f8ff;">
@@ -19,7 +19,7 @@ require_once "../api/staff-api/open-live-queue-b.php";
     <div class="header-content">
 
         <div class="header-logo">
-            <img src="../img/SLC LOGO.png" alt="slc logo" />
+            <img src="../../img/SLC LOGO.png" alt="slc logo" />
         </div>
 
         <div class="header-text">
@@ -29,8 +29,8 @@ require_once "../api/staff-api/open-live-queue-b.php";
         </div>
 
         <div class="header-button">
-            <button class="btn btn-outline-danger" onclick="location.href='../index.php'">
-                <i class="bi bi-arrow-left"></i> Back to Login
+            <button class="btn btn-outline-danger" onclick="location.href='dashboard.php'">
+                <i class="bi bi-arrow-left"></i> Back to Dashboard
             </button>
         </div>
 
@@ -176,10 +176,12 @@ require_once "../api/staff-api/open-live-queue-b.php";
             </div>
         </div>
 
-        <?php include "../includes/footer.php"; ?>
+        <footer class="footer">
+            <p>&copy; 2025 Saint Louis College of San Fernando, La Union. All rights reserved.</p>
+        </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="../js/open_live_queue.js"></script>
+        <script src="../../js/open_live_queue.js"></script>
 
     </body>
 </html>
