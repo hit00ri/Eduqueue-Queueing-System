@@ -14,8 +14,9 @@ require_once __DIR__ . "/../api/staff-api/reports-b.php";
 <link rel="stylesheet" href="../css/sidebar.css">
 </head>
 <body>
+  <?php include __DIR__ . '../../includes/header.php'; ?>
 <?php include 'sidebar.php'; ?>
-<button class="dark-toggle" title="Toggle dark mode"><i class="bi bi-moon-stars"></i></button>
+
 
 <div class="main-content">
   <h1><i class="bi bi-bar-chart nav-icon"></i> Reports</h1>
@@ -166,7 +167,8 @@ require_once __DIR__ . "/../api/staff-api/reports-b.php";
   <p class="mt-3"><a href="../staff-management/admin/admin_dashboard.php" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Back to Dashboard</a></p>
 </div>
 
-<script src="js/darkmode.js"></script>
+
 <script src="js/autorefresh.js"></script>
+<?php include __DIR__ . '../../includes/footer.php'; ?>
 </body>
 </html>

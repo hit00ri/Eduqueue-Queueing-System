@@ -2,9 +2,10 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height:550px;
     background: #f8f9fa; /* Light background for better contrast */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
 
 }
 
@@ -54,7 +55,11 @@
 
 /* Logout container */
 .logout-container {
-    margin-top: 130px;
+    margin-top: 100px;
     padding-top: 15px; /* Slightly larger padding */
     border-top: 1px solid #dee2e6; /* Separator line */
+}
+
+.admin-sidebar-profile h3{
+    margin-left: 5px;
 }
