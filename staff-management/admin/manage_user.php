@@ -1,10 +1,18 @@
 <?php
     // Main listing page for users. Shows a search box and a table with
     // actions to modify or delete a user.
+    require_once __DIR__ . '/../../db/config.php';
     require_once __DIR__ . '/../../api/auth.php';
+    if (!function_exists('require_role')) {
+        function require_role($role) {
+            // Example implementation: check session for role
+            if (!isset($_SESSION['role']) || $_SESSION['role'] !== $role) {
+                header('Location: /Eduqueue-Queueing-System/login.php');
+                exit;
+            }
+        }
+    }
     require_role('admin');
-
-    include "../../db/config.php"; // Connect to DB
 
     // Handle optional search query.
     $search = "";

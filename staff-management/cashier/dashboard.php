@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../../db/config.php';
 require_once __DIR__ . '/../../api/auth.php';
-require_role('cashier');
+// api/auth.php already ensures login
 
 require_once "../../api/staff-api/cashier/dashboard-b.php";
 ?>

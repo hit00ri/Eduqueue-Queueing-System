@@ -1,9 +1,8 @@
 <?php
 require_once __DIR__ . "/../../db/config.php";
+require_once __DIR__ . "/../../api/auth.php";
 
-// Check if user is logged in and is admin
- require_once __DIR__ . "/../../auth.php";
- require_role('admin');
+require_role('admin');
 
 // Fetch active queues
 $queues = $conn->query("

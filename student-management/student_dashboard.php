@@ -19,9 +19,12 @@ require_once "../api/student-api/student-dashboard-b.php";
 
     
 
-    <a href="help.php" class="help-button position-fixed top-0 end-0 m-3 pulse">
+    <a href="help.php" class="help-button position-fixed pulse" style="top: 100px; right: 20px;">
         <i class="bi bi-question-lg"></i>
     </a>
+
+
+
 
     <p class="mt-3"><a href="../api/student-api/student-logout-b.php">Logout</a></p>
 <div class="student-dashboard-container">
