@@ -24,19 +24,28 @@ if (!$isPublic) {
 
 $err = '';
 
+// On GET, surface any flash set by a previous POST
+if (!empty($_SESSION['flash'])) {
+    $flash = $_SESSION['flash'];
+    if (!empty($flash['text'])) {
+        $err = $flash['text'];
+    }
+    unset($_SESSION['flash']);
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'] ?? '';
+    $identifier = trim($_POST['username'] ?? $_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    // Try staff login first (admin or cashier)
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? LIMIT 1");
-    $stmt->execute([$username]);
+    // Try staff login first (allow email or username)
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? OR email = ? LIMIT 1");
+    $stmt->execute([$identifier, $identifier]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user && $password === $user['password']) {
         // Staff login successful
         $_SESSION['user'] = $user;
-        
+
         // Redirect based on user role
         if ($user['role'] === 'admin') {
             header('Location: /Eduqueue-Queueing-System/staff-management/admin/admin_dashboard.php');
@@ -46,9 +55,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Try student login
-    $stmt = $conn->prepare("SELECT * FROM students WHERE student_id = ? LIMIT 1");
-    $stmt->execute([$username]);
+    // Try student login (email)
+    $stmt = $conn->prepare("SELECT * FROM students WHERE email = ? LIMIT 1");
+    $stmt->execute([$identifier]);
     $student = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($student && $password === $student['password']) {
@@ -58,7 +67,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Neither staff nor student found
-    $err = 'Invalid username/student ID or password';
+    // Neither staff nor student found — set flash and redirect to GET (PRG)
+    $_SESSION['flash'] = ['type' => 'error', 'text' => 'Invalid email/username or password'];
+    header('Location: /Eduqueue-Queueing-System/index.php');
+    exit;
 }
 ?>

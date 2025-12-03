@@ -26,10 +26,11 @@ if (isset($_POST['update'])) {
     $name = trim($_POST['name'] ?? '');
     $course = trim($_POST['course'] ?? '');
     $year_level = trim($_POST['year_level'] ?? '');
+    $email = trim($_POST['email'] ?? '');
 
     try {
-        $stmt = $conn->prepare("UPDATE students SET name = ?, course = ?, year_level = ? WHERE student_id = ?");
-        $stmt->execute([$name, $course, $year_level, $id]);
+        $stmt = $conn->prepare("UPDATE students SET name = ?, course = ?, year_level = ?, email = ? WHERE student_id = ?");
+        $stmt->execute([$name, $course, $year_level, $email, $id]);
         header("Location: ../../staff-management/admin/manage_user.php?message=updated");
         exit;
     } catch (PDOException $e) {
@@ -67,6 +68,11 @@ if (isset($_POST['update'])) {
             <div class="mb-3">
                 <label>Year Level: </label>
                 <input type="text" name="year_level" class="form-control" value="<?= $user['year_level'] ?>" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Email: </label>
+                <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($user['email'] ?? '') ?>">
             </div>
 
             <button name="update" class="btn btn-primary">Update</button>
