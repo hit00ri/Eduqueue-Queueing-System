@@ -1,5 +1,5 @@
 <?php
-require_once "../api/staff-api/open-live-queue-b.php";
+require_once "../../api/staff-api/cashier/open-live-queue-C-b.php";
 ?>
 <!doctype html>
 <html>
@@ -9,15 +9,15 @@ require_once "../api/staff-api/open-live-queue-b.php";
         <title>Live Queue Display - EDUQUEUE</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
-        <link rel="stylesheet" href="../css/common.css">
-        <link rel="stylesheet" href="../css/open_live_queue.css">
+        <link rel="stylesheet" href="../../css/common.css">
+        <link rel="stylesheet" href="../../css/open_live_queue.css">
     </head>
 
     <body style="background-color: #f0f8ff;">
 
-<header class="header">
-    <?php include __DIR__ . '../../includes/header.php'; ?>
-    <?php include 'sidebar.php'; ?>
+    <?php include __DIR__ . '/../../includes/header.php'; ?>
+
+    <?php include '../../includes/cashier_sidebar.php'; ?>
 
         <div class="container mt-4">
             <div class="row justify-content-center">
@@ -26,64 +26,64 @@ require_once "../api/staff-api/open-live-queue-b.php";
                     <div class="digital-display">
                         <div class="display-header">
                             <h3><i class="bi bi-display"></i> EDUQUEUE LIVE DISPLAY</h3>
-                            <!-- <div class="auto-refresh-notice">
-                                <i class="bi bi-arrow-clockwise"></i> Auto-refreshes every 15 seconds
-                            </div> -->
                             <button class="btn btn-primary" onclick="location.reload()">
                                 <i class="bi bi-arrow-clockwise"></i> Refresh Display
                             </button>
                         </div>
                         
-                        <!-- Now Serving Section -->
-                        <div class="now-serving-box">
-                            <div class="now-serving-label blink">
-                                <i class="bi bi-megaphone"></i> NOW SERVING
+                        <!-- Serving Container - Two Columns -->
+                        <div class="serving-container">
+                            <!-- LEFT COLUMN: Next to Serve -->
+                            <div class="next-serving-column">
+                                <div class="next-serving-label">
+                                    <i class="bi bi-chevron-right"></i> NEXT TO SERVE
+                                </div>
+                                
+                                <?php if ($nextServing): ?>
+                                    <div class="next-queue-number">
+                                        <?= $nextServing['queue_number'] ?>
+                                    </div>
+                                    <div class="student-info">
+                                        <?= htmlspecialchars($nextServing['name']) ?>
+                                    </div>
+                                    <div class="student-info course">
+                                        <?= htmlspecialchars($nextServing['course']) ?>
+                                    </div>
+                                    <div class="student-info id">
+                                        ID: <?= htmlspecialchars($nextServing['student_id']) ?>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="next-queue-number" style="color: #808080ff;">
+                                        No one is waiting
+                                    </div>
+                                <?php endif; ?>
                             </div>
                             
-                            <?php if ($nowServing): ?>
-                                <div class="queue-number flash">
-                                    <?= $nowServing['queue_number'] ?>
+                            <!-- RIGHT COLUMN: Now Serving -->
+                            <div class="now-serving-column">
+                                <div class="now-serving-label blink">
+                                    <i class="bi bi-megaphone"></i> NOW SERVING
                                 </div>
-                                <div class="student-info">
-                                    <?= htmlspecialchars($nowServing['name']) ?>
-                                </div>
-                                <div class="student-info course">
-                                    <?= htmlspecialchars($nowServing['course']) ?>
-                                </div>
-                                <div class="student-info id">
-                                    ID: <?= htmlspecialchars($nowServing['student_id']) ?>
-                                </div>
-                            <?php else: ?>
-                                <div class="queue-number" style="color: #808080ff;">
-                                    No one is currently being served
-                                </div>
-                            <?php endif; ?>
-                        </div>
-                        
-                        <!-- Next Serving Section -->
-                        <div class="next-serving-box">
-                            <div class="next-serving-label">
-                                <i class="bi bi-chevron-right"></i> NEXT TO SERVE
+                                
+                                <?php if ($nowServing): ?>
+                                    <div class="queue-number flash">
+                                        <?= $nowServing['queue_number'] ?>
+                                    </div>
+                                    <div class="student-info">
+                                        <?= htmlspecialchars($nowServing['name']) ?>
+                                    </div>
+                                    <div class="student-info course">
+                                        <?= htmlspecialchars($nowServing['course']) ?>
+                                    </div>
+                                    <div class="student-info id">
+                                        ID: <?= htmlspecialchars($nowServing['student_id']) ?>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="queue-number" style="color: #808080ff;">
+                                        No one is currently being served
+                                    </div>
+                                <?php endif; ?>
                             </div>
-                            
-                            <?php if ($nextServing): ?>
-                                <div class="next-queue-number">
-                                    <?= $nextServing['queue_number'] ?>
-                                </div>
-                                <div class="student-info">
-                                    <?= htmlspecialchars($nextServing['name']) ?>
-                                </div>
-                                <div class="student-info course">
-                                    <?= htmlspecialchars($nextServing['course']) ?>
-                                </div>
-                                <div class="student-info id">
-                                    ID: <?= htmlspecialchars($nextServing['student_id']) ?>
-                                </div>
-                            <?php else: ?>
-                                <div class="next-queue-number" style="color: #808080ff;">
-                                    No one is waiting
-                                </div>
-                            <?php endif; ?>
                         </div>
                         
                         <!-- Stats Row -->
@@ -158,12 +158,10 @@ require_once "../api/staff-api/open-live-queue-b.php";
             </div>
         </div>
 
-        <footer class="footer">
-            <p>&copy; 2025 Saint Louis College of San Fernando, La Union. All rights reserved.</p>
-        </footer>
+        <?php include "../../includes/footer.php"; ?>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="../js/open_live_queue.js"></script>
+        <script src="../../js/open_live_queue.js"></script>
 
     </body>
 </html>
