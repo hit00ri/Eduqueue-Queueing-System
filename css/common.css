@@ -121,9 +121,9 @@ body {
 /* main content */
 .main-content { 
   margin-left: 215px; 
-  margin-top: 0;
+  margin-top: var(--header-height);
   padding: 28px; 
-  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  min-height: calc(100vh - var(--header-height));
   display: flex;
   flex-direction: column;
 }
@@ -144,7 +144,7 @@ body {
   background-color: #003d7a;
   color: white;
   text-align: right;
-  padding: 5px 12px;
+  padding: 5px 15px;
   font-size: 0.8rem;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
   position: fixed;
@@ -152,7 +152,6 @@ body {
   left: 0;
   right: 0;
   z-index: 900;
-
 }
 
 .footer p { margin: 0; font-size: 0.8rem; color: rgba(255,255,255,0.95); }

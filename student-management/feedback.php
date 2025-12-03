@@ -17,13 +17,14 @@ require_once "../api/student-api/feedback-b.php";
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body>
+    <?php include "../includes/header.php"; ?>
     <?php include '../includes/student_sidebar.php'; ?>
     
     <a href="help.php" class="help-button position-fixed top-0 end-0 m-3 pulse">
         <i class="bi bi-question-lg"></i>
     </a>
 
-    <div class="main-content">
+    <div class="main-content"  style="margin-top: 10px">
         <div class="feedback-container">
             <div class="card feedback-card fade-in">
                 <div class="card-header feedback-header text-center">
@@ -31,7 +32,7 @@ require_once "../api/student-api/feedback-b.php";
                         <i class="bi bi-chat-heart display-4"></i>
                     </div>
                     <h2 class="h3 mb-2">Share Your Feedback</h2>
-                    <p class="mb-0 opacity-75">Help us improve our queue management system</p>
+                    <p class="mb-0 opacity-75">Help us improve our queueing management system</p>
                 </div>
                 
                 <div class="card-body p-4">
@@ -199,6 +200,8 @@ require_once "../api/student-api/feedback-b.php";
             </div>
         </div>
     </div>
+
+    <?php include "../includes/footer.php"; ?>
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/feedback.js"></script>
