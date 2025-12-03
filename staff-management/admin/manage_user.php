@@ -172,18 +172,10 @@
                                                     <button class="btn btn-outline-secondary btn-action" disabled>
                                                         <i class="bi bi-pencil"></i> Modify
                                                     </button>
-                                                    <button class="btn btn-outline-secondary btn-action" disabled>
-                                                        <i class="bi bi-trash"></i> Delete
-                                                    </button>
                                                 <?php else: ?>
                                                     <a href="../../includes/user-management/edit_staff.php?user_id=<?= $user['id'] ?>" 
                                                        class="btn btn-outline-primary btn-action">
                                                         <i class="bi bi-pencil"></i> Modify
-                                                    </a>
-                                                    <a href="../../includes/user-management/delete_staff.php?user_id=<?= $user['id'] ?>" 
-                                                       class="btn btn-outline-danger btn-action"
-                                                       onclick="return confirm('Are you sure you want to delete this user? This action cannot be undone.')">
-                                                        <i class="bi bi-trash"></i> Delete
                                                     </a>
                                                 <?php endif; ?>
                                             </div>
@@ -264,11 +256,6 @@
                                                 <a href="../../includes/user-management/edit_student.php?student_id=<?= $stu['id'] ?>" 
                                                    class="btn btn-outline-primary btn-action">
                                                     <i class="bi bi-pencil"></i> Modify
-                                                </a>
-                                                <a href="../../includes/user-management/delete_student.php?student_id=<?= $stu['id'] ?>" 
-                                                   class="btn btn-outline-danger btn-action"
-                                                   onclick="return confirm('Are you sure you want to delete this student? This action cannot be undone.')">
-                                                    <i class="bi bi-trash"></i> Delete
                                                 </a>
                                             </div>
                                         </td>

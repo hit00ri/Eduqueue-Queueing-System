@@ -110,14 +110,3 @@ tbody tr:hover {
     background: #007bff;
     color: white;
 }
-
-.btn-outline-danger {
-    background: transparent;
-    border: 1px solid #dc3545;
-    color: #dc3545;
-}
-
-.btn-outline-danger:hover {
-    background: #dc3545;
-    color: white;
-}
