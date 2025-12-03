@@ -29,13 +29,13 @@
     </a>
 
     <!-- Performance Metrics (Admin) -->
-    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/metrics_dashboard.php">
+    <a class="sidebar-link" href="/Eduqueue-Queueing-System/staff-management/admin/metrics_dashboard.php">
         <span class="material-symbols-outlined nav-icon">monitoring</span>
         Performance Metrics
     </a>
     
     <!-- Daily Reports -->
-    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/reports.php">
+    <a class="sidebar-link" href="/Eduqueue-Queueing-System/staff-management/admin/reports.php">
         <span class="material-symbols-outlined nav-icon">analytics</span>
         Daily Reports
     </a>

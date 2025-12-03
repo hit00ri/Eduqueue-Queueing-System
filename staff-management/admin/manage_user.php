@@ -64,6 +64,8 @@
 
 <body class="bg-light">
 
+<?php include __DIR__ . '../../../includes/header.php'; ?>
+
     <?php include '../../includes/sidebar.php'; ?>
 
     <div class="main-content">
@@ -188,7 +190,7 @@
         });
     </script>
 
-
+        <?php include __DIR__ . '../../../includes/footer.php'; ?>
 
 </body>
 
