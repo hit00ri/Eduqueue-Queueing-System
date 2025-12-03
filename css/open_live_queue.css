@@ -1,15 +1,5 @@
-<<<<<<< HEAD
-/* Simplified Live Queue Display CSS */
-* {
-    font-family: Century Gothic;
-}
+open_live_queue.css
 
-/* Header */
-.header {
-    background: linear-gradient(135deg, #003d7a 0%, #004a8f 100%);
-    color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-=======
 /* ================================
    FULLSCREEN NO-SCROLL LAYOUT
 ================================== */
@@ -58,7 +48,6 @@ html, body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     padding: 5px 0;
     flex-shrink: 0;
->>>>>>> bdummy
 }
 
 .header-content {
@@ -66,18 +55,6 @@ html, body {
     margin: 0 auto;
     display: flex;
     align-items: center;
-<<<<<<< HEAD
-    gap: 6px;
-    padding: 0 20px;
-}
-
-.header-logo img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-=======
     gap: 5px;
     padding: 0 10px;
 }
@@ -91,48 +68,10 @@ html, body {
 
 .header-text {
     flex: 1;
->>>>>>> bdummy
 }
 
 .header-title {
     font-weight: 600;
-<<<<<<< HEAD
-    font-size: 1.2rem;
-    margin-bottom: 2px;
-}
-
-.header-subtitle {
-    font-size: 0.8rem;
-    opacity: 0.9;
-    font-style: italic;
-}
-
-.header-system {
-    font-size: 0.75rem;
-    opacity: 0.8;
-}
-
-.header-button {
-    margin-left: auto;
-}
-
-/* Main Display */
-.digital-display {
-    background: rgb(212, 241, 255);
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    margin-bottom: 20px;
-}
-
-.display-header {
-    background: linear-gradient(135deg, #003d7a 0%, #004a8f 100%);
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-=======
     font-size: 0.85rem;
     margin-bottom: 1px;
     line-height: 1;
@@ -182,27 +121,10 @@ html, body {
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
->>>>>>> bdummy
 }
 
 .display-header h3 {
     margin: 0;
-<<<<<<< HEAD
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-/* .auto-refresh-notice {
-    font-size: 0.8rem;
-    opacity: 0.9;
-} */
-
-/* Serving Boxes */
-.now-serving-box, .next-serving-box {
-    padding: 25px;
-    text-align: center;
-    border-bottom: 2px solid #b9b9b9;
-=======
     font-weight: 600;
     font-size: 0.85rem;
     white-space: nowrap;
@@ -256,55 +178,11 @@ html, body {
     margin-bottom: 8px;
     font-size: 0.8rem;
     text-align: center;
->>>>>>> bdummy
 }
 
 .now-serving-label {
     background: #28a768;
     color: white;
-<<<<<<< HEAD
-    display: inline-block;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-}
-
-.next-serving-label {
-    color: #003d7a;
-    font-weight: 600;
-    margin-bottom: 20px;
-    font-size: 1rem;
-}
-
-/* Queue Numbers */
-.queue-number {
-    font-size: 4rem;
-    font-weight: 700;
-    color: #003d7a;
-    margin: 10px 0;
-    line-height: 1;
-}
-
-.next-queue-number {
-    font-size: 3rem;
-    font-weight: 600;
-    color: #004a8f;
-    margin: 10px 0;
-    line-height: 1;
-}
-
-/* Student Info */
-.student-info {
-    font-size: 1.2rem;
-    color: #333;
-    margin: 5px 0;
-}
-
-.student-info.course {
-    font-size: 1rem;
-=======
     padding: 4px 12px;
     border-radius: 15px;
     font-weight: 600;
@@ -367,26 +245,11 @@ html, body {
 
 .student-info.course {
     font-size: 0.75rem;
->>>>>>> bdummy
     color: #666;
     font-style: italic;
 }
 
 .student-info.id {
-<<<<<<< HEAD
-    font-size: 0.9rem;
-    color: #555;
-    margin-top: 3px;
-}
-
-/* Stats Container */
-.stats-container {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    background: #b8dcff;
-    border-bottom: 1px solid #eaeaea;
-=======
     font-size: 0.7rem;
     color: #555;
 }
@@ -402,24 +265,10 @@ html, body {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     flex-shrink: 0;
->>>>>>> bdummy
 }
 
 .stat-card {
     text-align: center;
-<<<<<<< HEAD
-    flex: 1;
-}
-
-.stat-icon {
-    font-size: 1.5rem;
-    color: #003d7a;
-    margin-bottom: 5px;
-}
-
-.stat-number {
-    font-size: 2rem;
-=======
     padding: 3px;
 }
 
@@ -431,23 +280,12 @@ html, body {
 
 .stat-number {
     font-size: 1rem;
->>>>>>> bdummy
     font-weight: 700;
     color: #003d7a;
     line-height: 1;
 }
 
 .stat-label {
-<<<<<<< HEAD
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 5px;
-}
-
-/* Recently Served */
-.recent-served {
-    padding: 20px;
-=======
     font-size: 0.65rem;
     color: #666;
     margin-top: 1px;
@@ -460,21 +298,11 @@ html, body {
     padding: 8px 10px;
     flex-shrink: 0;
     border-top: none;
->>>>>>> bdummy
 }
 
 .recent-served h6 {
     color: #003d7a;
     font-weight: 600;
-<<<<<<< HEAD
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eaeaea;
-    padding-bottom: 10px;
-}
-
-.recent-list {
-    max-height: 200px;
-=======
     margin-bottom: 6px;
     border-bottom: 1px solid #eee;
     padding-bottom: 4px;
@@ -483,7 +311,6 @@ html, body {
 
 .recent-list {
     max-height: 80px;
->>>>>>> bdummy
     overflow-y: auto;
 }
 
@@ -491,13 +318,8 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-<<<<<<< HEAD
-    padding: 10px 0;
-    border-bottom: 1px solid #f0f0f0;
-=======
     padding: 3px 0;
     border-bottom: 1px solid #f5f5f5;
->>>>>>> bdummy
 }
 
 .recent-item:last-child {
@@ -507,72 +329,21 @@ html, body {
 .recent-number {
     background: #e9ecef;
     color: #003d7a;
-<<<<<<< HEAD
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 0.85rem;
-=======
     padding: 1px 4px;
     border-radius: 6px;
     font-weight: 600;
     font-size: 0.65rem;
->>>>>>> bdummy
 }
 
 .recent-name {
     flex: 1;
-<<<<<<< HEAD
-    margin: 0 15px;
-    color: #333;
-=======
     margin: 0 6px;
     color: #333;
     font-size: 0.75rem;
->>>>>>> bdummy
 }
 
 .recent-time {
     color: #666;
-<<<<<<< HEAD
-    font-size: 0.85rem;
-}
-
-/* Action Buttons */
-.action-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 20px;
-}
-
-.btn {
-    padding: 10px 25px;
-    border-radius: 8px;
-    font-weight: 500;
-}
-
-.btn-primary {
-    background: #003d7a;
-    border: none;
-}
-
-.btn-primary:hover {
-    background: #002a52;
-}
-
-.btn-outline-primary {
-    color: #003d7a;
-    border-color: #003d7a;
-}
-
-.btn-outline-primary:hover {
-    background: #003d7a;
-    color: white;
-}
-
-/* Footer */
-=======
     font-size: 0.65rem;
 }
 
@@ -622,33 +393,22 @@ html, body {
 /* ================================
    FOOTER - MINIMAL
 ================================== */
->>>>>>> bdummy
 .footer {
     background: #003d7a;
     color: white;
-<<<<<<< HEAD
     text-align: center;
-<<<<<<< HEAD
-=======
     padding: 4px;
     font-size: 0.6rem;
     flex-shrink: 0;
     margin-top: 5px;
->>>>>>> bdummy
-=======
->>>>>>> 40757fa19415fc0c89b8ff4314e51cffdf2f81c7
     padding: 15px;
     margin-top: 30px;
     font-size: 0.85rem;
 }
 
-<<<<<<< HEAD
-/* Animations */
-=======
 /* ================================
    ANIMATIONS - MINIMAL
 ================================== */
->>>>>>> bdummy
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.7; }
@@ -660,33 +420,13 @@ html, body {
 
 @keyframes flash {
     0%, 100% { transform: scale(1); }
-<<<<<<< HEAD
-    50% { transform: scale(1.02); }
-=======
     50% { transform: scale(1.01); }
->>>>>>> bdummy
 }
 
 .flash {
     animation: flash 2s infinite;
 }
 
-<<<<<<< HEAD
-/* Responsive */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-    
-    .queue-number {
-        font-size: 3rem;
-    }
-    
-    .next-queue-number {
-        font-size: 2.5rem;
-=======
 /* ================================
    RESPONSIVE DESIGN
 ================================== */
@@ -724,57 +464,10 @@ html, body {
     .next-queue-number[style*="color: #808080ff;"] {
         font-size: 0.9rem !important;
         min-height: 35px !important;
->>>>>>> bdummy
     }
     
     .stats-container {
         flex-direction: column;
-<<<<<<< HEAD
-        gap: 20px;
-    }
-    
-    .action-buttons {
-        flex-direction: column;
-    }
-}
-
-/* Waiting List Styles */
-.waiting-list-container {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.waiting-list {
-    margin-top: 15px;
-    padding: 15px;
-    background: #f8f9fa;
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    max-height: 300px;
-    overflow-y: auto;
-    text-align: left;
-}
-
-.waiting-list h6 {
-    font-weight: 600;
-    color: #003d7a;
-    margin-bottom: 10px;
-}
-
-.waiting-list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.waiting-list li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eaeaea;
-}
-
-.waiting-list li:last-child {
-    border-bottom: none;
-=======
         gap: 5px;
         padding: 6px;
     }
@@ -828,5 +521,4 @@ html, body {
         font-size: 0.9rem !important;
         min-height: 30px !important;
     }
->>>>>>> bdummy
 }
