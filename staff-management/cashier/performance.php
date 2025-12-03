@@ -35,6 +35,8 @@ $transactionMetrics = $stmtTransactionMetrics->fetch(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body>
+    <?php include __DIR__ . '/../../includes/header.php'; ?>
+    
     <?php include "../../includes/cashier_sidebar.php"; ?>
 
     <div class="main-content">
@@ -99,6 +101,8 @@ $transactionMetrics = $stmtTransactionMetrics->fetch(PDO::FETCH_ASSOC);
             </div>
         </div>
     </div>
+
+    <?php include "../../includes/footer.php"; ?>
 
     <script src="../../js/auto-refresh.js"></script>
 </body>

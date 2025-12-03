@@ -12,6 +12,8 @@ require_once "../../api/staff-api/cashier/reports-b.php"
 <link rel="stylesheet" href="../../css/reports.css">
 </head>
 <body>
+  <?php include __DIR__ . '/../../includes/header.php'; ?>
+  
 <?php include '../../includes/sidebar.php'; ?>
 
 <div class="main-content">
@@ -38,6 +40,8 @@ require_once "../../api/staff-api/cashier/reports-b.php"
 
   <p class="mt-3"><a href="dashboard.php" class="btn btn-link">Back</a></p>
 </div>
+
+<?php include "../../includes/footer.php"; ?>
 
 <script src="../../js/darkmode.js"></script>
 <script src="../../js/autorefresh.js"></script>
