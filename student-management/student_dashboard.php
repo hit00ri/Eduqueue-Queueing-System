@@ -27,7 +27,7 @@ require_once "../api/student-api/student-dashboard-b.php";
 
 
     <p class="mt-3"><a href="../api/student-api/student-logout-b.php">Logout</a></p>
-<div class="student-dashboard-container">
+<div class="student-dashboard-container" style="max-width: 90%;">
     <div class="container-fluid">
 
         <?php include '../includes/student_sidebar.php'; ?>
@@ -228,8 +228,8 @@ require_once "../api/student-api/student-dashboard-b.php";
             </div>
 
             <!-- Queue Statistics -->
-            <div class="stats-box">
-                <div class="row text-center">
+            <div class="container text-center">
+                <div class="row justify-content-around">
                     <div class="col-6">
                         <div class="h4 text-primary"><?= $waitingCount ?: 0 ?></div>
                         <small class="text-muted">Waiting</small>

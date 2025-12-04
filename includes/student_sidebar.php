@@ -45,7 +45,7 @@
         Help
     </a> -->
 
-    <div class="logout-container" >
+    <div class="logout-container" style="margin-bottom: 20px;">
         <a class="sidebar-link <?= basename($_SERVER['PHP_SELF']) === 'feedback.php' ? 'active' : '' ?>" href="feedback.php">
             <span class="material-symbols-outlined nav-icon">feedback</span>
             Feedback

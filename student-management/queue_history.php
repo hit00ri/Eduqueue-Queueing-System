@@ -38,11 +38,6 @@ require_once "../api/student-api/queue-history-b.php";
                             <?= htmlspecialchars($student['course'] ?? '') ?> - <?= htmlspecialchars($student['year_level'] ?? '') ?>
                         </p>
                     </div>
-                    <div class="col-md-4 text-end">
-                        <a href="student_dashboard.php" class="btn btn-light btn-sm">
-                            <i class="bi bi-arrow-left"></i> Back to Dashboard
-                        </a>
-                    </div>
                 </div>
             </div>
 

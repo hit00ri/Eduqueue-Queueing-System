@@ -157,9 +157,6 @@ require_once "../api/student-api/feedback-b.php";
                             <button type="submit" name="submit_feedback" class="btn btn-primary btn-lg">
                                 <i class="bi bi-send-check"></i> Submit Feedback
                             </button>
-                            <a href="student_dashboard.php" class="btn btn-outline-secondary">
-                                <i class="bi bi-arrow-left"></i> Back to Dashboard
-                            </a>
                         </div>
                     </form>
                     
