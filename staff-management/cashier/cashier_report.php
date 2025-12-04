@@ -38,12 +38,10 @@ require_once "../../api/staff-api/cashier/reports-b.php"
     </table>
   </div>
 
-  <p class="mt-3"><a href="dashboard.php" class="btn btn-link">Back</a></p>
 </div>
 
 <?php include "../../includes/footer.php"; ?>
 
-<script src="../../js/darkmode.js"></script>
 <script src="../../js/autorefresh.js"></script>
 </body>
 </html>
