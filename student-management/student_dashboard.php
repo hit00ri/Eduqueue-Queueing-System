@@ -48,8 +48,8 @@ require_once "../api/student-api/student-dashboard-b.php";
                 </div>
             <?php endif; ?>
 
-            <!-- Payment Slip Modal -->
-            <div class="modal fade" id="paymentSlipModal" tabindex="-1" aria-labelledby="paymentSlipModalLabel" aria-hidden="true">
+            <!-- Payment Slip Modal (non-blocking: no backdrop) -->
+            <div class="modal fade" id="paymentSlipModal" data-bs-backdrop="false" tabindex="-1" aria-labelledby="paymentSlipModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -279,5 +279,28 @@ require_once "../api/student-api/student-dashboard-b.php";
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/auto-refresh.js"></script>
+    <script>
+        // Initialize the payment slip modal as non-blocking so background remains interactive.
+        (function () {
+            var modalEl = document.getElementById('paymentSlipModal');
+            if (!modalEl) return;
+
+            // Create a Modal instance with focus disabled to avoid focus trapping.
+            var modalInstance = new bootstrap.Modal(modalEl, {
+                backdrop: false,
+                focus: false
+            });
+
+            // When the modal is shown, remove the `modal-open` class so the page stays scrollable and interactive.
+            modalEl.addEventListener('shown.bs.modal', function () {
+                document.body.classList.remove('modal-open');
+            });
+
+            // Optional: when hiding, ensure body class cleaned up (no-op but safe).
+            modalEl.addEventListener('hidden.bs.modal', function () {
+                document.body.classList.remove('modal-open');
+            });
+        })();
+    </script>
 </body>
 </html>
