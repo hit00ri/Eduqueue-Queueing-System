@@ -51,7 +51,22 @@
 
                     <div class="mb-3">
                         <label>Year Level: </label>
-                        <input type="text" name="year_level" class="form-control" required>
+                        <div class="input-group">
+                            <select name="year_level" id="yearLevelSelect" class="form-control" required>
+                                <option value="" disabled selected>Select Year Level</option>
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year">3rd Year</option>
+                                <option value="4th Year">4th Year</option>
+                                <option value="others">others..</option>
+                            </select>
+                            <span class="input-group-text" style="padding-right: 12px; padding-left: 12px;">
+                                ▼
+                            </span>
+                        </div>
+                        <!-- Text input that appears only when "others..." is selected -->
+                        <input type="text" name="other_year" id="otherYearInput" class="form-control mt-2" 
+                            placeholder="Please specify year level..." style="display: none;">
                     </div>
 
                     <div class="mb-3">
@@ -71,6 +86,34 @@
                 </form>
             </div>
         </div>
+
+        <script>
+document.getElementById('yearLevelSelect').addEventListener('change', function() {
+    const otherInput = document.getElementById('otherYearInput');
+    
+    if (this.value === 'others') {
+        otherInput.style.display = 'block';
+        otherInput.required = true;
+        otherInput.focus();
+    } else {
+        otherInput.style.display = 'none';
+        otherInput.required = false;
+        otherInput.value = '';
+    }
+});
+
+// Handle form submission
+document.querySelector('form').addEventListener('submit', function(e) {
+    const yearSelect = document.getElementById('yearLevelSelect');
+    const otherInput = document.getElementById('otherYearInput');
+    
+    if (yearSelect.value === 'others' && !otherInput.value.trim()) {
+        e.preventDefault();
+        alert('Please specify the year level');
+        otherInput.focus();
+    }
+});
+</script>
     </body>
 
 </html>

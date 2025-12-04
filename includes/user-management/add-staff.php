@@ -60,7 +60,7 @@ if (isset($_POST['save'])) {
                     </div>
 
                     <button class="btn btn-success" name="save">Save</button>
-                    <a href="user_management.php" class="btn btn-secondary">Back</a>
+                    <a href="../../staff-management/admin/manage_user.php" class="btn btn-secondary">Back</a>
                 </form>
                 
             </div>
