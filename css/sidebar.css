@@ -1,14 +1,20 @@
 /* Sidebar container */
 .sidebar {
+    --sidebar-width: 240px;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height));
     display: flex;
     flex-direction: column;
     justify-content: space-between;  /* Push last item to the bottom */
-
-    height: 100%;
-    max-height: 100vh;
     background: #f8f9fa;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.08);
+    transition: all 0.18s ease;
+    padding: 18px;
+    box-sizing: border-box;
+    z-index: 900;
 }
 
 
