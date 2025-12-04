@@ -167,7 +167,7 @@
         </div>
       </div>
 
-      <p class="mt-3"><a href="admin_dashboard.php" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Back to Dashboard</a></p>
+      
     </div>
 
 

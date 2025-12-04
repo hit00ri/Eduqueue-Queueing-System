@@ -47,8 +47,11 @@ if (isset($_POST['update'])) {
 <head>
     <title>Edit User</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/common.css">
 </head>
 <body class="bg-light">
+
+<?php include __DIR__ . '/../../includes/header.php'; ?>
 
 <div class="container mt-5">
 
@@ -83,6 +86,8 @@ if (isset($_POST['update'])) {
         </form>
     </div>
 </div>
+
+<?php include __DIR__ . '/../../includes/footer.php'; ?>
 
 </body>
 </html>

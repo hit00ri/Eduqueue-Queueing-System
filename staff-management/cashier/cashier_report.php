@@ -16,7 +16,7 @@ require_once "../../api/staff-api/cashier/reports-b.php"
   
 <?php include '../../includes/cashier_sidebar.php'; ?>
 
-<div class="main-content">
+<div class="main-content" style="margin-left: 240px">
   <h1><i class="bi bi-bar-chart nav-icon"></i> Reports</h1>
   <p>Served: <strong><?= $servedCount ?></strong> | Waiting: <strong><?= $waitingCount ?></strong></p>
 

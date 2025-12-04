@@ -17,9 +17,10 @@
     <?php endif; ?>
 
     <div class="admin-sidebar-profile">
-        <a class="nav-link" href="profile.php">
-        <span class="material-symbols-outlined">person_2</span>
-        <h3>Admin</h3>
+        <h3 class="mb-4 sidebar-title">
+            <span class="material-symbols-outlined">person_2</span>
+        Admin
+        </h3>
     </div>
 
 

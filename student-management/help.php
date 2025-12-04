@@ -71,9 +71,12 @@
                 </div>
             </div>
         </div>
-        <a href="student_dashboard.php" class="btn btn-outline-secondary">
-            <i class="bi bi-arrow-left"></i> Back to Dashboard
-        </a>
+        <br>
+        <div class=" d-flex justify-content-end">
+            <a href="student_dashboard.php" class="btn btn-outline-secondary text-white bg-primary">
+                <i class="bi bi-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

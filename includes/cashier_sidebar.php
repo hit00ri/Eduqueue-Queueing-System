@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../../css/sidebar.css">
 
 <div class="sidebar fade-in">
-    <h4 class="mb-4 sidebar-title">
+    <h3 class="mb-4 sidebar-title">
         <span class="material-symbols-outlined nav-icon">dashboard</span>
         Cashier
-    </h4>
+    </h3>
 
     <!-- Debug: Show session status -->
     <?php if (getenv('APP_DEBUG') || isset($_GET['debug'])): ?>
