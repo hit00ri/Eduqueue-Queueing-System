@@ -45,12 +45,6 @@
         <span class="material-symbols-outlined nav-icon">list_alt</span>
         Manage Users
     </a>
-    
-    <!-- Advanced Reports (Admin) -->
-    <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/reports.php">
-        <span class="material-symbols-outlined nav-icon">assessment</span>
-        Monitoring Dashboard
-    </a>
 
     <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/transaction_history.php">
         <span class="material-symbols-outlined nav-icon">assessment</span>

@@ -29,7 +29,8 @@ require_once "../api/staff-api/open-live-queue-b.php";
         </div>
 
         <div class="header-button">
-            <button class="btn btn-outline-danger" onclick="location.href='../index.php'">
+
+            <button class="btn btn-primary" onclick="location.href='../index.php'">
                 <i class="bi bi-arrow-left"></i> Back to Login
             </button>
         </div>

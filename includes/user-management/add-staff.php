@@ -23,52 +23,47 @@ if (isset($_POST['save'])) {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Add User</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-</head>
-<body class="bg-light">
+    <head>
+        <title>Add User</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    </head>
+    <body class="bg-light">
 
-<div class="container mt-5">
-    <div class="card p-4 shadow-sm">
-        <h4>Add User</h4><hr>
+        <div class="container mt-5">
+            <div class="card p-4 shadow-sm">
+                <h4>Add User</h4><hr>
 
-           <!-- The form below posts back to this same script. Fields are
-               required at the HTML level, but server-side validation is
-               still recommended. -->
-           <form method="POST">
-            <div class="mb-3">
-                <label>Name: </label>
-                <input type="text" name="name" class="form-control" required>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label>Name: </label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Username: </label>
+                        <input type="text" name="username" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Password: </label>
+                        <input type="text" name="password" class="form-control" minlength="3" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>User Role</label>
+                            <select name="role" class="form-control">
+                                <option>Cashier</option>
+                            </select>
+                    </div>
+
+                    <button class="btn btn-success" name="save">Save</button>
+                    <a href="user_management.php" class="btn btn-secondary">Back</a>
+                </form>
+                
             </div>
-
-            <div class="mb-3">
-                <label>Username: </label>
-                <input type="text" name="username" class="form-control" required>
-            </div>
-
-            
-                <!-- Email input removed -->
-
-            <div class="mb-3">
-                <label>Password: </label>
-                <input type="text" name="password" class="form-control" minlength="3" required>
-            </div>
-
-            <div class="mb-3">
-                <label>User Role</label>
-                    <select name="role" class="form-control">
-                        <option>Cashier</option>
-                    </select>
-            </div>
-
-            <!-- Submit button: 'save' is used by PHP to detect submission -->
-            <button class="btn btn-success" name="save">Save</button>
-            <a href="user_management.php" class="btn btn-secondary">Back</a>
-        </form>
-    </div>
-</div>
-</body>
+        </div>
+    </body>
 </html>

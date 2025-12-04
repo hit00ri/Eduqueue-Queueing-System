@@ -274,7 +274,7 @@ require_once "../api/student-api/student-dashboard-b.php";
         </div>
     </div>
 </div>
-    <?php include "../includes/footer.php"; ?>
+    <?php include __DIR__ . '/../includes/footer.php'; ?>
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
