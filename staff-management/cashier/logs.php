@@ -23,7 +23,7 @@ $queueLogs = $stmtQueue->fetchAll(PDO::FETCH_ASSOC);
     
     <?php include "../../includes/cashier_sidebar.php"; ?>
 
-    <div class="main-content">
+    <div class="main-content" style="margin-left: 240px">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h1>
                 <span class="material-symbols-outlined" style="vertical-align:middle">update</span>
