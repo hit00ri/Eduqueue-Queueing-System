@@ -7,7 +7,7 @@
 <div class="sidebar fade-in">
     <h4 class="mb-4 sidebar-title">
         <span class="material-symbols-outlined nav-icon">dashboard</span>
-        Queueing System
+        Cashier
     </h4>
 
     <!-- Debug: Show session status -->

@@ -30,12 +30,6 @@ $queueLogs = $stmtQueue->fetchAll(PDO::FETCH_ASSOC);
                 Activity Logs
             </h1>
 
-            <div>
-                <a href="performance.php" class="btn btn-outline-secondary me-2">
-                    <span class="material-symbols-outlined" style="vertical-align:middle">analytics</span>
-                    View Performance
-                </a>
-            </div>
         </div>
 
         <!-- Option 1: Logs from Queue Table -->

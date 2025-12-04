@@ -46,12 +46,6 @@ $transactionMetrics = $stmtTransactionMetrics->fetch(PDO::FETCH_ASSOC);
                 My Performance
             </h1>
 
-            <div>
-                <a href="logs.php" class="btn btn-outline-secondary me-2">
-                    <span class="material-symbols-outlined" style="vertical-align:middle">update</span>
-                    View Activity Logs
-                </a>
-            </div>
         </div>
 
         <!-- Performance Metrics -->
