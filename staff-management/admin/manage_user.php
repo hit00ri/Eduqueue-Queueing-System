@@ -165,7 +165,7 @@
                                             </td>
                                             <td><?= htmlspecialchars($user['username']) ?></td>
                                             <td>
-                                                <span class="badge <?= $user['role'] === 'admin' ? 'badge-admin' : 'badge-cashier' ?> text-white">
+                                                <span class="badge <?= $user['role'] === 'admin' ? 'badge-admin' : 'badge-cashier' ?> text-white" >
                                                     <i class="bi bi-<?= $user['role'] === 'admin' ? 'shield-check' : 'cash' ?> me-1"></i>
                                                     <?= htmlspecialchars(ucfirst($user['role'])) ?>
                                                 </span>

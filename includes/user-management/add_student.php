@@ -26,9 +26,12 @@
     <head>
         <title>Add User</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/common.css">
     </head>
 
     <body class="bg-light">
+
+    <?php include __DIR__ . '/../../includes/header.php'; ?>
 
         <div class="container mt-5">
             <div class="card p-4 shadow-sm">
@@ -114,6 +117,7 @@ document.querySelector('form').addEventListener('submit', function(e) {
     }
 });
 </script>
+<?php include __DIR__ . '/../../includes/footer.php'; ?>
     </body>
 
 </html>
