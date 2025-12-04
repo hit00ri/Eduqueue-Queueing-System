@@ -58,9 +58,9 @@
         <title>User Management | Eduqueue</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="/Eduqueue-Queueing-System/css/common.css">
-        <link rel="stylesheet" href="/Eduqueue-Queueing-System/css/user_management.css">
-        <link rel="stylesheet" href="../../css/manage_user.css">
+        <link rel="stylesheet" href="/Eduqueue-Queueing-System/css/common.css?v=<?= time() ?>">
+        <link rel="stylesheet" href="/Eduqueue-Queueing-System/css/user_management.css?v=<?= time() ?>">
+        <link rel="stylesheet" href="/Eduqueue-Queueing-System/css/manage_user.css?v=<?= time() ?>">
     </head>
 
     <body>
