@@ -24,15 +24,6 @@
                     <span class="material-symbols-outlined" style="vertical-align:middle">admin_panel_settings</span>
                     Admin Performance Dashboard
                 </h1>
-                <div>
-                    <a href="admin_reports.php" class="btn btn-outline-primary me-2">
-                        <span class="material-symbols-outlined" style="vertical-align:middle">assessment</span>
-                        Advanced Reports
-                    </a>
-                    <a href="../staff-management/admin/admin_dashboard.php" class="btn btn-outline-secondary">
-                        Back to Queue
-                    </a>
-                </div>
             </div>
 
             <!-- Real-time KPIs -->

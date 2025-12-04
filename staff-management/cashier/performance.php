@@ -51,11 +51,6 @@ $transactionMetrics = $stmtTransactionMetrics->fetch(PDO::FETCH_ASSOC);
                     <span class="material-symbols-outlined" style="vertical-align:middle">update</span>
                     View Activity Logs
                 </a>
-
-                <a href="../../api/staff-api/cashier/logout.php" class="btn btn-outline-danger">
-                    <span class="material-symbols-outlined" style="vertical-align:middle">logout</span>
-                    Logout
-                </a>
             </div>
         </div>
 

@@ -35,11 +35,6 @@ $queueLogs = $stmtQueue->fetchAll(PDO::FETCH_ASSOC);
                     <span class="material-symbols-outlined" style="vertical-align:middle">analytics</span>
                     View Performance
                 </a>
-
-                <a href="../../api/staff-api/cashier/logout.php" class="btn btn-outline-danger">
-                    <span class="material-symbols-outlined" style="vertical-align:middle">logout</span>
-                    Logout
-                </a>
             </div>
         </div>
 
