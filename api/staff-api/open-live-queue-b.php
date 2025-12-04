@@ -34,7 +34,7 @@
     
     // Fetch recent served (last 3)
     $recentServed = $conn->query("
-        SELECT q.queue_number, s.name, q.time_out
+        SELECT q.queue_number, s.student_id, q.time_out
         FROM queue q 
         JOIN students s ON q.student_id = s.student_id
         WHERE q.status = 'served' AND DATE(q.time_in) = CURDATE()

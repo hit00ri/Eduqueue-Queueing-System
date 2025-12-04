@@ -149,7 +149,7 @@
                                     <?php foreach ($recentServed as $recent): ?>
                                         <div class="recent-item">
                                             <span class="recent-number">#<?= $recent['queue_number'] ?></span>
-                                            <span class="recent-name"><?= htmlspecialchars($recent['name']) ?></span>
+                                            <span class="recent-name"><?= htmlspecialchars($recent['student_id']) ?></span>
                                             <span class="recent-time"><?= date('h:i A', strtotime($recent['time_out'])) ?></span>
                                         </div>
                                     <?php endforeach; ?>

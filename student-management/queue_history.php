@@ -19,7 +19,7 @@ require_once "../api/student-api/queue-history-b.php";
     <?php include "../includes/header.php"; ?>
     <?php include '../includes/student_sidebar.php'; ?>
     
-    <a href="help.php" class="help-button position-fixed top-0 end-0 m-3 pulse">
+    <a href="help.php" class="help-button position-fixed top-10 end-0 m-3 pulse">
         <i class="bi bi-question-lg"></i>
     </a>
 
