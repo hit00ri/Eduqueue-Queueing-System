@@ -18,6 +18,11 @@ require_once "../../api/staff-api/cashier/reports-b.php"
 
 <div class="main-content" style="margin-left: 240px">
   <h1><i class="bi bi-bar-chart nav-icon"></i> Reports</h1>
+  <div class="mt-4">
+    <a href="cashier_generate_report_fpdf.php" class="btn btn-primary">
+        <i class="bi bi-file-earmark-pdf"></i> Generate PDF Report
+    </a>
+</div>
   <p>Served: <strong><?= $servedCount ?></strong> | Waiting: <strong><?= $waitingCount ?></strong></p>
 
   <div class="reports-table card">
