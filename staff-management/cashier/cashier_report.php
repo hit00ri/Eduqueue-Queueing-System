@@ -14,7 +14,7 @@ require_once "../../api/staff-api/cashier/reports-b.php"
 <body>
   <?php include __DIR__ . '/../../includes/header.php'; ?>
   
-<?php include '../../includes/sidebar.php'; ?>
+<?php include '../../includes/cashier_sidebar.php'; ?>
 
 <div class="main-content">
   <h1><i class="bi bi-bar-chart nav-icon"></i> Reports</h1>

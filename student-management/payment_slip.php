@@ -23,7 +23,7 @@ require_once "../api/student-api/payment-slip-b.php";
         <i class="bi bi-question-lg"></i>
     </a>
 
-    <div class="container mt-4">
+    <div class="container mt-4" style="margin-left: 30%; max-width: 50%;">
         <div class="payment-slip-container" >
             <!-- Header -->
             <div class="payment-slip-header text-center">
@@ -53,17 +53,17 @@ require_once "../api/student-api/payment-slip-b.php";
                     <h5 class="mb-3"><i class="bi bi-person-badge"></i> Student Information</h5>
                     
                     <div class="mb-3">
-                        <label class="form-label"><strong>NAME:</strong></label>
+                        <label class="form-label" style="font-size: 12px;"><strong>NAME:</strong></label>
                         <input type="text" class="form-control" value="<?= htmlspecialchars($student['name']) ?>" readonly>
                     </div>
                     
                     <div class="mb-3">
-                        <label class="form-label"><strong>ID NO:</strong></label>
+                        <label class="form-label" style="font-size: 12px;"><strong>ID NO:</strong></label>
                         <input type="text" class="form-control" value="<?= htmlspecialchars($student['student_id']) ?>" readonly>
                     </div>
                     
                     <div class="mb-3">
-                        <label class="form-label"><strong>COURSE & YEAR:</strong></label>
+                        <label class="form-label" style="font-size: 12px;"><strong>COURSE & YEAR:</strong></label>
                         <input type="text" class="form-control" value="<?= htmlspecialchars($student['course'] ?? '') ?> - <?= htmlspecialchars($student['year_level'] ?? '') ?>" readonly>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ require_once "../api/student-api/payment-slip-b.php";
                     <h5 class="mb-3"><i class="bi bi-cash-coin"></i> Payment Details</h5>
                     
                     <div class="mb-3">
-                        <label for="amount" class="form-label"><strong>AMOUNT:</strong></label>
+                        <label for="amount" class="form-label" style="font-size: 12px;"><strong>AMOUNT:</strong></label>
                         <div class="input-group amount-input">
                             <span class="input-group-text">₱</span>
                             <?php
@@ -92,7 +92,7 @@ require_once "../api/student-api/payment-slip-b.php";
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label"><strong>IN PAYMENT OF:</strong></label>
+                        <label class="form-label" style="font-size: 12px;"><strong>IN PAYMENT OF:</strong></label>
                         <div class="payment-options">
                             <?php
                             // Get payment_for from POST or session
@@ -103,25 +103,25 @@ require_once "../api/student-api/payment-slip-b.php";
                             <div class="form-check">
                                 <input type="checkbox" name="payment_for[]" value="tuition" class="form-check-input"
                                     <?= (in_array('tuition', $paymentFor)) ? 'checked' : '' ?>>
-                                <label class="form-check-label">Tuition Fee</label>
+                                <label class="form-check-label fs-6">Tuition Fee</label>
                             </div>
                             
                             <div class="form-check">
                                 <input type="checkbox" name="payment_for[]" value="transcript" class="form-check-input"
                                     <?= (in_array('transcript', $paymentFor)) ? 'checked' : '' ?>>
-                                <label class="form-check-label">Transcript</label>
+                                <label class="form-check-label fs-6">Transcript</label>
                             </div>
                             
                             <div class="form-check">
                                 <input type="checkbox" name="payment_for[]" value="overdue" class="form-check-input"
                                     <?= (in_array('overdue', $paymentFor)) ? 'checked' : '' ?>>
-                                <label class="form-check-label">Overdue</label>
+                                <label class="form-check-labe fs-6">Overdue</label>
                             </div>
                             
                             <div class="form-check">
                                 <input type="checkbox" name="payment_for[]" value="others" class="form-check-input" id="others-checkbox"
                                     <?= (in_array('others', $paymentFor)) ? 'checked' : '' ?>>
-                                <label class="form-check-label">Others (Please specify)</label>
+                                <label class="form-check-label fs-6">Others (Please specify)</label>
                             </div>
                             
                             <input type="text" 
@@ -146,9 +146,6 @@ require_once "../api/student-api/payment-slip-b.php";
                     <button type="submit" name="submit_payment_slip" class="btn btn-primary btn-lg">
                         <i class="bi bi-check-circle"></i> Submit Payment Slip & Proceed to Queue
                     </button>
-                    <a href="student_dashboard.php" class="btn btn-outline-secondary">
-                        <i class="bi bi-arrow-left"></i> Back to Dashboard
-                    </a>
                 </div>
             </form>
 

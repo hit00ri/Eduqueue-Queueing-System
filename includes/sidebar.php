@@ -55,7 +55,7 @@
         <a class="sidebar-link" href="../../api/student-api/student-logout-b.php">
             <span class="material-symbols-outlined">logout</span>
             Logout
-        </a> 
+        </a>
     </div>
 </div>
 

@@ -1,7 +1,6 @@
 <?php
-    require_once "../../db/config.php";
-
-    require_once __DIR__ . "/../auth.php";
+    require_once __DIR__ . "/../../../db/config.php";
+    require_once __DIR__ . "/../../auth.php";
 
     // Get queue data
     $data = $conn->query("

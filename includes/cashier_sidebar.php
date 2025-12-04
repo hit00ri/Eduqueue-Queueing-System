@@ -42,6 +42,11 @@
        View Live queue
     </a>
 
+    <a class="sidebar-link" href="cashier_report.php">
+        <span class="material-symbols-outlined">bar_chart</span>
+        Reports
+    </a>
+
     <div class="logout-container">
         <a class="sidebar-link" href="../../api/student-api/student-logout-b.php">
             <span class="material-symbols-outlined">logout</span>
