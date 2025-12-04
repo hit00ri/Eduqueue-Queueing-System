@@ -1,42 +1,42 @@
 <?php
-require_once __DIR__ . '/../../db/config.php';
-require_once __DIR__ . '/../../api/auth.php';
-// api/auth.php already calls ensure_logged_in()
+  require_once __DIR__ . '/../../db/config.php';
+  require_once __DIR__ . '/../../api/auth.php';
+  // api/auth.php already calls ensure_logged_in()
 
-include "../../api/staff-api/admin/dashboard-queries.php";
+  include "../../api/staff-api/admin/dashboard-queries.php";
 ?>
 <!doctype html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Dashboard - Queuing</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dashboard - Queuing</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/common.css">
-  <link rel="stylesheet" href="../../css/dashboard.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
-</head>
+  </head>
 
-<body>
-  <?php include __DIR__ . '/../../includes/header.php'; ?>
+  <body>
+    <?php include __DIR__ . '/../../includes/header.php'; ?>
 
-  <?php include '../../includes/sidebar.php'; ?>
+    <?php include '../../includes/sidebar.php'; ?>
 
-  <div class="main-content">
+    <div class="main-content">
 
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h1>
-        <span class="material-symbols-outlined" style="vertical-align:middle">dashboard</span>
-        Dashboard
-      </h1>
-    </div>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>
+          <span class="material-symbols-outlined" style="vertical-align:middle">dashboard</span>
+          Dashboard
+        </h1>
+      </div>
 
-    <div class="container-fluid mb-4">
-      <div class="row g-3">
-        <?php
+      <div class="container-fluid mb-4">
+        <div class="row g-3">
+          <?php
           // Prepare metrics with safe defaults
           $m = [
             ['label' => 'Total Users', 'value' => (int) ($total_users ?? 0), 'color' => 'primary'],
@@ -47,8 +47,8 @@ include "../../api/staff-api/admin/dashboard-queries.php";
             ['label' => 'Voided Today', 'value' => (int) ($voided_today ?? 0), 'color' => 'danger'],
             ['label' => 'Revenue Today', 'value' => '₱' . number_format((float) ($revenue_today ?? 0), 2), 'color' => 'dark'],
             ['label' => 'Transactions Today', 'value' => (int) ($transactions_today ?? 0), 'color' => 'primary'],
-            ['label' => 'Avg Wait', 'value' => (round((float) ($avg_wait_today ?? 0),2) . 's'), 'color' => 'info'],
-            ['label' => 'Avg Service', 'value' => (round((float) ($avg_service_today ?? 0),2) . 's'), 'color' => 'info'],
+            ['label' => 'Avg Wait', 'value' => (round((float) ($avg_wait_today ?? 0), 2) . 's'), 'color' => 'info'],
+            ['label' => 'Avg Service', 'value' => (round((float) ($avg_service_today ?? 0), 2) . 's'), 'color' => 'info'],
           ];
 
           foreach ($m as $metric): ?>
@@ -65,21 +65,21 @@ include "../../api/staff-api/admin/dashboard-queries.php";
               </div>
             </div>
           <?php endforeach; ?>
+        </div>
       </div>
+
+      <h3 style="margin-left:20px;">Served vs Voided (Daily)</h3>
+      <canvas id="servedVoidedChart" style="width:100%; max-height:400px;"></canvas>
+
+
     </div>
 
-    <h3 style="margin-left:20px;">Served vs Voided (Daily)</h3>
-    <canvas id="servedVoidedChart" style="width:100%; max-height:400px;"></canvas>
+    <?php include __DIR__ . '/../../includes/footer.php'; ?>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../js/served_voided_chart.js"></script>
+    <!-- <script src="../js/autorefresh.js"></script> -->
 
-  </div>
-
-<?php include __DIR__ . '/../../includes/footer.php'; ?>
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="../../js/served_voided_chart.js"></script>
-  <!-- <script src="../js/autorefresh.js"></script> -->
-
-</body>
+  </body>
 
 </html>

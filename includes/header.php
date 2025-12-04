@@ -17,21 +17,18 @@
     </div>
 </header>
 <script>
-// On bfcache restore or back/forward navigation, force a reload so the
-// server re-validates session state. Some browsers don't always set
-// `event.persisted` for forward navigations, so also check the
-// Navigation Timing API for a back_forward navigation type.
+
 window.addEventListener('pageshow', function (event) {
     try {
         var navEntries = performance.getEntriesByType && performance.getEntriesByType('navigation');
         var navType = (navEntries && navEntries.length) ? navEntries[0].type : null;
         var isBackForward = event.persisted || navType === 'back_forward';
         if (isBackForward) {
-            // Reload from server so auth checks run (no-cache headers also help).
+
             window.location.reload();
         }
     } catch (e) {
-        // Fallback: if something goes wrong, be conservative and reload when persisted is true
+        
         if (event.persisted) {
             window.location.reload();
         }

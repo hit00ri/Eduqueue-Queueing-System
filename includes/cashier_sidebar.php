@@ -1,5 +1,5 @@
 <?php
-require_once "../../api/staff-api/cashier/open-live-queue-C-b.php";
+    require_once "../../api/staff-api/cashier/open-live-queue-C-b.php";
 ?>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 <link rel="stylesheet" href="../../css/sidebar.css">

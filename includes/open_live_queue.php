@@ -1,8 +1,9 @@
 <?php
-require_once "../api/staff-api/open-live-queue-b.php";
+    require_once "../api/staff-api/open-live-queue-b.php";
 ?>
 <!doctype html>
 <html>
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -15,33 +16,33 @@ require_once "../api/staff-api/open-live-queue-b.php";
 
     <body style="background-color: #f0f8ff;">
 
-<header class="header">
-    <div class="header-content">
+        <header class="header">
+            <div class="header-content">
 
-        <div class="header-logo">
-            <img src="../img/SLC LOGO.png" alt="slc logo" />
-        </div>
+                <div class="header-logo">
+                    <img src="../img/SLC LOGO.png" alt="slc logo" />
+                </div>
 
-        <div class="header-text">
-            <p class="header-title">Saint Louis College</p>
-            <p class="header-subtitle">City of San Fernando, La Union</p>
-            <p class="header-system">Digital Queue Display Panel</p>
-        </div>
+                <div class="header-text">
+                    <p class="header-title">Saint Louis College</p>
+                    <p class="header-subtitle">City of San Fernando, La Union</p>
+                    <p class="header-system">Digital Queue Display Panel</p>
+                </div>
 
-        <div class="header-button">
+                <div class="header-button">
 
-            <button class="btn btn-primary" onclick="location.href='../index.php'">
-                <i class="bi bi-arrow-left"></i> Back to Login
-            </button>
-        </div>
+                    <button class="btn btn-primary" onclick="location.href='../index.php'">
+                        <i class="bi bi-arrow-left"></i> Back to Login
+                    </button>
+                </div>
 
-        </div>
-</header>
+            </div>
+        </header>
 
         <div class="container mt-4">
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-xl-8">
-                    
+
                     <div class="digital-display">
                         <div class="display-header">
                             <h3><i class="bi bi-display"></i> EDUQUEUE LIVE DISPLAY</h3>
@@ -49,7 +50,7 @@ require_once "../api/staff-api/open-live-queue-b.php";
                                 <i class="bi bi-arrow-clockwise"></i> Refresh Display
                             </button>
                         </div>
-                        
+
                         <!-- Serving Container - Two Columns -->
                         <div class="serving-container">
                             <!-- LEFT COLUMN: Next to Serve -->
@@ -57,7 +58,7 @@ require_once "../api/staff-api/open-live-queue-b.php";
                                 <div class="next-serving-label">
                                     <i class="bi bi-chevron-right"></i> NEXT TO SERVE
                                 </div>
-                                
+
                                 <?php if ($nextServing): ?>
                                     <div class="next-queue-number">
                                         <?= $nextServing['queue_number'] ?>
@@ -77,13 +78,13 @@ require_once "../api/staff-api/open-live-queue-b.php";
                                     </div>
                                 <?php endif; ?>
                             </div>
-                            
+
                             <!-- RIGHT COLUMN: Now Serving -->
                             <div class="now-serving-column">
                                 <div class="now-serving-label blink">
                                     <i class="bi bi-megaphone"></i> NOW SERVING
                                 </div>
-                                
+
                                 <?php if ($nowServing): ?>
                                     <div class="queue-number flash">
                                         <?= $nowServing['queue_number'] ?>
@@ -104,7 +105,7 @@ require_once "../api/staff-api/open-live-queue-b.php";
                                 <?php endif; ?>
                             </div>
                         </div>
-                        
+
                         <!-- Stats Row -->
                         <div class="stats-container">
                             <div class="stat-card" id="waiting-stat-card" style="cursor:pointer;">
@@ -116,7 +117,7 @@ require_once "../api/staff-api/open-live-queue-b.php";
                                     <div class="stat-label">Waiting</div>
                                 </div>
                             </div>
-                            
+
                             <div class="stat-card" id="served-stat-card" style="cursor:pointer;">
                                 <div class="stat-icon">
                                     <i class="bi bi-check-circle"></i>
@@ -126,7 +127,7 @@ require_once "../api/staff-api/open-live-queue-b.php";
                                     <div class="stat-label">Served</div>
                                 </div>
                             </div>
-                            
+
                             <div class="stat-card">
                                 <div class="stat-icon">
                                     <i class="bi bi-door-open"></i>
@@ -137,23 +138,23 @@ require_once "../api/staff-api/open-live-queue-b.php";
                                 </div>
                             </div>
                         </div>
-                        
-                        <?php if (!empty($recentServed)): ?>
-                        <div class="recent-served">
-                            <h6 id="recent-toggle" style="cursor:pointer;">
-                                <i class="bi bi-clock-history"></i> RECENTLY SERVED
-                            </h6>
 
-                            <div class="recent-list" id="recent-list">
-                                <?php foreach ($recentServed as $recent): ?>
-                                    <div class="recent-item">
-                                        <span class="recent-number">#<?= $recent['queue_number'] ?></span>
-                                        <span class="recent-name"><?= htmlspecialchars($recent['name']) ?></span>
-                                        <span class="recent-time"><?= date('h:i A', strtotime($recent['time_out'])) ?></span>
-                                    </div>
-                                <?php endforeach; ?>
+                        <?php if (!empty($recentServed)): ?>
+                            <div class="recent-served">
+                                <h6 id="recent-toggle" style="cursor:pointer;">
+                                    <i class="bi bi-clock-history"></i> RECENTLY SERVED
+                                </h6>
+
+                                <div class="recent-list" id="recent-list">
+                                    <?php foreach ($recentServed as $recent): ?>
+                                        <div class="recent-item">
+                                            <span class="recent-number">#<?= $recent['queue_number'] ?></span>
+                                            <span class="recent-name"><?= htmlspecialchars($recent['name']) ?></span>
+                                            <span class="recent-time"><?= date('h:i A', strtotime($recent['time_out'])) ?></span>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
                             </div>
-                        </div>
                         <?php endif; ?>
                     </div>
 
@@ -172,7 +173,7 @@ require_once "../api/staff-api/open-live-queue-b.php";
                             </ul>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -183,4 +184,5 @@ require_once "../api/staff-api/open-live-queue-b.php";
         <script src="../js/open_live_queue.js"></script>
 
     </body>
+
 </html>
