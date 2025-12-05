@@ -26,7 +26,7 @@ require_once __DIR__ . '/../../api/staff-api/cashier/cashier-pdf.php'
         background: #f8f9fa;
     }
     .btn-generate {
-        background: linear-gradient(135deg, #003d7a, #0056b3);
+        background: linear-gradient(135deg, #9cccfcff, #9ccafcff);
         color: white;
         border: none;
         padding: 12px 40px;
@@ -36,7 +36,7 @@ require_once __DIR__ . '/../../api/staff-api/cashier/cashier-pdf.php'
         font-weight: bold;
     }
     .btn-generate:hover {
-        background: linear-gradient(135deg, #0056b3, #003d7a);
+        background: linear-gradient(135deg, #78aee7ff, #a8c8e9ff);
         transform: translateY(-2px);
         box-shadow: 0 5px 15px rgba(0,61,122,0.3);
     }
