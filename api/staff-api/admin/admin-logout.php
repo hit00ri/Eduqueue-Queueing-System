@@ -5,7 +5,7 @@
 		session_start();
 	}
 
-	// Clear session data
+	// Clear session data (including session token to prevent bfcache bypass)
 	$_SESSION = [];
 	session_unset();
 

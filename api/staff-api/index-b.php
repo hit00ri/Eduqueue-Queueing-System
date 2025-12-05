@@ -45,6 +45,8 @@
         if ($user && $password === $user['password']) {
             // Staff login successful
             $_SESSION['user'] = $user;
+            // Generate a token to prevent bfcache bypass
+            generate_session_token();
 
             // Redirect based on user role
             if ($user['role'] === 'admin') {
@@ -63,6 +65,8 @@
         if ($student && $password === $student['password']) {
             // Student login successful
             $_SESSION['student'] = $student;
+            // Generate a token to prevent bfcache bypass
+            generate_session_token();
             header("Location: /Eduqueue-Queueing-System/student-management/student_dashboard.php");
             exit;
         }

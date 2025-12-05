@@ -189,6 +189,7 @@ require_once "../../api/staff-api/cashier/dashboard-b.php";
 
 <script src="../../js/darkmode.js"></script>
 <script src="../../js/auto-refresh.js"></script>
+<script src="../../js/session-guard.js"></script>
 
 <?php include "../../includes/footer.php"; ?>
 

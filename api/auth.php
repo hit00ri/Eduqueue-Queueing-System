@@ -15,6 +15,10 @@
     header('Pragma: no-cache');
     header('Expires: 0');
 
+    // Validate session token to prevent bfcache bypass
+    require_once __DIR__ . '/../db/config.php';
+    validate_session_token('/Eduqueue-Queueing-System/index.php');
+
     function require_role(string $role) {
         // Ensure session is active
         if (session_status() === PHP_SESSION_NONE) {

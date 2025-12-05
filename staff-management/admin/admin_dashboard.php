@@ -78,6 +78,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../../js/served_voided_chart.js"></script>
+    <script src="../../js/session-guard.js"></script>
     <!-- <script src="../js/autorefresh.js"></script> -->
 
   </body>

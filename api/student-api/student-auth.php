@@ -28,6 +28,8 @@
                 if ($student && $password === $student['password']) {
                     // Successful login
                     $_SESSION['student'] = $student;
+                    // Generate a token to prevent bfcache bypass
+                    generate_session_token();
                     header('Location: /Eduqueue-Queueing-System/student-management/student_dashboard.php');
                     exit;
                 } else {

@@ -85,5 +85,23 @@ require_once __DIR__ . "/api/staff-api/index-b.php";
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script>
+// Force a reload when the page is restored from bfcache or navigated via back/forward
+window.addEventListener('pageshow', function (event) {
+    try {
+        var navEntries = performance.getEntriesByType && performance.getEntriesByType('navigation');
+        var navType = (navEntries && navEntries.length) ? navEntries[0].type : null;
+        var isBackForward = event.persisted || navType === 'back_forward';
+        if (isBackForward) {
+            // Reload so server-side session checks and redirects apply
+            window.location.reload();
+        }
+    } catch (e) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    }
+});
+</script> -->
 </body>
 </html>

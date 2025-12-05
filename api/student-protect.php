@@ -17,4 +17,8 @@
         exit;
     }
 
+    // Validate session token to prevent bfcache bypass
+    require_once __DIR__ . '/../db/config.php';
+    validate_session_token('/Eduqueue-Queueing-System/index.php?public=1');
+
 ?>

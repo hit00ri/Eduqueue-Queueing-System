@@ -174,5 +174,6 @@ require_once "../api/student-api/payment-slip-b.php";
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/slip.js"></script>
+    <script src="../js/session-guard.js"></script>
 </body>
 </html>
