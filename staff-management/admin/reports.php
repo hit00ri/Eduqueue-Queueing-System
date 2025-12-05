@@ -23,17 +23,17 @@
 
     <div class="main-content">
       <div class="row align-items-center mb-3">
-        <!-- Left Column (Title) -->
-        <div class="col-md-6">
-          <h1><i class="bi bi-bar-chart nav-icon"></i> Reports</h1>
-        </div>
+          <!-- Left Column (Title) -->
+          <div class="col-md-6">
+              <h1><i class="bi bi-bar-chart nav-icon"></i> Reports</h1>
+          </div>
 
-        <!-- Right Column (Button) -->
-        <div class="col-md-6 text-md-end text-start">
-          <a href="admin_generate_report_fpdf.php" class="btn btn-primary">
-              <i class="bi bi-file-earmark-pdf"></i> Generate PDF Report
-          </a>
-        </div>
+          <!-- Right Column (Button) -->
+          <div class="col-md-6 text-md-end text-start">
+              <a href="admin_generate_report_fpdf.php" class="btn btn-primary">
+                  <i class="bi bi-file-earmark-pdf"></i> Generate PDF Report
+              </a>
+          </div>
       </div>
 
       <!-- Today's Summary Card -->
