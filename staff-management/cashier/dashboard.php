@@ -4,6 +4,19 @@ require_once __DIR__ . '/../../api/auth.php';
 // api/auth.php already ensures login
 
 require_once "../../api/staff-api/cashier/dashboard-b.php";
+
+// Check if we have a payment success/error message
+$paymentMessage = '';
+$paymentType = ''; // success, error, info
+if (isset($_SESSION['payment_message'])) {
+    $paymentMessage = $_SESSION['payment_message'];
+    $paymentType = $_SESSION['payment_type'] ?? 'info';
+    unset($_SESSION['payment_message']);
+    unset($_SESSION['payment_type']);
+}
+
+// Get the current user ID for handling payments
+$currentUserId = $_SESSION['user']['user_id'] ?? null;
 ?>
 <!doctype html>
 <html>
@@ -18,6 +31,8 @@ require_once "../../api/staff-api/cashier/dashboard-b.php";
 <link rel="stylesheet" href="../../css/dashboard.css?v=<?= time() ?>">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
+<!-- Add Font Awesome for payment icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 <?php include __DIR__ . '/../../includes/header.php'; ?>
@@ -25,6 +40,14 @@ require_once "../../api/staff-api/cashier/dashboard-b.php";
 <?php include '../../includes/cashier_sidebar.php'; ?>
 
 <div class="main-content">
+
+  <!-- Show payment message if exists -->
+  <?php if ($paymentMessage): ?>
+    <div class="alert alert-<?= $paymentType ?> alert-dismissible fade show mb-4" role="alert">
+      <?= htmlspecialchars($paymentMessage) ?>
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+  <?php endif; ?>
 
   <!-- Dashboard Header -->
   <div class="dashboard-header mb-5">
@@ -35,6 +58,12 @@ require_once "../../api/staff-api/cashier/dashboard-b.php";
           Queue Management
         </h1>
         <p class="header-subtitle">Manage and serve customers efficiently</p>
+      </div>
+      <!-- Add quick stats badge -->
+      <div class="header-stats">
+        <span class="badge bg-info">
+          <i class="fas fa-users me-1"></i> Waiting: <?= count($waiting) ?>
+        </span>
       </div>
     </div>
   </div>
@@ -53,16 +82,35 @@ require_once "../../api/staff-api/cashier/dashboard-b.php";
             <span class="stat-number">#<?= ($serving['queue_number'] ?? '-') ?></span>
             <span class="stat-name"><?= ($serving ? htmlspecialchars($serving['name']) : 'Idle') ?></span>
           </div>
+          <?php if ($serving): ?>
+            <div class="payment-info">
+              <small class="text-muted">
+                <i class="fas fa-money-bill-wave me-1"></i>
+                Amount: ₱<?= number_format($serving['amount'] ?? 0, 2) ?>
+              </small>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
       <div class="stat-action">
-        <form method="post" class="form-inline">
-          <input type="hidden" name="queue_id" value="<?= $serving['queue_id'] ?? '' ?>">
-          <button name="served" class="action-btn success-btn" <?= !$serving ? 'disabled' : '' ?>>
-            <span class="material-symbols-outlined">task_alt</span>
-            Served
-          </button>
-        </form>
+        <?php if ($serving): ?>
+          <div class="action-buttons">
+            <button class="action-btn success-btn" data-bs-toggle="modal" data-bs-target="#paymentModal"
+                    data-queue-id="<?= $serving['queue_id'] ?>" 
+                    data-student-name="<?= htmlspecialchars($serving['name']) ?>"
+                    data-amount="<?= $serving['amount'] ?? 0 ?>">
+              <i class="fas fa-money-bill-wave me-2"></i>
+              Process Payment
+            </button>
+            <form method="post" class="form-inline">
+              <input type="hidden" name="queue_id" value="<?= $serving['queue_id'] ?>">
+              <button name="served" class="action-btn secondary-btn" onclick="return confirm('Mark as served without payment?')">
+                <span class="material-symbols-outlined">task_alt</span>
+                Served
+              </button>
+            </form>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
 
@@ -125,11 +173,28 @@ require_once "../../api/staff-api/cashier/dashboard-b.php";
               <span class="detail-label">Customer Name</span>
               <span class="detail-value"><?= htmlspecialchars($serving['name']) ?></span>
             </div>
+            <?php if ($serving['payment_for']): ?>
+              <div class="detail-field">
+                <span class="detail-label">Payment For</span>
+                <span class="detail-value"><?= htmlspecialchars($serving['payment_for']) ?></span>
+              </div>
+            <?php endif; ?>
+            <div class="detail-field">
+              <span class="detail-label">Amount Due</span>
+              <span class="detail-value text-success fw-bold">₱<?= number_format($serving['amount'] ?? 0, 2) ?></span>
+            </div>
           </div>
           <div class="action-buttons">
+            <button class="btn-action btn-success" data-bs-toggle="modal" data-bs-target="#paymentModal"
+                    data-queue-id="<?= $serving['queue_id'] ?>" 
+                    data-student-name="<?= htmlspecialchars($serving['name']) ?>"
+                    data-amount="<?= $serving['amount'] ?? 0 ?>">
+              <i class="fas fa-money-bill-wave me-2"></i>
+              Process Payment
+            </button>
             <form method="post" class="action-form">
               <input type="hidden" name="queue_id" value="<?= $serving['queue_id'] ?>">
-              <button name="served" class="btn-action btn-success">
+              <button name="served" class="btn-action btn-secondary">
                 <span class="material-symbols-outlined">task_alt</span>
                 Mark as Served
               </button>
@@ -175,7 +240,16 @@ require_once "../../api/staff-api/cashier/dashboard-b.php";
                 <div class="waiting-number">#<?= $w['queue_number'] ?></div>
                 <div class="waiting-info">
                   <div class="waiting-name"><?= htmlspecialchars($w['name']) ?></div>
-                  <div class="waiting-time"><?= $w['time_in'] ?? 'N/A' ?></div>
+                  <div class="waiting-details">
+                    <small class="text-muted">
+                      <i class="fas fa-money-bill-wave me-1"></i>
+                      ₱<?= number_format($w['amount'] ?? 0, 2) ?>
+                    </small>
+                    <small class="text-muted ms-3">
+                      <i class="fas fa-clock me-1"></i>
+                      <?= date('H:i', strtotime($w['time_in'])) ?>
+                    </small>
+                  </div>
                 </div>
               </li>
             <?php endforeach; ?>
@@ -187,11 +261,98 @@ require_once "../../api/staff-api/cashier/dashboard-b.php";
 
 </div>
 
+<!-- Payment Modal -->
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="paymentModalLabel">
+          <i class="fas fa-money-bill-wave me-2"></i>Process Payment
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- Simple form that posts back to the same page -->
+      <form method="POST" action="">
+        <input type="hidden" name="action" value="complete_payment">
+        <input type="hidden" name="queue_id" id="modalQueueId">
+        <div class="modal-body">
+          <div id="paymentDetails">
+            <div class="mb-3">
+              <label class="form-label fw-bold">Student</label>
+              <input type="text" class="form-control" id="modalStudentName" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="paymentFor" class="form-label fw-bold">Payment For</label>
+              <select class="form-select" id="paymentFor" name="payment_for" required>
+                <option value="Tuition Fee" selected>Tuition Fee</option>
+                <option value="Miscellaneous Fee">Miscellaneous Fee</option>
+                <option value="Library Fee">Library Fee</option>
+                <option value="Laboratory Fee">Laboratory Fee</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="amount" class="form-label fw-bold">Amount (PHP)</label>
+              <div class="input-group">
+                <span class="input-group-text">₱</span>
+                <input type="number" class="form-control" id="amount" name="amount" step="0.01" 
+                       placeholder="0.00" required min="0">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="paymentType" class="form-label fw-bold">Payment Type</label>
+              <select class="form-select" id="paymentType" name="payment_type" required>
+                <option value="">Select payment type</option>
+                <option value="cash">Cash</option>
+                <option value="card">Credit/Debit Card</option>
+                <option value="digital">Digital Payment</option>
+              </select>
+            </div>
+            <div class="alert alert-info">
+              <small>
+                <i class="fas fa-info-circle me-1"></i>
+                This will create a transaction record and mark the queue as served.
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            <i class="fas fa-times me-1"></i>Cancel
+          </button>
+          <button type="submit" class="btn btn-success">
+            <i class="fas fa-check me-1"></i>Complete Payment
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../../js/darkmode.js"></script>
 <script src="../../js/auto-refresh.js"></script>
 <script src="../../js/session-guard.js"></script>
+<script>
+  // Payment Modal Handler - Simple version
+  const paymentModal = document.getElementById('paymentModal');
+  paymentModal.addEventListener('show.bs.modal', function (event) {
+    const button = event.relatedTarget;
+    const queueId = button.getAttribute('data-queue-id');
+    const studentName = button.getAttribute('data-student-name');
+    const amount = button.getAttribute('data-amount');
+    
+    document.getElementById('modalQueueId').value = queueId;
+    document.getElementById('modalStudentName').value = studentName;
+    document.getElementById('amount').value = amount;
+  });
+
+  // Auto-refresh dashboard every 30 seconds
+  setTimeout(() => {
+    location.reload();
+  }, 30000);
+</script>
 
 <?php include "../../includes/footer.php"; ?>
-
 </body>
 </html>
