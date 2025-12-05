@@ -1,17 +1,6 @@
 <?php
     require_once __DIR__ . '/../../db/config.php';
-    require_once __DIR__ . '/../../api/auth.php';
-    if (!function_exists('require_role')) {
-        function require_role($role)
-        {
-            if (!isset($_SESSION['role']) || $_SESSION['role'] !== $role) {
-                header('Location: /Eduqueue-Queueing-System/login.php');
-                exit;
-            }
-        }
-    }
-    require_role('admin');
-
+    
     $search = "";
     if (isset($_GET['search'])) {
         $search = $_GET['search'];

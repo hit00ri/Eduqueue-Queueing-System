@@ -1,6 +1,5 @@
 <?php
   require_once __DIR__ . '/../../db/config.php';
-  require_once __DIR__ . '/../../api/auth.php';
   // api/auth.php already calls ensure_logged_in()
 
   include "../../api/staff-api/admin/dashboard-queries.php";

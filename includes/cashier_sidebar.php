@@ -48,7 +48,7 @@
     </a>
 
     <div class="logout-container">
-        <a class="sidebar-link" href="../../api/student-api/student-logout-b.php">
+        <a class="sidebar-link" href="../../api/auth.php?action=logout">
             <span class="material-symbols-outlined">logout</span>
             Logout
         </a>
