@@ -123,8 +123,8 @@
                                 <tbody>
                                     <?php foreach ($cashierPerformance as $cashier): ?>
                                     <tr>
-                                        <td><?= $cashier['name'] ?></td>
-                                        <td><?= $cashier['served_today'] ?> served</td>
+                                        <td><?= $cashier['cashier_name'] ?></td>
+                                        <td><?= $cashier['served_count'] ?> served</td>
                                         <td><?= number_format($cashier['avg_service_time'] / 60, 1) ?>m</td>
                                     </tr>
                                     <?php endforeach; ?>
