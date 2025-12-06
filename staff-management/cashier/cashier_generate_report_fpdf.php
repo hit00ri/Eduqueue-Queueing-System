@@ -53,7 +53,7 @@ require_once __DIR__ . '/../../api/staff-api/cashier/cashier-pdf.php'
 </head>
 <body>
   <?php include __DIR__ . '/../../includes/header.php'; ?>
-  <?php include '../../includes/sidebar.php'; ?>
+  <?php include '../../includes/cashier_sidebar.php'; ?>
 
 <div class="main-content" style="margin-left: 240px; padding: 20px;">
   <h1><i class="bi bi-file-earmark-pdf"></i> Generate PDF Report (FPDF)</h1>
