@@ -62,8 +62,10 @@ if (isset($_POST['save'])) {
                             </select>
                     </div>
 
-                    <button class="btn btn-success" name="save">Save</button>
-                    <a href="../../staff-management/admin/manage_user.php" class="btn btn-secondary">Back</a>
+                    <div class=" d-flex justify-content-end d-grid gap-3">
+                        <button class="btn btn-success" name="save">Save</button>
+                        <a href="../../staff-management/admin/manage_user.php" class="btn btn-secondary">Back</a>
+                    </div>
                 </form>
                 
             </div>

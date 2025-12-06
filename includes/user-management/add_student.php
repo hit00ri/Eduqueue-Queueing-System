@@ -83,9 +83,11 @@
                     </div>
 
 
-                    <!-- Submit button: 'save' is used by PHP to detect submission -->
-                    <button class="btn btn-success" name="save">Save</button>
-                    <a href="../../staff-management/admin/manage_user.php" class="btn btn-secondary">Back</a>
+                    <div class=" d-flex justify-content-end d-grid gap-3">
+                        <!-- Submit button: 'save' is used by PHP to detect submission -->
+                        <button class="btn btn-success" name="save">Save</button>
+                        <a href="../../staff-management/admin/manage_user.php" class="btn btn-secondary">Back</a>
+                    </div>
                 </form>
             </div>
         </div>
