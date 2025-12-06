@@ -1,5 +1,8 @@
 <?php
-    include "../db/config.php";
+    // Protect this page: require a valid session and send no-cache headers
+    require_once __DIR__ . '/../api/protect.php';
+
+    // db/config.php is loaded by api/protect.php and $conn is available
 
     $stmt = $conn->query("
         SELECT 

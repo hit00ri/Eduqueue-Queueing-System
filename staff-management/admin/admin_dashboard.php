@@ -1,6 +1,6 @@
 <?php
-  require_once __DIR__ . '/../../db/config.php';
-  // api/auth.php already calls ensure_logged_in()
+  require_once __DIR__ . '/../../api/protect.php';
+  // db/config.php and session/token validation are handled by api/protect.php
 
   include "../../api/staff-api/admin/dashboard-queries.php";
 ?>

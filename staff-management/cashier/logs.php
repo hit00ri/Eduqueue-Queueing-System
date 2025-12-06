@@ -1,5 +1,6 @@
 <?php
-require_once '../../db/config.php';
+require_once __DIR__ . '/../../api/protect.php';
+// logs page uses $conn from db/config.php via protect.php
 
 $stmtQueue = $conn->prepare("SELECT queue_id, queue_number, status, time_in, time_out FROM queue ORDER BY time_in DESC");
 $stmtQueue->execute();

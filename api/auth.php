@@ -1,20 +1,28 @@
 <?php
 require_once __DIR__ . '/../db/config.php';
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Check if action parameter exists
 $action = $_POST['action'] ?? $_GET['action'] ?? '';
 
 if ($action === 'login') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
-    
+
     if (empty($email) || empty($password)) {
         header('Location: ../index.php?error=empty_fields');
         exit();
     }
     
-    $database = new Database();
-    $db = $database->getConnection();
+    // `db/config.php` exposes a PDO connection in `$conn`.
+    if (!isset($conn) || !$conn instanceof PDO) {
+        // Helpful error for runtime if config didn't provide a PDO instance
+        trigger_error('Database connection ($conn) not found. Check db/config.php', E_USER_ERROR);
+    }
+    $db = $conn;
     
     // Check in users table (staff/admin)
     $query = "SELECT * FROM users WHERE email = :email";
@@ -25,21 +33,27 @@ if ($action === 'login') {
     if ($stmt->rowCount() > 0) {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         
-        // IMPORTANT: Use password_verify() if you hash passwords!
-        // For now, simple check (you should hash passwords in production)
-        if ($password === $user['password']) {
+        // Use password_verify() for hashed passwords, fallback to plain compare
+        if ((isset($user['password']) && password_verify($password, $user['password'])) || $password === $user['password']) {
             $_SESSION['user'] = [
+                'user_id' => $user['user_id'],
                 'id' => $user['user_id'],
                 'name' => $user['name'],
+                'username' => $user['username'] ?? $user['email'],
                 'email' => $user['email'],
                 'role' => $user['role']
             ];
+
+            // Generate session token used by validate_session_token()
+            if (function_exists('generate_session_token')) {
+                generate_session_token();
+            }
             
             // Redirect based on role
             if ($user['role'] === 'admin') {
-                header('Location: ../admin-dashboard.php');
+                header('Location: /Eduqueue-Queueing-System/staff-management/admin/admin_dashboard.php');
             } else {
-                header('Location: ../cashier-dashboard.php');
+                header('Location: /Eduqueue-Queueing-System/staff-management/cashier/dashboard.php');
             }
             exit();
         }
@@ -54,16 +68,20 @@ if ($action === 'login') {
     if ($stmt->rowCount() > 0) {
         $student = $stmt->fetch(PDO::FETCH_ASSOC);
         
-        // Check student password (adjust field name if needed)
-        if ($password === $student['password']) {
+        // Check student password (accept hashed or plain)
+        if ((isset($student['password']) && password_verify($password, $student['password'])) || $password === $student['password']) {
             $_SESSION['student'] = [
                 'id' => $student['student_id'],
+                'student_id' => $student['student_id'],
                 'name' => $student['name'],
-                'email' => $student['email'],
-                'student_id' => $student['student_id']
+                'email' => $student['email']
             ];
+            // Generate session token used by validate_session_token()
+            if (function_exists('generate_session_token')) {
+                generate_session_token();
+            }
             
-            header('Location: ../student-dashboard.php');
+            header('Location: /Eduqueue-Queueing-System/student-management/student_dashboard.php');
             exit();
         }
     }

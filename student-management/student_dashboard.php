@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../api/protect.php';
+// load student dashboard bootstrap
 require_once "../api/student-api/student-dashboard-b.php";
 ?>
 <!DOCTYPE html>

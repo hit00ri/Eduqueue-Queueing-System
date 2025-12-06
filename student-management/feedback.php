@@ -1,5 +1,6 @@
 <?php
-// feedback.php
+require_once __DIR__ . '/../api/protect.php';
+// load student feedback bootstrap (protect.php validates student session)
 require_once "../api/student-api/feedback-b.php";
 ?>
 <!DOCTYPE html>
