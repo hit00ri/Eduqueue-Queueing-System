@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../api/protect.php';
-// load student dashboard bootstrap
+
 require_once "../api/student-api/student-dashboard-b.php";
 ?>
 <!DOCTYPE html>
@@ -52,24 +52,24 @@ require_once "../api/student-api/student-dashboard-b.php";
                     </div>
                 <?php endif; ?>
 
-                <!-- Payment Slip Modal (non-blocking: no backdrop) -->
+                <!-- Payment Slip Modal-->
                 <div class="modal fade" id="paymentSlipModal" data-bs-backdrop="false" tabindex="-1"
                     aria-labelledby="paymentSlipModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header bg-primary text-white">
                                 <h5 class="modal-title" id="paymentSlipModalLabel">
                                     <i class="bi bi-receipt"></i> Payment Slip
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="payment-slip-container">
                                     <!-- Header -->
-                                    <div class="payment-slip-header text-center">
-                                        <h1 class="h3 mb-1">Saint Louis College</h1>
-                                        <p class="mb-1">City of San Fernando, 2500 La Union</p>
+                                    <div class="payment-slip-header">
+                                        <h1 class="h3 mb-2">Saint Louis College</h1>
+                                        <p class="mb-2">City of San Fernando, 2500 La Union</p>
                                         <h2 class="h4 mb-0">PAYMENT SLIP</h2>
                                     </div>
 
@@ -77,23 +77,33 @@ require_once "../api/student-api/student-dashboard-b.php";
                                     <div class="form-section">
                                         <h5 class="mb-3"><i class="bi bi-person-badge"></i> Student Information</h5>
 
-                                        <div class="mb-3">
-                                            <label class="form-label"><strong>NAME:</strong></label>
-                                            <input type="text" class="form-control"
-                                                value="<?= htmlspecialchars($student['name']) ?>" readonly>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label"><strong>NAME:</strong></label>
+                                                <input type="text" class="form-control"
+                                                    value="<?= htmlspecialchars($student['name']) ?>" readonly>
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label"><strong>ID NO:</strong></label>
+                                                <input type="text" class="form-control"
+                                                    value="<?= htmlspecialchars($student['student_id']) ?>" readonly>
+                                            </div>
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label class="form-label"><strong>ID NO:</strong></label>
-                                            <input type="text" class="form-control"
-                                                value="<?= htmlspecialchars($student['student_id']) ?>" readonly>
-                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label"><strong>COURSE:</strong></label>
+                                                <input type="text" class="form-control"
+                                                    value="<?= htmlspecialchars($student['course'] ?? '') ?>" readonly>
+                                            </div>
 
-                                        <div class="mb-3">
-                                            <label class="form-label"><strong>COURSE & YEAR:</strong></label>
-                                            <input type="text" class="form-control"
-                                                value="<?= htmlspecialchars($student['course'] ?? '') ?> - <?= htmlspecialchars($student['year_level'] ?? '') ?>"
-                                                readonly>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label"><strong>YEAR LEVEL:</strong></label>
+                                                <input type="text" class="form-control"
+                                                    value="<?= htmlspecialchars($student['year_level'] ?? '') ?>"
+                                                    readonly>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -101,19 +111,27 @@ require_once "../api/student-api/student-dashboard-b.php";
                                     <div class="form-section">
                                         <h5 class="mb-3"><i class="bi bi-cash-coin"></i> Payment Details</h5>
 
-                                        <div class="mb-3">
-                                            <label class="form-label"><strong>AMOUNT:</strong></label>
-                                            <div class="input-group amount-input">
-                                                <span class="input-group-text">₱</span>
-                                                <input type="text" class="form-control"
-                                                    value="<?= isset($paymentSlipData) ? number_format($paymentSlipData['amount'], 2) : '0.00' ?>"
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label"><strong>AMOUNT:</strong></label>
+                                                <div class="input-group amount-input">
+                                                    <span class="input-group-text">₱</span>
+                                                    <input type="text" class="form-control text-end fw-bold"
+                                                        value="<?= isset($paymentSlipData) ? number_format($paymentSlipData['amount'], 2) : '0.00' ?>"
+                                                        readonly>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label"><strong>DATE:</strong></label>
+                                                <input type="text" class="form-control" value="<?= date('F j, Y') ?>"
                                                     readonly>
                                             </div>
                                         </div>
 
                                         <div class="mb-3">
                                             <label class="form-label"><strong>IN PAYMENT OF:</strong></label>
-                                            <div class="payment-options">
+                                            <div class="payment-options bg-white p-3 rounded border">
                                                 <?php if (isset($paymentSlipData) && !empty($paymentSlipData['payment_for'])): ?>
                                                     <?php
                                                     $paymentForLabels = [
@@ -127,13 +145,14 @@ require_once "../api/student-api/student-dashboard-b.php";
                                                         $label = $paymentForLabels[$paymentType] ?? ucfirst($paymentType);
                                                         $checked = in_array($paymentType, $paymentSlipData['payment_for']) ? 'checked' : '';
                                                         ?>
-                                                        <div class="form-check">
+                                                        <div class="form-check mb-2">
                                                             <input type="checkbox" class="form-check-input" <?= $checked ?>
                                                                 disabled>
-                                                            <label class="form-check-label">
+                                                            <label class="form-check-label fw-medium">
                                                                 <?= htmlspecialchars($label) ?>
                                                                 <?php if ($paymentType === 'others' && !empty($paymentSlipData['other_purpose'])): ?>
-                                                                    : <?= htmlspecialchars($paymentSlipData['other_purpose']) ?>
+                                                                    : <span
+                                                                        class="text-muted"><?= htmlspecialchars($paymentSlipData['other_purpose']) ?></span>
                                                                 <?php endif; ?>
                                                             </label>
                                                         </div>
@@ -145,26 +164,20 @@ require_once "../api/student-api/student-dashboard-b.php";
                                         </div>
                                     </div>
 
-                                    <!-- Date -->
-                                    <div class="mb-3">
-                                        <label class="form-label"><strong>DATE:</strong></label>
-                                        <input type="text" class="form-control" value="<?= date('F j, Y') ?>" readonly>
-                                    </div>
-
                                     <!-- Reference Code -->
-                                    <div class="reference-code mt-4 pt-3 border-top">
-                                        <div class="row">
+                                    <div class="reference-code mt-4">
+                                        <div class="row text-center">
                                             <div class="col-4">
                                                 <strong>Reference Code</strong><br>
-                                                FM-TREA-001
+                                                <span class="text-muted">FM-TREA-001</span>
                                             </div>
                                             <div class="col-4">
                                                 <strong>Revision No.</strong><br>
-                                                0
+                                                <span class="text-muted">0</span>
                                             </div>
                                             <div class="col-4">
                                                 <strong>Effectivity Date</strong><br>
-                                                August 1, 2019
+                                                <span class="text-muted">August 1, 2019</span>
                                             </div>
                                         </div>
                                     </div>
@@ -172,6 +185,9 @@ require_once "../api/student-api/student-dashboard-b.php";
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="printPaymentSlip()">
+                                    <i class="bi bi-printer"></i> Print
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -289,33 +305,57 @@ require_once "../api/student-api/student-dashboard-b.php";
         </div>
     </div>
     <?php include __DIR__ . '/../includes/footer.php'; ?>
-
-    <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/auto-refresh.js"></script>
     <script src="../js/session-guard.js"></script>
     <script>
-        // Initialize the payment slip modal as non-blocking so background remains interactive.
-        (function () {
-            var modalEl = document.getElementById('paymentSlipModal');
-            if (!modalEl) return;
+        document.addEventListener('DOMContentLoaded', function () {
+            const paymentModal = document.getElementById('paymentSlipModal');
 
-            // Create a Modal instance with focus disabled to avoid focus trapping.
-            var modalInstance = new bootstrap.Modal(modalEl, {
-                backdrop: false,
-                focus: false
-            });
+            if (paymentModal) {
+                paymentModal.addEventListener('show.bs.modal', function () {
+                    document.body.classList.remove('modal-open');
+                    document.body.style.paddingRight = '0';
+                    document.body.style.overflow = 'visible';
+                });
 
-            // When the modal is shown, remove the `modal-open` class so the page stays scrollable and interactive.
-            modalEl.addEventListener('shown.bs.modal', function () {
-                document.body.classList.remove('modal-open');
-            });
+                paymentModal.addEventListener('hidden.bs.modal', function () {
+                    document.body.style.overflow = 'visible';
+                    document.body.style.paddingRight = '0';
+                });
+            }
+        });
 
-            // Optional: when hiding, ensure body class cleaned up (no-op but safe).
-            modalEl.addEventListener('hidden.bs.modal', function () {
-                document.body.classList.remove('modal-open');
-            });
-        })();
+        function printPaymentSlip() {
+            const modal = bootstrap.Modal.getInstance(document.getElementById('paymentSlipModal'));
+            if (modal) modal.hide();
+
+            const modalContent = document.querySelector('#paymentSlipModal .payment-slip-container').outerHTML;
+
+            let printContainer = document.getElementById('printContainer');
+            if (!printContainer) {
+                printContainer = document.createElement('div');
+                printContainer.id = 'printContainer';
+                document.body.appendChild(printContainer);
+            }
+
+            const now = new Date();
+            const timestamp = now.toLocaleString();
+            printContainer.innerHTML = `
+            <div style="text-align: right; margin-bottom: 20px; font-size: 0.9rem; color: #666;">
+                Printed: ${timestamp}
+            </div>
+            ${modalContent}
+        `;
+
+            window.print();
+
+            setTimeout(() => {
+                if (printContainer && printContainer.parentNode) {
+                    printContainer.parentNode.removeChild(printContainer);
+                }
+            }, 100);
+        }
     </script>
 </body>
 
