@@ -8,9 +8,12 @@ require_once "../api/forgot_password.php";
     <meta charset="UTF-8">
     <title>Forgot Password</title>
     <link rel="stylesheet" href="../css/forgot.css">
+    <link rel="stylesheet" href="../css/common.css">
 </head>
 
 <body>
+
+    <?php include "../includes/header.php"; ?>
     <div class="forgot-page">
         <div class="forgot-card">
             <div class="forgot-left">
@@ -62,14 +65,16 @@ require_once "../api/forgot_password.php";
                             <path fill="#f1f1f1ff"
                                 d="M16.002 11.5c-.764 0-1.48-.201-2.1-.554c.84-1 1.346-2.289 1.346-3.696a5.73 5.73 0 0 0-1.346-3.696a4.25 4.25 0 1 1 2.1 7.946m1.5 4c0-.946-.329-1.815-.877-2.5h3.377a2.5 2.5 0 0 1 2.5 2.5v7a6.5 6.5 0 0 1-8.078 6.307a7.99 7.99 0 0 0 3.078-6.307zm5-4c-.764 0-1.48-.201-2.1-.554c.84-1 1.345-2.289 1.345-3.696a5.73 5.73 0 0 0-1.345-3.696a4.25 4.25 0 1 1 2.1 7.946m1.5 4c0-.946-.329-1.815-.877-2.5h3.377a2.5 2.5 0 0 1 2.5 2.5v7a6.5 6.5 0 0 1-8.078 6.307a7.99 7.99 0 0 0 3.078-6.307zM5.5 13A2.5 2.5 0 0 0 3 15.5v7a6.5 6.5 0 1 0 13 0v-7a2.5 2.5 0 0 0-2.5-2.5zm4-1.5a4.25 4.25 0 1 0 0-8.5a4.25 4.25 0 0 0 0 8.5" />
                         </svg>
-                        <h1>EDUQUEUE</h1>
+                        <h1 style="color: white;">EDUQUEUE</h1>
                     </div>
-                    <h2>Queue Management System</h2>
+                    <h2>Queueing Management System</h2>
                     <p>Reset your password to regain access to your account and manage queues efficiently.</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <?php include "../includes/footer.php"; ?>
     <script src="../js/forgot_password.js"></script>
 </body>
 

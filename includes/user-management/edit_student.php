@@ -83,8 +83,10 @@ if (isset($_POST['update'])) {
                         value="<?= htmlspecialchars($user['email'] ?? '') ?>">
                 </div>
 
-                <button name="update" class="btn btn-primary">Update</button>
-                <a href="../../staff-management/admin/manage_user.php" class="btn btn-secondary">Back</a>
+                <div class=" d-flex justify-content-end d-grid gap-3">
+                    <button name="update" class="btn btn-primary">Update</button>
+                    <a href="../../staff-management/admin/manage_user.php" class="btn btn-secondary">Back</a>
+                </div>
 
             </form>
         </div>

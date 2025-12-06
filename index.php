@@ -81,11 +81,9 @@ require_once __DIR__ . "/api/auth.php";
             <button type="submit" class="btn btn-primary w-100 mb-3">
                 Log In
             </button>
-            <p class="forgot-password"><a href="includes/forget_password.php" class="forgot-password">Forgot
-                    Password?</a></p>
+            <p class="forgot-password"><a href="includes/forget_password.php" class="forgot-password" style="margin-bottom: 10px;">Forgot Password?</a></p>
 
-            <p><a href="includes/open_live_queue.php" class="btn btn-outline-primary"
-                    style="display:flex; justify-content:center;">View Live Queue</a></p>
+            <p><a href="includes/open_live_queue.php" class="btn btn-outline-primary" style="display:flex; justify-content:center;">View Live Queue</a></p>
 
     </div>
     </div>

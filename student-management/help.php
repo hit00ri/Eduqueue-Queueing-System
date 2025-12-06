@@ -10,6 +10,9 @@
 </head>
 
 <body>
+
+    <?php include "../includes/header.php"; ?>
+
     <div class="container mt-5">
         <h1 class="text-center">Help Page</h1>
         <p class="text-muted text-center">Learn how to use the Queuing Management System</p>
@@ -90,6 +93,8 @@
             </a>
         </div>
     </div>
+
+    <?php include "../includes/footer.php"; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>

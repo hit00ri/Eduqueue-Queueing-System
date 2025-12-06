@@ -21,6 +21,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     min-height: 600px;
+    margin-top: 20px;
 }
 
 .forgot-left {
@@ -272,4 +273,8 @@ body {
 .strength-strong {
     background-color: #28a745;
     width: 100%;
+}
+
+.forgot-right h1{
+    color: white;
 }
