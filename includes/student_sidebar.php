@@ -59,15 +59,3 @@
 
 <script src="../js/sidebar.js"></script>
 
-<!-- <style>
-.sidebar {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-.logout-container {
-    margin-top: auto;
-    padding-top: 10px;
-}
-</style> -->

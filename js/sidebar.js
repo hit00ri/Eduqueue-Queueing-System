@@ -1,29 +1,21 @@
-// sidebar.js - Active page highlighting without modifying PHP files
-
 document.addEventListener("DOMContentLoaded", function () {
   // Function to highlight the active page in sidebar
-  function highlightActivePage() {
-    // Get current page URL
+  function highlightActivePage() { // Get current page URL
     const currentUrl = window.location.href;
 
-    // Get all sidebar links
     const sidebarLinks = document.querySelectorAll(".sidebar-link");
 
-    // Find and highlight the active link
     sidebarLinks.forEach((link) => {
       const linkUrl = link.getAttribute("href");
 
       // Check if current URL contains the link's URL (for relative paths)
       if (currentUrl.includes(linkUrl) && linkUrl !== "#") {
-        // Remove active class from all links first
         sidebarLinks.forEach((l) => l.classList.remove("active"));
-
-        // Add active class to current link
         link.classList.add("active");
       }
     });
 
-    // Fallback: If no link is active, try to match by page name
+    //If no link is active, try to match by page name
     if (!document.querySelector(".sidebar-link.active")) {
       const currentPage = currentUrl.split("/").pop() || "index.php";
 

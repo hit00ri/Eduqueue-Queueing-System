@@ -1,10 +1,4 @@
-// ===============================================
-// LIVE QUEUE DISPLAY JAVASCRIPT
-// ===============================================
-
-// -------------------------------
 // Real-Time Clock
-// -------------------------------
 function updateClock() {
   const now = new Date();
 
@@ -25,9 +19,7 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-// -------------------------------
 // Queue Number Glow Effects
-// -------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   const queueNumbers = document.querySelectorAll(
     ".queue-number, .next-queue-number"
@@ -41,9 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// -------------------------------
 // Waiting List Toggle (click the Waiting stat card)
-// -------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   const waitingStatCard = document.getElementById("waiting-stat-card");
   const waitingList = document.getElementById("waiting-list");
@@ -63,42 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-// // ---------------------------------------------
-// // SERVED STAT CARD TOGGLE FOR RECENTLY SERVED
-// // ---------------------------------------------
-// document.addEventListener("DOMContentLoaded", () => {
-//     const servedCard = document.getElementById("served-stat-card");
-//     const recentList = document.getElementById("recent-list");
-
-//     if (servedCard && recentList) {
-//         servedCard.addEventListener("click", () => {
-//             if (recentList.style.display === "none" || recentList.style.display === "") {
-//                 recentList.style.display = "block";
-//             } else {
-//                 recentList.style.display = "none";
-//             }
-//         });
-//     }
-// });
-
-// // ---------------------------------------------
-// // RECENTLY SERVED Toggle
-// // ---------------------------------------------
-// document.addEventListener("DOMContentLoaded", () => {
-//     const recentToggle = document.getElementById("recent-toggle");
-//     const recentList = document.getElementById("recent-list");
-
-//     if (recentToggle && recentList) {
-//         recentToggle.addEventListener("click", () => {
-//             if (recentList.style.display === "none" || recentList.style.display === "") {
-//                 recentList.style.display = "block";
-//             } else {
-//                 recentList.style.display = "none";
-//             }
-//         });
-//     }
-// });
 
 document.addEventListener("DOMContentLoaded", () => {
   const servedCard = document.getElementById("served-stat-card");
