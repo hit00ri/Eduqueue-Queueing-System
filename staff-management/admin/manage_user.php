@@ -57,7 +57,7 @@ try {
     <?php include __DIR__ . '../../../includes/header.php'; ?>
     <?php include '../../includes/sidebar.php'; ?>
 
-    <div class="user-management-container">
+    <div class="user-management-container" style="background-color: #F3F6FA;">
         <!-- Stats Row -->
         <div class="row mb-4">
             <div class="col-md-4">

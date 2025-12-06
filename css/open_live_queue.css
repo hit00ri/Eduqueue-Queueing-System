@@ -1,26 +1,18 @@
-open_live_queue.css
-
-/* ================================
-   FULLSCREEN NO-SCROLL LAYOUT
-================================== */
 html,
 body {
   height: 100vh;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  /* Prevent scrolling */
   background: #f2f7ff;
   display: flex;
   flex-direction: column;
 }
 
-/* Simplified Live Queue Display CSS */
 * {
   font-family: Century Gothic;
 }
 
-/* Main container - fill available space */
 .container.mt-4 {
   flex: 1;
   display: flex;
@@ -32,7 +24,6 @@ body {
   overflow: hidden;
 }
 
-/* Center content */
 .row.justify-content-center {
   width: 100%;
   height: 100%;
@@ -42,9 +33,6 @@ body {
   overflow: hidden;
 }
 
-/* ================================
-   HEADER - ULTRA COMPACT
-================================== */
 .header {
   background: linear-gradient(135deg, #003d7a 0%, #004a8f 100%);
   color: white;
@@ -114,14 +102,10 @@ body {
   white-space: nowrap;
 }
 
-/* ================================
-   MAIN DISPLAY - FIXED HEIGHT
-================================== */
 .digital-display {
   width: 700px;
   max-width: 90%;
   max-height: 85vh;
-  /* Limit maximum height */
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -131,7 +115,6 @@ body {
   flex-direction: column;
 }
 
-/* Card Header */
 .display-header {
   background: linear-gradient(135deg, #003d7a 0%, #004a8f 100%);
   color: white;
@@ -154,21 +137,15 @@ body {
   font-size: 0.7rem;
 }
 
-/* ================================
-   TWO COLUMN LAYOUT - FIXED HEIGHT
-================================== */
 .serving-container {
   display: flex;
   width: 100%;
   flex: 1;
   min-height: 180px;
-  /* Reduced height */
   max-height: 220px;
-  /* Limit max height */
   overflow: hidden;
 }
 
-/* Left Column - Next to Serve */
 .next-serving-column {
   flex: 1;
   padding: 10px;
@@ -180,7 +157,6 @@ body {
   text-align: center;
 }
 
-/* Right Column - Now Serving */
 .now-serving-column {
   flex: 1;
   padding: 10px;
@@ -192,7 +168,6 @@ body {
   text-align: center;
 }
 
-/* Labels */
 .next-serving-label {
   color: #003d7a;
   font-weight: 600;
@@ -213,7 +188,6 @@ body {
   white-space: nowrap;
 }
 
-/* Queue Numbers - Optimized for empty states */
 .next-queue-number {
   font-size: 2.2rem;
   color: #004a8f;
@@ -240,7 +214,6 @@ body {
   justify-content: center;
 }
 
-/* Empty state styling - MUCH MORE COMPACT */
 .queue-number[style*="color: #808080ff;"],
 .next-queue-number[style*="color: #808080ff;"] {
   font-size: 2rem !important;
@@ -255,7 +228,6 @@ body {
   justify-content: center !important;
 }
 
-/* Student Info - Compact */
 .student-info {
   font-size: 0.85rem;
   color: #333;
@@ -275,9 +247,6 @@ body {
   color: #555;
 }
 
-/* ================================
-   STATS CONTAINER - ULTRA COMPACT
-================================== */
 .stats-container {
   display: flex;
   justify-content: space-around;
@@ -312,9 +281,6 @@ body {
   margin-top: 1px;
 }
 
-/* ================================
-   RECENT SERVED LIST - COMPACT
-================================== */
 .recent-served {
   padding: 8px 10px;
   flex-shrink: 0;
@@ -368,9 +334,6 @@ body {
   font-size: 0.65rem;
 }
 
-/* ================================
-   WAITING LIST
-================================== */
 .waiting-list-container {
   margin-top: 8px;
   text-align: center;
@@ -411,9 +374,6 @@ body {
   border-bottom: none;
 }
 
-/* ================================
-   ANIMATIONS - MINIMAL
-================================== */
 @keyframes blink {
   0%,
   100% {
@@ -444,9 +404,6 @@ body {
   animation: flash 2s infinite;
 }
 
-/* ================================
-   RESPONSIVE DESIGN
-================================== */
 @media (max-width: 768px) {
   .digital-display {
     width: 95%;
@@ -501,7 +458,6 @@ body {
   }
 }
 
-/* Small mobile screens */
 @media (max-width: 480px) {
   .digital-display {
     width: 98%;
@@ -522,7 +478,6 @@ body {
   }
 }
 
-/* Extra height adjustment for empty states */
 @media (max-height: 700px) {
   .serving-container {
     min-height: 150px;

@@ -13,6 +13,7 @@ A modern and academic-ready queueing management system designed to streamline se
 - [Screenshots / UI Preview](#screenshots--ui-preview)
 - [Technologies Used](#technologies-used)
 - [Installation Guide](#installation-guide)
+- [Credentials](#access-credentials)
 - [Authors](#authors)
 - [Course](#course)
 - [School](#school)
@@ -94,6 +95,20 @@ Example:
    ```
    http://localhost/Eduqueue-Queueing-System/
    ```
+
+---
+
+## 🔑 Access Credentials
+
+Use the following credentials for testing and administration:
+
+| Role | Email | Password |
+| :--- | :--- | :--- |
+| **Admin** | `admin@slc.edu` | `123` |
+| **Cashier** | `cashier@slc.edu` | `456` |
+| **Student** | `brentalabag@slc.edu` | `123` |
+| **Student** | `adryaquino@slc.edu` | `456` |
+| **Student** | `lestermark@slc.edu` | `789` |
 
 ---
 

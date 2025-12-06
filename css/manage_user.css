@@ -1,20 +1,16 @@
-/* Prevent sidebar overlap */
 body {
   overflow-x: hidden;
 }
 
 .user-management-container {
   margin-left: 240px;
-  /* Match sidebar width */
   width: calc(100% - 240px);
-  /* Prevent overflow */
   padding: 20px;
   min-height: calc(100vh - 120px);
   position: relative;
   margin-top: 65px;
 }
 
-/* Header Actions */
 .header-actions {
   background: white;
   border-radius: 12px;
@@ -24,7 +20,6 @@ body {
   width: 100%;
 }
 
-/* Search box */
 .search-container {
   position: relative;
   max-width: 400px;
@@ -48,7 +43,6 @@ body {
   z-index: 10;
 }
 
-/* Card styling */
 .card-custom {
   border: none;
   border-radius: 10px;
@@ -65,17 +59,14 @@ body {
   padding: 15px 20px;
 }
 
-/* Table container for scrolling */
 .table-scroll-container {
   width: 100%;
   overflow-x: auto;
   border-radius: 0 0 10px 10px;
 }
 
-/* Table styling */
 .table-custom {
   min-width: 800px;
-  /* Minimum width for table */
   width: 100%;
   margin-bottom: 0;
 }
@@ -99,7 +90,6 @@ body {
   background-color: #f8fafc;
 }
 
-/* Badge styling */
 .badge-admin {
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   padding: 6px 12px;
@@ -110,7 +100,6 @@ body {
   padding: 6px 12px;
 }
 
-/* Stats cards */
 .stats-card {
   background: white;
   border-radius: 10px;
@@ -133,7 +122,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* Action buttons */
 .action-btn-group {
   display: flex;
   gap: 8px;
@@ -149,7 +137,6 @@ body {
   gap: 5px;
 }
 
-/* Empty state */
 .empty-state {
   padding: 40px 20px;
   text-align: center;
@@ -162,7 +149,6 @@ body {
   opacity: 0.3;
 }
 
-/* Responsive design */
 @media (max-width: 1024px) {
   .user-management-container {
     margin-left: 200px;
