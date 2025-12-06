@@ -2,7 +2,6 @@ body {
     display: flex;
     min-height: 100vh;
     background-color: #f8f9fa;
-    /* Softer background */
 }
 
 .sidebar {
@@ -25,16 +24,11 @@ body {
 
 .feedback-container {
     max-width: 700px;
-    /* Wider container */
     margin: 0 auto;
     padding: 20px;
-    /* Add padding */
     background: #ffffff;
-    /* White background for contrast */
     border-radius: 10px;
-    /* Rounded corners */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow */
 }
 
 /* Mobile responsive */
@@ -59,9 +53,8 @@ body {
 .star-rating {
     display: flex;
     justify-content: center;
-    flex-direction: row-reverse; /* Explicitly reverse the order of stars */
+    flex-direction: row-reverse;
     gap: 12px;
-    /* Larger gap */
     margin: 20px 0;
 }
 
@@ -71,16 +64,13 @@ body {
 
 .star-rating label {
     font-size: 2.5rem;
-    /* Larger stars */
     color: #ddd;
     transition: color 0.3s ease;
-    /* Smoother transition */
 }
 
 .star-rating label:hover,
 .star-rating input:checked~label {
     color: #ffc107;
-    /* Gold color */
 }
 
 .star-rating label:hover~label {
@@ -96,24 +86,20 @@ body {
 
 .feedback-header {
     background: linear-gradient(135deg, #6c63ff, #3f51b5);
-    /* Gradient background */
     color: white;
     border-radius: 10px 10px 0 0;
-    /* Rounded top corners */
     padding: 25px;
     text-align: center;
 }
 
 .feedback-header h2 {
     font-size: 1.5rem;
-    /* Larger heading */
     margin-bottom: 0.5rem;
     color: #fff6f6;
 }
 
 .feedback-header p {
     font-size: 1rem;
-    /* Slightly larger text */
     opacity: 0.8;
     color: #fff6f6;
 }
@@ -122,10 +108,8 @@ body {
     font-size: 0.875rem;
     color: #6c757d;
     text-align: right;
-    /* Align to the right */
 }
 
 .character-count.warning {
     color: #dc3545;
-    /* Red for warnings */
 }

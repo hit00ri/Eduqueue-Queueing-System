@@ -1,7 +1,6 @@
-/* Student Dashboard Enhancements */
 body {
-    background-color: #f8f9fa; /* Softer background */
-    color: #495057; /* Neutral text color */
+    background-color: #f8f9fa; 
+    color: #495057; 
 }
 
 .container-fluid {
@@ -11,26 +10,26 @@ body {
 }
 
 .student-box {
-    max-width: 900px; /* Wider container */
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-    background: #ffffff; /* White background for contrast */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background: #ffffff; 
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card {
     border: none;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
 }
 
 .card-header {
-    background-color: #5880A5; /* Gradient background */
+    background-color: #5880A5; 
     color: white;
     padding: 20px;
-    font-size: 1.25rem; /* Larger font size */
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
@@ -49,7 +48,7 @@ body {
     flex: 1;
     text-align: center;
     padding: 15px;
-    background: #f8f9fa; /* Softer background */
+    background: #f8f9fa; 
 }
 
 .stats-box .card h3 {
