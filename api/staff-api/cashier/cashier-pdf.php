@@ -1,5 +1,6 @@
 <?php
-ob_start();
+ob_start(); // Start output buffering
+
 require_once "../../db/config.php";
 require_once "../../api/staff-api/cashier/reports-b.php";
 
@@ -17,6 +18,9 @@ if (isset($_GET['generate_pdf']) && $_GET['generate_pdf'] == '1') {
     $transactions = getFilteredTransactions($conn, $date_from, $date_to, $payment_type);
     $summary = getSummaryData($conn, $date_from, $date_to, $payment_type);
     
+    // Clear output buffer before generating PDF
+    ob_end_clean();
+
     // Generate PDF using FPDF
     generateFPDFReport($transactions, $summary, $date_from, $date_to);
     exit;
@@ -129,7 +133,7 @@ function getSummaryData($conn, $date_from, $date_to, $payment_type) {
 
 // Function to generate PDF using FPDF
 function generateFPDFReport($transactions, $summary, $date_from, $date_to) {
-    ob_end_clean();
+    ob_end_clean(); // Clear output buffer
     
     // Create PDF instance
     $pdf = new FPDF('P', 'mm', 'A4');
