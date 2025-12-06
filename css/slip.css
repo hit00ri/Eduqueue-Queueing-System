@@ -1,6 +1,5 @@
 .payment-slip-container {
     max-width: 600px;
-    /* center horizontally inside parent */
     margin: 70px auto 50px;
     display: block;
     width: 100%;

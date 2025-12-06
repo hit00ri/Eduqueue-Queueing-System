@@ -1,4 +1,3 @@
-/* Sidebar container */
 .sidebar {
     --sidebar-width: 240px;
     position: fixed;
@@ -8,7 +7,7 @@
     height: calc(100vh - var(--header-height));
     display: flex;
     flex-direction: column;
-    justify-content: space-between;  /* Push last item to the bottom */
+    justify-content: space-between; 
     background: #f8f9fa;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.08);
     transition: all 0.18s ease;
@@ -17,57 +16,51 @@
     z-index: 900;
 }
 
-
-
-/* Sidebar links */
 .sidebar-link {
-    padding: 12px 18px; /* Slightly larger padding */
+    padding: 12px 18px;
     border-radius: 8px;
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: background 0.3s ease, padding-left 0.3s ease; /* Smoother transition */
-    font-size: 1rem; /* Slightly larger font */
-    color: #495057; /* Neutral text color */
+    transition: background 0.3s ease, padding-left 0.3s ease;
+    font-size: 1rem; 
+    color: #495057; 
 }
 
 .sidebar-link:hover {
-    background: #e9ecef; /* Softer hover background */
-    color: #0d6efd !important; /* Accent color for hover */
-    padding-left: 25px; /* More pronounced hover effect */
+    background: #e9ecef; 
+    color: #0d6efd !important;
+    padding-left: 25px; 
 }
 
 .sidebar-link.active {
-    background: #dbe4ff; /* Softer active background */
+    background: #dbe4ff; 
     color: #1a237e !important;
     font-weight: 600;
     padding-left: 25px;
-    border-left: 4px solid #5c6bc0; /* Slightly thicker border */
+    border-left: 4px solid #5c6bc0; 
     border-radius: 0 8px 8px 0;
     margin-right: 5px;
 }
 
-/* Sidebar title */
 .sidebar-title {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.25rem; /* Larger title font */
+    font-size: 1.25rem; 
     font-weight: bold;
-    color: #343a40; /* Darker title color */
-    margin-bottom: 1rem; /* Add spacing below title */
+    color: #343a40; 
+    margin-bottom: 1rem; 
 }
 
-/* History container */
 .history-container {
-    margin-top: 15px; /* Slightly larger margin */
+    margin-top: 15px; 
 }
 
-/* Logout container */
 .logout-container {
     margin-top: auto;
-    padding-top: 15px; /* Slightly larger padding */
-    border-top: 1px solid #dee2e6; /* Separator line */  
+    padding-top: 15px; 
+    border-top: 1px solid #dee2e6;
     margin-bottom: 100px; 
 }
 

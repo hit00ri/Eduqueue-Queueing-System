@@ -2,7 +2,6 @@
   font-family: Century Gothic;
 }
 
-/* Help Button Styles */
 .help-button {
     background-color: #0d6efd;
     color: white;
@@ -34,7 +33,6 @@
     font-size: 1.5rem;
 }
     
-/* Pulse animation to draw attention */
 @keyframes pulse {
     0% {
         box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.7);
@@ -51,59 +49,58 @@
     animation: pulse 5s infinite;
 }
 
-/* Help Page Enhancements */
 body {
-    background-color: #f8f9fa; /* Softer background */
-    color: #495057; /* Neutral text color */
+    background-color: #f8f9fa; 
+    color: #495057; 
 }
 
 .container {
-    max-width: 800px; /* Wider container */
+    max-width: 800px; 
     margin: 0 auto;
     padding: 20px;
-    background: #ffffff; /* White background for contrast */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
 }
 
 h1 {
-    font-size: 2rem; /* Larger heading */
+    font-size: 2rem; 
     font-weight: bold;
-    color: #343a40; /* Darker heading color */
+    color: #343a40; 
 }
 
 p {
-    font-size: 1rem; /* Slightly larger text */
-    margin-bottom: 1.5rem; /* Add spacing */
+    font-size: 1rem; 
+    margin-bottom: 1.5rem; 
 }
 
 .accordion-item {
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 10px; /* Add spacing */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    border: none; 
+    border-radius: 5px; 
+    margin-bottom: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .accordion-header {
-    background: #6c63ff; /* Accent color */
+    background: #6c63ff; 
     color: white;
     padding: 15px;
-    border-radius: 5px; /* Rounded corners */
-    font-size: 1.125rem; /* Slightly larger font */
+    border-radius: 5px; 
+    font-size: 1.125rem; 
 }
 
 .accordion-collapse {
-    background: #f8f9fa; /* Softer background */
+    background: #f8f9fa; 
     padding: 15px;
 }
 
 .btn {
-    background: #6c63ff; /* Accent color */
+    background: #6c63ff; 
     color: white;
     border: none;
-    transition: background 0.3s ease; /* Smoother transition */
+    transition: background 0.3s ease; /
 }
 
 .btn:hover {
-    background: #5a54d1; /* Darker hover color */
+    background: #5a54d1; 
 }
