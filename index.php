@@ -35,7 +35,7 @@ require_once __DIR__ . "/api/auth.php";
 </header>
 
 
-<div class="index-container" style="margin-top: 50px">
+<div class="index-container">
 
     </div><div class="login-container">
   <div class="login-logo">
@@ -74,8 +74,8 @@ require_once __DIR__ . "/api/auth.php";
           Log In
       </button>
       <p class="forgot-password"><a href="includes/forget_password.php" class="forgot-password">Forgot Password?</a></p>
-      <p><a href="includes/open_live_queue.php" class="forgot-password">View Live Queue</a></p>
-  </form>
+
+    <p><a href="includes/open_live_queue.php" class="btn btn-outline-primary" style="display:flex; justify-content:center;">View Live Queue</a></p>
 
     </div>
 </div>

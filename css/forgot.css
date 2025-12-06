@@ -1,6 +1,5 @@
 /* Forgot Password Page Styles */
-.forgot-body {
-    background: linear-gradient(135deg, #003d7a 0%, #0056b3 100%);
+body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;

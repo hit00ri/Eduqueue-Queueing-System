@@ -8,7 +8,7 @@ require_once "../api/forgot_password.php";
     <title>Forgot Password</title>
     <link rel="stylesheet" href="../css/forgot.css">
 </head>
-<body class="forgot-body">
+<body>
 <div class="forgot-page">
     <div class="forgot-card">
         <div class="forgot-left">
