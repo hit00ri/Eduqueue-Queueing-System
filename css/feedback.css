@@ -59,6 +59,7 @@ body {
 .star-rating {
     display: flex;
     justify-content: center;
+    flex-direction: row-reverse; /* Explicitly reverse the order of stars */
     gap: 12px;
     /* Larger gap */
     margin: 20px 0;
