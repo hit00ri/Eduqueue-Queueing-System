@@ -17,12 +17,10 @@
     <?php endif; ?>
 
     <div>
-        <li class="nav-item">
-            <a class="nav-link" href="profile.php">
-                <span class="material-symbols-outlined">person_2</span>
-                <h2>Profile</h2>
-            </a>
-        </li>
+        <a class="nav-link" href="profile.php">
+            <span class="material-symbols-outlined">person</span>
+            <h2>Profile</h2>
+        </a>
     </div>
 
     <a class="sidebar-link" href="../student-management/student_dashboard.php">
