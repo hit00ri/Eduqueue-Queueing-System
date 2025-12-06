@@ -109,14 +109,14 @@
             ORDER BY q.queue_id ASC
         ")->fetchAll(PDO::FETCH_ASSOC);
 
-    // Get cashier performance data (for display in dashboard)
+    // Get cashier performance data 
     $todayPerformance = [];
     $todayEfficiency = 0;
 
     if (isset($_SESSION['user']) && in_array($_SESSION['user']['role'], ['admin', 'cashier'])) {
         $cashier_id = $_SESSION['user']['user_id'];
 
-        // Today's performance for this cashier (only if handled_by column exists)
+        // Today's performance for this cashier
         if ($hasHandledBy) {
             $todayPerformance = $conn->query(
                 "SELECT 
@@ -128,7 +128,7 @@
                 AND DATE(time_in) = CURDATE()"
             )->fetch(PDO::FETCH_ASSOC);
         } else {
-            // Fallback: compute overall today's performance (cannot filter by cashier)
+            // Fallback: compute overall today's performance 
             $todayPerformance = $conn->query(
                 "SELECT 
                     COUNT(*) as today_queues,
