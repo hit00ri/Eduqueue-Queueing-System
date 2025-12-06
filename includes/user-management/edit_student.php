@@ -67,7 +67,7 @@ if (isset($_POST['update'])) {
                 </div>
 
                 <div class="mb-3">
-                    <label>course</label>
+                    <label>Course</label>
                     <input type="text" name="course" class="form-control" value="<?= $user['course'] ?>" required>
                 </div>
 
