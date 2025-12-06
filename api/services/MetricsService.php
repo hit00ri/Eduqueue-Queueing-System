@@ -10,8 +10,6 @@ class MetricsService
         $this->conn = $connection;
     }
 
-    // ... your existing methods (recordQueueCompletion, generateDailyKPISummary, etc.) ...
-
     /**
      * Get cashier-specific performance metrics
      * Requires 'handled_by' column in queue table
@@ -48,9 +46,10 @@ class MetricsService
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    /**
+    /*
      * Get individual cashier performance summary
      */
+
     public function getCashierPerformanceSummary($cashier_id, $days = 30)
     {
         $stmt = $this->conn->prepare("
@@ -84,7 +83,7 @@ class MetricsService
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    /**
+    /*
      * Compare all cashiers performance (Admin only)
      */
     public function getAllCashiersPerformance($days = 30)
@@ -125,12 +124,12 @@ class MetricsService
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    /**
+    /*
      * Log a generic event to metrics_log (creates table if missing)
      */
     public function logEvent($level, $category, $message, $user_id = null, $student_id = null, $queue_id = null)
     {
-        // Ensure table exists
+        
         $this->conn->exec(
             "CREATE TABLE IF NOT EXISTS metrics_log (
                 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -149,7 +148,7 @@ class MetricsService
         return $this->conn->lastInsertId();
     }
 
-    /**
+    /*
      * Record queue completion metrics (served/voided). Creates table if missing.
      */
     public function recordQueueCompletion($queue_id, $student_id, $status)
@@ -174,7 +173,7 @@ class MetricsService
         return $this->conn->lastInsertId();
     }
 
-    /**
+    /*
      * Generate and store the daily KPI summary for a given date (YYYY-MM-DD)
      */
     public function generateDailyKPISummary($date)
@@ -222,7 +221,7 @@ class MetricsService
                 $avgService = $t['asv'] !== null ? floatval($t['asv']) : null;
             }
         } catch (Exception $e) {
-            // ignore, leave nulls
+           
         }
 
         // Revenue
@@ -255,6 +254,4 @@ class MetricsService
 
         return true;
     }
-
-    // ... rest of your existing methods ...
 }
