@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Dec 06, 2025 at 04:00 PM
+=======
+-- Generation Time: Dec 06, 2025 at 03:35 PM
+>>>>>>> 6234d633400f4e123c651e9435b20a19bf917bd3
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -230,11 +234,22 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`student_id`, `name`, `course`, `year_level`, `email`, `created_at`, `password`) VALUES
+<<<<<<< HEAD
 (23100001, 'Brent Adrian Kyro L. Alabag', 'BSIT', '3rd Year', 'brentalabag@slc.edu', '2025-11-09 15:15:38', '123'),
 (23100002, 'Ardy A. Aquino', 'BSIT', '3rd Year', 'adryaquino@slc.edu', '2025-11-09 15:16:08', '456'),
 (23100003, 'Mark Lester Rivera', 'BSIT', '3rd Year', 'lestermark@slc.edu', '2025-11-09 15:16:48', '789'),
 (23100004, 'Erich Galiste', 'BSIT', '3rd Year', 'galiste@slc.edu', '2025-12-03 22:18:42', '012'),
 (23100005, 'Charlene Abenes', 'BSIT', '3rd Year', 'abenes@slc.edu', '2025-12-06 22:58:28', '345');
+=======
+(1, 'Brent Adrian Kyro L. Alabag', 'BSIT', '3rd Year', 'brentalabag@slc.edu', '2025-11-09 15:15:38', '123'),
+(2, 'Ardy Aquino', 'BSIT', '3rd Year', 'ardyaquino@slc.edu', '2025-11-09 15:16:08', '456'),
+(3, 'Mark Lester Rivera', 'BSIT', '3rd Year', 'lestermark@slc.edu', '2025-11-09 15:16:48', '789'),
+(4, 'Vince Alvendia', 'BSIT', '3rd Year', 'vince@gmail.com', '2025-12-02 05:04:09', 'vince'),
+(6, 'Charlene Abenes', 'BSIT', '3rd Year', 'charlene@gmail.com', '2025-12-02 05:06:36', 'charlene'),
+(7, 'lester', 'egg', '3rd Year', 'wer@slc.edu', '2025-12-05 11:31:24', '123'),
+(8, 'lester', 'ewf', '2nd Year', 'wer@slc.edu', '2025-12-05 11:31:54', '123'),
+(9, 'Clederick Vilog', 'BSMT', '1st Year', 'clederick@slc.edu', '2025-12-06 09:46:39', 'cledong');
+>>>>>>> 6234d633400f4e123c651e9435b20a19bf917bd3
 
 -- --------------------------------------------------------
 
@@ -473,7 +488,11 @@ ALTER TABLE `reports`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
+<<<<<<< HEAD
   MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23100006;
+=======
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+>>>>>>> 6234d633400f4e123c651e9435b20a19bf917bd3
 
 --
 -- AUTO_INCREMENT for table `student_feedback`
