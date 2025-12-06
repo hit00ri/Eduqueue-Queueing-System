@@ -1,7 +1,7 @@
 <?php
     require_once __DIR__ . '/../../api/protect.php';
     // load metrics bootstrap (protect.php already loads db/config.php)
-    require_once __DIR__ . "/../../api/staff-api/metrics-dashboard-b.php";
+    require_once __DIR__ . "/../../api/staff-api/admin/metrics-dashboard-b.php";
 ?>
 
 <!doctype html>

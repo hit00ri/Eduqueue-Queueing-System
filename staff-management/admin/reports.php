@@ -1,7 +1,7 @@
 <?php
   require_once __DIR__ . '/../../api/protect.php';
   // load reports bootstrap
-  require_once __DIR__ . "/../../api/staff-api/reports-b.php";
+  require_once __DIR__ . "/../../api/staff-api/admin/reports-b.php";
 ?>
 
 

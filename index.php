@@ -4,7 +4,7 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-require_once __DIR__ . "/api/staff-api/index-b.php";
+require_once __DIR__ . "/api/index-b.php";
 require_once __DIR__ . "/api/auth.php";
 ?>
 <!doctype html>
@@ -24,7 +24,7 @@ require_once __DIR__ . "/api/auth.php";
 <header class="header">
     <div class="header-content">
         <div class="header-logo">
-            <img src="./img/SLC LOGO.png" alt="slc logo" />
+            <img src="img/SLC LOGO.png" alt="slc logo" />
         </div>
         <div class="header-text">
             <p class= "header-title">Saint Louis College</p>

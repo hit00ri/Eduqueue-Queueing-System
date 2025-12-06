@@ -1,5 +1,5 @@
 <?php
-    require_once "../api/staff-api/open-live-queue-b.php";
+    require_once "../api/open-live-queue-b.php";
 ?>
 <!doctype html>
 <html>
