@@ -5,17 +5,20 @@ require_once "../api/student-api/profile-b.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Profile - Student Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/student.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="../css/profile.css">
 </head>
+
 <body>
     <?php include "../includes/header.php"; ?>
     <?php include '../includes/student_sidebar.php'; ?>
@@ -52,23 +55,25 @@ require_once "../api/student-api/profile-b.php";
                 <!-- Student Information -->
                 <div class="form-section">
                     <h5 class="mb-3"><i class="bi bi-person-badge"></i> Student Information</h5>
-                    
+
                     <div class="mb-3">
                         <label class="form-label"><strong>Student ID:</strong></label>
-                        <input type="text" class="form-control" value="<?= htmlspecialchars($studentData['student_id']) ?>" readonly>
+                        <input type="text" class="form-control"
+                            value="<?= htmlspecialchars($studentData['student_id']) ?>" readonly>
                         <small class="form-text text-muted">Student ID cannot be changed.</small>
                     </div>
-                    
+
                     <div class="mb-3">
                         <label class="form-label"><strong>Full Name:</strong></label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <span class="material-symbols-outlined">person</span>
                             </span>
-                            <input type="text" name="name" class="form-control" value="<?= htmlspecialchars($studentData['name']) ?>" required>
+                            <input type="text" name="name" class="form-control"
+                                value="<?= htmlspecialchars($studentData['name']) ?>" required>
                         </div>
                     </div>
-                    
+
                     <div class="mb-3">
                         <label class="form-label"><strong>Course:</strong></label>
                         <div class="input-group">
@@ -77,12 +82,18 @@ require_once "../api/student-api/profile-b.php";
                             </span>
                             <select name="course" class="form-control" required>
                                 <option value="">Select Course</option>
-                                <option value="BSIT" <?= ($studentData['course'] ?? '') === 'BSIT' ? 'selected' : '' ?>>BSIT - Bachelor of Science in Information Technology</option>
-                                <option value="BSCS" <?= ($studentData['course'] ?? '') === 'BSCS' ? 'selected' : '' ?>>BSCS - Bachelor of Science in Computer Science</option>
-                                <option value="BSIS" <?= ($studentData['course'] ?? '') === 'BSIS' ? 'selected' : '' ?>>BSIS - Bachelor of Science in Information Systems</option>
-                                <option value="BSCE" <?= ($studentData['course'] ?? '') === 'BSCE' ? 'selected' : '' ?>>BSCE - Bachelor of Science in Computer Engineering</option>
-                                <option value="BSBA" <?= ($studentData['course'] ?? '') === 'BSBA' ? 'selected' : '' ?>>BSBA - Bachelor of Science in Business Administration</option>
-                                <option value="BSEE" <?= ($studentData['course'] ?? '') === 'BSEE' ? 'selected' : '' ?>>BSEE - Bachelor of Science in Electrical Engineering</option>
+                                <option value="BSIT" <?= ($studentData['course'] ?? '') === 'BSIT' ? 'selected' : '' ?>>
+                                    BSIT - Bachelor of Science in Information Technology</option>
+                                <option value="BSCS" <?= ($studentData['course'] ?? '') === 'BSCS' ? 'selected' : '' ?>>
+                                    BSCS - Bachelor of Science in Computer Science</option>
+                                <option value="BSIS" <?= ($studentData['course'] ?? '') === 'BSIS' ? 'selected' : '' ?>>
+                                    BSIS - Bachelor of Science in Information Systems</option>
+                                <option value="BSCE" <?= ($studentData['course'] ?? '') === 'BSCE' ? 'selected' : '' ?>>
+                                    BSCE - Bachelor of Science in Computer Engineering</option>
+                                <option value="BSBA" <?= ($studentData['course'] ?? '') === 'BSBA' ? 'selected' : '' ?>>
+                                    BSBA - Bachelor of Science in Business Administration</option>
+                                <option value="BSEE" <?= ($studentData['course'] ?? '') === 'BSEE' ? 'selected' : '' ?>>
+                                    BSEE - Bachelor of Science in Electrical Engineering</option>
                             </select>
                         </div>
                     </div>
@@ -110,7 +121,8 @@ require_once "../api/student-api/profile-b.php";
                             <span class="input-group-text">
                                 <span class="material-symbols-outlined">email</span>
                             </span>
-                            <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($studentData['email']) ?>" required>
+                            <input type="email" name="email" class="form-control"
+                                value="<?= htmlspecialchars($studentData['email']) ?>" required>
                         </div>
                     </div>
                 </div>
@@ -119,7 +131,7 @@ require_once "../api/student-api/profile-b.php";
                 <div class="password-section">
                     <h5 class="mb-3"><i class="bi bi-shield-lock"></i> Change Password</h5>
                     <small class="text-muted d-block mb-3">Leave blank to keep current password</small>
-                    
+
                     <div class="mb-3">
                         <label class="form-label"><strong>Current Password:</strong></label>
                         <div class="input-group">
@@ -164,10 +176,11 @@ require_once "../api/student-api/profile-b.php";
             </form>
         </div>
     </div>
-    
+
     <?php include "../includes/footer.php"; ?>
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/darkmode.js"></script>
 </body>
+
 </html>

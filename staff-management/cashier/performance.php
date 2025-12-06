@@ -24,20 +24,23 @@ $transactionMetrics = $stmtTransactionMetrics->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Performance</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/dashboard.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
+
 <body>
     <?php include __DIR__ . '/../../includes/header.php'; ?>
-    
+
     <?php include "../../includes/cashier_sidebar.php"; ?>
 
     <div class="main-content" style="margin-left: 240px">
@@ -62,11 +65,13 @@ $transactionMetrics = $stmtTransactionMetrics->fetch(PDO::FETCH_ASSOC);
                     </div>
                     <div class="col-md-4">
                         <h6>Avg Service Time</h6>
-                        <h4><?= $queueMetrics['avg_service_time'] ? number_format($queueMetrics['avg_service_time'], 1) . 'm' : 'N/A' ?></h4>
+                        <h4><?= $queueMetrics['avg_service_time'] ? number_format($queueMetrics['avg_service_time'], 1) . 'm' : 'N/A' ?>
+                        </h4>
                     </div>
                     <div class="col-md-4">
                         <h6>Total Revenue</h6>
-                        <h4 class="text-success">₱<?= number_format($transactionMetrics['total_revenue'] ?? 0, 2) ?></h4>
+                        <h4 class="text-success">₱<?= number_format($transactionMetrics['total_revenue'] ?? 0, 2) ?>
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -85,7 +90,8 @@ $transactionMetrics = $stmtTransactionMetrics->fetch(PDO::FETCH_ASSOC);
                     </div>
                     <div class="col-md-6">
                         <h6>Total Revenue</h6>
-                        <h4 class="text-success">₱<?= number_format($transactionMetrics['total_revenue'] ?? 0, 2) ?></h4>
+                        <h4 class="text-success">₱<?= number_format($transactionMetrics['total_revenue'] ?? 0, 2) ?>
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -96,4 +102,5 @@ $transactionMetrics = $stmtTransactionMetrics->fetch(PDO::FETCH_ASSOC);
 
     <script src="../../js/auto-refresh.js"></script>
 </body>
+
 </html>

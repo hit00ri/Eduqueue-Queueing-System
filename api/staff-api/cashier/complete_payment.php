@@ -33,21 +33,21 @@ if (!$queueId || !$amount || !$paymentType) {
 
 try {
     $conn->beginTransaction();
-    
+
     // Get student ID and queue number from queue
     $queueQuery = "SELECT q.student_id, q.queue_number FROM queue q WHERE q.queue_id = :queue_id";
     $queueStmt = $conn->prepare($queueQuery);
     $queueStmt->bindParam(':queue_id', $queueId);
     $queueStmt->execute();
     $queueData = $queueStmt->fetch(PDO::FETCH_ASSOC);
-    
+
     if (!$queueData) {
         throw new Exception("Queue not found");
     }
-    
+
     $studentId = $queueData['student_id'];
     $queueNumber = $queueData['queue_number'];
-    
+
     // Insert transaction
     $transactionQuery = "
         INSERT INTO transactions (queue_id, amount, payment_type, cashier_id, date_paid) 
@@ -60,7 +60,7 @@ try {
     $transactionStmt->bindParam(':cashier_id', $cashierId);
     $transactionStmt->execute();
     $transactionId = $conn->lastInsertId();
-    
+
     // Update queue status
     $updateQueueQuery = "
         UPDATE queue 
@@ -75,7 +75,7 @@ try {
     $updateQueueStmt->bindParam(':payment_for', $paymentFor);
     $updateQueueStmt->bindParam(':handled_by', $cashierId);
     $updateQueueStmt->execute();
-    
+
     // Add to payment history
     $historyQuery = "
         INSERT INTO payment_history (student_id, transaction_id, status, date) 
@@ -85,9 +85,9 @@ try {
     $historyStmt->bindParam(':student_id', $studentId);
     $historyStmt->bindParam(':transaction_id', $transactionId);
     $historyStmt->execute();
-    
+
     $conn->commit();
-    
+
     echo json_encode([
         'success' => true,
         'message' => "Payment of ₱" . number_format($amount, 2) . " completed for Queue #{$queueNumber}",
@@ -96,7 +96,7 @@ try {
         'amount' => $amount,
         'payment_type' => $paymentType
     ]);
-    
+
 } catch (Exception $e) {
     $conn->rollBack();
     error_log("Payment Error: " . $e->getMessage());

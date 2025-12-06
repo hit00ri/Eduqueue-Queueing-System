@@ -8,20 +8,23 @@ $queueLogs = $stmtQueue->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Logs</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/dashboard.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
+
 <body>
     <?php include __DIR__ . '/../../includes/header.php'; ?>
-    
+
     <?php include "../../includes/cashier_sidebar.php"; ?>
 
     <div class="main-content" style="margin-left: 240px">
@@ -40,35 +43,35 @@ $queueLogs = $stmtQueue->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="card-body">
                 <?php if (count($queueLogs) > 0): ?>
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Queue ID</th>
-                                <th>Queue Number</th>
-                                <th>Status</th>
-                                <th>Time In</th>
-                                <th>Time Out</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($queueLogs as $log): ?>
-                            <tr>
-                                <td><?= htmlspecialchars($log['queue_id']) ?></td>
-                                <td><?= htmlspecialchars($log['queue_number']) ?></td>
-                                <td><?= htmlspecialchars($log['status']) ?></td>
-                                <td><?= htmlspecialchars($log['time_in']) ?></td>
-                                <td><?= htmlspecialchars($log['time_out']) ?></td>
-                            </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Queue ID</th>
+                                    <th>Queue Number</th>
+                                    <th>Status</th>
+                                    <th>Time In</th>
+                                    <th>Time Out</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($queueLogs as $log): ?>
+                                    <tr>
+                                        <td><?= htmlspecialchars($log['queue_id']) ?></td>
+                                        <td><?= htmlspecialchars($log['queue_number']) ?></td>
+                                        <td><?= htmlspecialchars($log['status']) ?></td>
+                                        <td><?= htmlspecialchars($log['time_in']) ?></td>
+                                        <td><?= htmlspecialchars($log['time_out']) ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
                 <?php else: ?>
-                <div class="text-center py-4">
-                    <i class="bi bi-receipt" style="font-size: 3rem; color: #6c757d;"></i>
-                    <p class="text-muted mt-2">No queue logs found.</p>
-                </div>
+                    <div class="text-center py-4">
+                        <i class="bi bi-receipt" style="font-size: 3rem; color: #6c757d;"></i>
+                        <p class="text-muted mt-2">No queue logs found.</p>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
@@ -78,4 +81,5 @@ $queueLogs = $stmtQueue->fetchAll(PDO::FETCH_ASSOC);
 
     <script src="../../js/auto-refresh.js"></script>
 </body>
+
 </html>

@@ -5,21 +5,24 @@ require_once "../api/student-api/queue-history-b.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Queue History - Student Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/student.css">
     <link rel="stylesheet" href="../css/queue_history.css">
     <link rel="stylesheet" href="../css/help.css">
 </head>
+
 <body>
     <?php include "../includes/header.php"; ?>
     <?php include '../includes/student_sidebar.php'; ?>
-    
+
     <a href="help.php" class="help-button position-fixed top-10 end-0 m-3 pulse">
         <i class="bi bi-question-lg"></i>
     </a>
@@ -35,8 +38,9 @@ require_once "../api/student-api/queue-history-b.php";
                             <?= htmlspecialchars($student['name']) ?>
                         </h4>
                         <p class="mb-0 opacity-75">
-                            ID: <?= htmlspecialchars($student['student_id']) ?> | 
-                            <?= htmlspecialchars($student['course'] ?? '') ?> - <?= htmlspecialchars($student['year_level'] ?? '') ?>
+                            ID: <?= htmlspecialchars($student['student_id']) ?> |
+                            <?= htmlspecialchars($student['course'] ?? '') ?> -
+                            <?= htmlspecialchars($student['year_level'] ?? '') ?>
                         </p>
                     </div>
                 </div>
@@ -91,7 +95,8 @@ require_once "../api/student-api/queue-history-b.php";
                                             </td>
                                             <td>
                                                 <?php if ($queue['time_out']): ?>
-                                                    <small class="text-success"><?= date('g:i A', strtotime($queue['time_out'])) ?></small>
+                                                    <small
+                                                        class="text-success"><?= date('g:i A', strtotime($queue['time_out'])) ?></small>
                                                 <?php else: ?>
                                                     <small class="text-muted">-</small>
                                                 <?php endif; ?>
@@ -107,10 +112,11 @@ require_once "../api/student-api/queue-history-b.php";
                                                 <small><?= htmlspecialchars($queue['payment_for'] ?? 'General Inquiry') ?></small>
                                             </td>
                                             <td>
-                                                <span class="badge 
-                                                    <?= $queue['status'] === 'served' ? 'bg-success' : 
-                                                       ($queue['status'] === 'serving' ? 'bg-primary' : 
-                                                       ($queue['status'] === 'waiting' ? 'bg-warning' : 'bg-secondary')) ?>">
+                                                <span
+                                                    class="badge 
+                                                    <?= $queue['status'] === 'served' ? 'bg-success' :
+                                                        ($queue['status'] === 'serving' ? 'bg-primary' :
+                                                            ($queue['status'] === 'waiting' ? 'bg-warning' : 'bg-secondary')) ?>">
                                                     <?= ucfirst($queue['status']) ?>
                                                 </span>
                                             </td>
@@ -119,7 +125,7 @@ require_once "../api/student-api/queue-history-b.php";
                                 </tbody>
                             </table>
                         </div>
-                        
+
                         <!-- Summary Stats -->
                         <div class="p-3 bg-light border-top">
                             <div class="row text-center">
@@ -153,18 +159,21 @@ require_once "../api/student-api/queue-history-b.php";
                             <i class="bi bi-info-circle"></i> About Your Queue History
                         </h6>
                         <p class="mb-0 small">
-                            This page shows only <strong>your personal queue history</strong>. You can see all the queues you've taken, 
-                            their status, and payment details. The data is filtered to show only transactions associated with your student account.
+                            This page shows only <strong>your personal queue history</strong>. You can see all the queues
+                            you've taken,
+                            their status, and payment details. The data is filtered to show only transactions associated
+                            with your student account.
                         </p>
                     </div>
                 </div>
             <?php endif; ?>
         </div>
     </div>
-    
+
     <?php include "../includes/footer.php"; ?>
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/darkmode.js"></script>
 </body>
+
 </html>

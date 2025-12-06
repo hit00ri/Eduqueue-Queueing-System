@@ -12,7 +12,7 @@ try {
     $stmt = $conn->prepare("SELECT * FROM users WHERE user_id = ?");
     $stmt->execute([$id]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    
+
     if (!$user) {
         echo "Error: User not found.";
         exit;
@@ -44,50 +44,57 @@ if (isset($_POST['update'])) {
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Edit User</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/common.css">
 </head>
+
 <body class="bg-light">
 
-<?php include __DIR__ . '/../../includes/header.php'; ?>
+    <?php include __DIR__ . '/../../includes/header.php'; ?>
 
-<div class="container mt-5">
+    <div class="container mt-5">
 
-    <div class="card p-4 shadow-sm">
-        <h4>Edit User</h4><hr>
+        <div class="card p-4 shadow-sm">
+            <h4>Edit User</h4>
+            <hr>
 
-           <!-- The form posts back to this page. The select inputs are
+            <!-- The form posts back to this page. The select inputs are
                pre-selected using the $user array fetched above. -->
-           <form method="POST">
+            <form method="POST">
 
-           <div class="mb-3">
-                <label>Name: </label>
-                <input type="text" name="name" class="form-control" value="<?= htmlspecialchars($user['name'] ?? '') ?>" required>
-            </div>
+                <div class="mb-3">
+                    <label>Name: </label>
+                    <input type="text" name="name" class="form-control"
+                        value="<?= htmlspecialchars($user['name'] ?? '') ?>" required>
+                </div>
 
-            <div class="mb-3">
-                <label>Username: </label>
-                <input type="text" name="username" class="form-control" value="<?= htmlspecialchars($user['username'] ?? '') ?>" required>
-            </div>
+                <div class="mb-3">
+                    <label>Username: </label>
+                    <input type="text" name="username" class="form-control"
+                        value="<?= htmlspecialchars($user['username'] ?? '') ?>" required>
+                </div>
 
-            <div class="mb-3">
-                <label>Role: </label>
-                <select name="role" class="form-control">
-                    <option value="cashier" <?= (strtolower($user['role'] ?? '')=="cashier")?"selected":"" ?>>Cashier</option>
-                </select>
-            </div>
+                <div class="mb-3">
+                    <label>Role: </label>
+                    <select name="role" class="form-control">
+                        <option value="cashier" <?= (strtolower($user['role'] ?? '') == "cashier") ? "selected" : "" ?>>Cashier
+                        </option>
+                    </select>
+                </div>
 
 
-            <button name="update" class="btn btn-primary">Update</button>
-            <a href="../../staff-management/admin/manage_user.php" class="btn btn-secondary">Back</a>
+                <button name="update" class="btn btn-primary">Update</button>
+                <a href="../../staff-management/admin/manage_user.php" class="btn btn-secondary">Back</a>
 
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
-<?php include __DIR__ . '/../../includes/footer.php'; ?>
+    <?php include __DIR__ . '/../../includes/footer.php'; ?>
 
 </body>
+
 </html>

@@ -1,5 +1,5 @@
 <?php
-    require_once "../../api/staff-api/cashier/open-live-queue-C-b.php";
+require_once "../../api/staff-api/cashier/open-live-queue-C-b.php";
 ?>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 <link rel="stylesheet" href="../../css/sidebar.css">
@@ -12,47 +12,47 @@
 
     <!-- Debug: Show session status -->
     <?php if (getenv('APP_DEBUG') || isset($_GET['debug'])): ?>
-    <div style="background:#f0f0f0; padding:8px; margin-bottom:10px; font-size:11px; color:#333;">
-        Session: <?= isset($_SESSION['user']) ? 'YES' : 'NO' ?><br>
-        Role: <?= $_SESSION['user']['role'] ?? 'N/A' ?><br>
-        Name: <?= $_SESSION['user']['username'] ?? 'N/A' ?>
-    </div>
+        <div style="background:#f0f0f0; padding:8px; margin-bottom:10px; font-size:11px; color:#333;">
+            Session: <?= isset($_SESSION['user']) ? 'YES' : 'NO' ?><br>
+            Role: <?= $_SESSION['user']['role'] ?? 'N/A' ?><br>
+            Name: <?= $_SESSION['user']['username'] ?? 'N/A' ?>
+        </div>
     <?php endif; ?>
 
 
     <!-- Cashier & Admin: Queue Management -->
     <?php if (isset($_SESSION['user']) && in_array($_SESSION['user']['role'], ['cashier'])): ?>
-    <a class="sidebar-link" href="dashboard.php">
-        <span class="material-symbols-outlined">featured_play_list</span>
-        Queue Management
-    </a>
-
-    <a class="sidebar-link" href="performance.php">
-        <span class="material-symbols-outlined">analytics</span>
-        My Performance
-    </a>
-
-    <a class="sidebar-link" href="logs.php">
-        <span class="material-symbols-outlined">update</span>
-       Activity Logs
-    </a>
-
-    <a class="sidebar-link" href="cashier_queue_monitor.php">
-        <span class="material-symbols-outlined">monitor</span>
-       View Live queue
-    </a>
-
-    <a class="sidebar-link" href="cashier_report.php">
-        <span class="material-symbols-outlined">bar_chart</span>
-        Reports
-    </a>
-
-    <div class="logout-container">
-        <a class="sidebar-link confirm-logout" href="/Eduqueue-Queueing-System/api/auth.php?action=logout">
-            <span class="material-symbols-outlined">logout</span>
-            Logout
+        <a class="sidebar-link" href="dashboard.php">
+            <span class="material-symbols-outlined">featured_play_list</span>
+            Queue Management
         </a>
-    </div>
+
+        <a class="sidebar-link" href="performance.php">
+            <span class="material-symbols-outlined">analytics</span>
+            My Performance
+        </a>
+
+        <a class="sidebar-link" href="logs.php">
+            <span class="material-symbols-outlined">update</span>
+            Activity Logs
+        </a>
+
+        <a class="sidebar-link" href="cashier_queue_monitor.php">
+            <span class="material-symbols-outlined">monitor</span>
+            View Live queue
+        </a>
+
+        <a class="sidebar-link" href="cashier_report.php">
+            <span class="material-symbols-outlined">bar_chart</span>
+            Reports
+        </a>
+
+        <div class="logout-container">
+            <a class="sidebar-link confirm-logout" href="/Eduqueue-Queueing-System/api/auth.php?action=logout">
+                <span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+        </div>
     <?php endif; ?>
 
 </div>

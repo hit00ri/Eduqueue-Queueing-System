@@ -25,9 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt = $conn->prepare("SELECT user_id FROM users WHERE email = ? LIMIT 1");
             $stmt->execute([$email]);
             $user_exists = $stmt->fetch(PDO::FETCH_ASSOC);
-            
+
             $table_to_update = "";
-            
+
             if ($user_exists) {
                 $table_to_update = "users";
             } else {
@@ -35,14 +35,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $stmt = $conn->prepare("SELECT student_id FROM students WHERE email = ? LIMIT 1");
                 $stmt->execute([$email]);
                 $student_exists = $stmt->fetch(PDO::FETCH_ASSOC);
-                
+
                 if ($student_exists) {
                     $table_to_update = "students";
                 } else {
                     $error = "Email not found in our system.";
                 }
             }
-            
+
             // If email was found, update the password (in plain text as per your system)
             if ($table_to_update && empty($error)) {
                 // Store as plain text (matching your profile-b.php system)
@@ -51,9 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 } else {
                     $update = $conn->prepare("UPDATE students SET password = ? WHERE email = ?");
                 }
-                
+
                 $result = $update->execute([$new_password, $email]);
-                
+
                 if ($result && $update->rowCount() > 0) {
                     $message = "Password updated successfully. You can now sign in.";
                     $email_value = ""; // Clear the email field
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     $error = "Failed to update password. Please try again.";
                 }
             }
-            
+
         } catch (PDOException $e) {
             error_log("Password reset error: " . $e->getMessage());
             $error = "An error occurred while processing your request. Please try again later.";

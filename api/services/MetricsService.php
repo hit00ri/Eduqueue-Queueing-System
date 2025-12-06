@@ -9,7 +9,7 @@ class MetricsService
     {
         $this->conn = $connection;
     }
-    
+
     // ... your existing methods (recordQueueCompletion, generateDailyKPISummary, etc.) ...
 
     /**
