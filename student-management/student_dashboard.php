@@ -27,7 +27,7 @@ require_once "../api/student-api/student-dashboard-b.php";
 
 
 
-    <p class="mt-3"><a href="../api/student-api/student-logout-b.php">Logout</a></p>
+    <p class="mt-3"><a class="confirm-logout" href="../api/student-api/student-logout-b.php">Logout</a></p>
 <div class="student-dashboard-container" style="max-width: 90%;">
     <div class="container-fluid">
 
