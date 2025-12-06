@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../../api/protect.php';
+// load cashier reports bootstrap
 require_once "../../api/staff-api/cashier/reports-b.php"
 ?>
 <!doctype html>

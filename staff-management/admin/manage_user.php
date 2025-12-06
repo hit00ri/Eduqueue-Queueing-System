@@ -1,5 +1,6 @@
 <?php
-    require_once __DIR__ . '/../../db/config.php';
+    require_once __DIR__ . '/../../api/protect.php';
+    // db/config.php is loaded by api/protect.php
     
     $search = "";
     if (isset($_GET['search'])) {

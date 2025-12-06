@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../../api/protect.php';
+// load open-live-queue bootstrap
 require_once "../../api/staff-api/cashier/open-live-queue-C-b.php";
 ?>
 <!doctype html>

@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../api/protect.php';
+// load payment slip bootstrap (protect.php validates session)
 require_once "../api/student-api/payment-slip-b.php";    
 ?>
 <!DOCTYPE html>

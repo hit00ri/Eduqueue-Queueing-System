@@ -40,12 +40,18 @@
         <span class="material-symbols-outlined nav-icon">analytics</span>
         Daily Reports
     </a>
+    <?php if (getenv('APP_DEBUG') === '1'): ?>
+        <a class="sidebar-debug" href="/Eduqueue-Queueing-System/staff-management/admin/reports.php?debug_protect=1" title="Debug protect">[dbg]</a>
+    <?php endif; ?>
 
     <!-- System Logs (Admin) -->
     <a class="sidebar-link" href="/Eduqueue-Queueing-System/staff-management/admin/manage_user.php">
         <span class="material-symbols-outlined nav-icon">list_alt</span>
         Manage Users
     </a>
+    <?php if (getenv('APP_DEBUG') === '1'): ?>
+        <a class="sidebar-debug" href="/Eduqueue-Queueing-System/staff-management/admin/manage_user.php?debug_protect=1" title="Debug protect">[dbg]</a>
+    <?php endif; ?>
 
     <a class="sidebar-link" href="/Eduqueue-Queueing-System/includes/transaction_history.php">
         <span class="material-symbols-outlined nav-icon">assessment</span>

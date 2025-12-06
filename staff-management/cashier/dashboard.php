@@ -1,8 +1,6 @@
 <?php
-require_once __DIR__ . '/../../db/config.php';
-require_once __DIR__ . '/../../api/auth.php';
-// api/auth.php already ensures login
-
+require_once __DIR__ . '/../../api/protect.php';
+// load cashier dashboard bootstrap (protect.php already loads db/config.php and validates session)
 require_once "../../api/staff-api/cashier/dashboard-b.php";
 
 // Check if we have a payment success/error message

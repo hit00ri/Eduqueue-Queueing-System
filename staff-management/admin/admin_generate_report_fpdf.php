@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../../api/protect.php';
+// ensure admin PDF generator has access to validated session and DB
 require_once __DIR__ . '/../../api/staff-api/admin/admin-pdf.php'
 ?>
 <!doctype html>

@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../../api/protect.php';
+// ensure cashier PDF generator runs with validated session
 require_once __DIR__ . '/../../api/staff-api/cashier/cashier-pdf.php'
 ?>
 <!doctype html>

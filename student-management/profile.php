@@ -1,5 +1,6 @@
 <?php
-// profile.php
+require_once __DIR__ . '/../api/protect.php';
+// load student profile bootstrap (protect.php validates session)
 require_once "../api/student-api/profile-b.php";
 ?>
 <!DOCTYPE html>

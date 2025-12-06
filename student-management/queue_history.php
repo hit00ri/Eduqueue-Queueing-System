@@ -1,5 +1,6 @@
 <?php
-// queue_history.php
+require_once __DIR__ . '/../api/protect.php';
+// load queue history bootstrap (protect.php validates session)
 require_once "../api/student-api/queue-history-b.php";
 ?>
 <!DOCTYPE html>

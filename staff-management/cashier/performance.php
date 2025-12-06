@@ -1,5 +1,6 @@
 <?php
-require_once '../../db/config.php';
+require_once __DIR__ . '/../../api/protect.php';
+// performance metrics use $conn provided by protect.php
 
 // Fetch data from the `queue` table for performance metrics
 $stmtQueueMetrics = $conn->prepare(
