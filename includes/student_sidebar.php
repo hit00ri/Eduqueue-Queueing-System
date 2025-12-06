@@ -51,7 +51,7 @@
             Feedback
         </a>
 
-        <a class="sidebar-link" href="../api/auth.php?action=logout">
+        <a class="sidebar-link" href="/Eduqueue-Queueing-System/api/auth.php?action=logout">
             <span class="material-symbols-outlined">logout</span>
             Logout
         </a>
